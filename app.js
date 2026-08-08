@@ -80,14 +80,14 @@ function initNavbar() {
    2. Refined Dual Theme Switcher (Dark & Light)
    ========================================================================== */
 function initTheme() {
-    const themeBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('nabil_portfolio_theme') || 'dark';
 
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
+    const themeBtns = document.querySelectorAll('.theme-toggle-action, #themeToggle');
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
@@ -95,13 +95,13 @@ function initTheme() {
             localStorage.setItem('nabil_portfolio_theme', newTheme);
             updateThemeIcon(newTheme);
         });
-    }
+    });
 }
 
 function updateThemeIcon(theme) {
-    const themeBtn = document.getElementById('themeToggle');
-    if (themeBtn) {
-        const icon = themeBtn.querySelector('i');
+    const themeBtns = document.querySelectorAll('.theme-toggle-action, #themeToggle');
+    themeBtns.forEach(btn => {
+        const icon = btn.querySelector('i');
         if (icon) {
             if (theme === 'light') {
                 icon.className = 'fa-solid fa-moon';
@@ -109,32 +109,33 @@ function updateThemeIcon(theme) {
                 icon.className = 'fa-solid fa-sun';
             }
         }
-    }
+    });
 }
 
 /* ==========================================================================
    3. Comprehensive Language Switcher (Bangla <-> English)
    ========================================================================== */
 function initLanguageSwitcher() {
-    const langBtn = document.getElementById('langToggle');
-    if (!langBtn) return;
+    const langBtns = document.querySelectorAll('.lang-toggle-action, #langToggle');
+    if (!langBtns || langBtns.length === 0) return;
 
     let currentLang = localStorage.getItem('nabil_lang') || 'bn';
 
     applyLanguage(currentLang);
 
-    langBtn.addEventListener('click', () => {
-        currentLang = currentLang === 'bn' ? 'en' : 'bn';
-        localStorage.setItem('nabil_lang', currentLang);
-        applyLanguage(currentLang);
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLang = currentLang === 'bn' ? 'en' : 'bn';
+            localStorage.setItem('nabil_lang', currentLang);
+            applyLanguage(currentLang);
+        });
     });
 }
 
 function applyLanguage(lang) {
-    const langText = document.getElementById('langText');
-    if (langText) {
-        langText.textContent = lang === 'bn' ? 'EN' : 'বাংলা';
-    }
+    document.querySelectorAll('.langText, #langText').forEach(el => {
+        el.textContent = lang === 'bn' ? 'EN' : 'বাংলা';
+    });
 
     document.documentElement.setAttribute('lang', lang);
 
@@ -145,16 +146,23 @@ function applyLanguage(lang) {
             navWhy: "কেন শিখবেন?",
             navEdu: "শিক্ষাগত যোগ্যতা",
             navTuition: "টিউশন বিষয়সমূহ",
-            navSyllabus: "সিলেবাস পেজ",
-            navProjects: "প্রজেক্টস পেজ",
+            navSyllabus: "সিলেবাস",
+            navProjects: "প্রজেক্ট",
             navContact: "যোগাযোগ",
+            navTalkBtn: "<i class=\"fa-brands fa-whatsapp\"></i> কথা বলুন",
+            themeText: "থিম",
             statusBadge: "বরমী, মাওনা ও শ্রীপুরে ICT (আইসিটি) স্পেশালিস্ট টিউশন চালু আছে",
             heroTitle: "হাই, আমি <span class=\"text-gradient\">নূরুল আরেফিন নাবিল</span>",
             heroFocusTag: "<i class=\"fa-solid fa-star\"></i> ICT (আইসিটি) স্পেশালিস্ট প্রাইভেট টিউটর — শ্রীপুর, মাওনা ও বরমী",
             heroDesc: "আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল অগ্রাধিকার হল ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের <strong>ICT (আইসিটি)</strong> বিষয়ে প্র্যাকটিক্যাল কোডিং ও ১০০% এ+ উপযোগী প্রস্তুতি প্রদান করা। পাশাপাশি বরমী, মাওনা ও শ্রীপুর এলাকায় <strong>বাংলা, ইংরেজি ও বিজ্ঞান বিষয়সমূহ (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ প্রাইভেট টিচিং দেওয়া হয়।",
             heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে কথা বলুন",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC এর সম্পূর্ণ সিলেবাস পেজ দেখুন ➔",
-            statSreepurRank: "SSC-তে শ্রীপুর উপজেলায় ১ম স্থান",
+            statCgpaNum: "৩.৭০+",
+            statOneOnOneNum: "১-অন-১",
+            statExpNum: "৪+ বছর",
+            statStudentsNum: "৫০+",
+            statPersonalCare: "ব্যক্তিগত স্পেশাল কেয়ার",
+            badgeIctSub: "প্র্যাকটিক্যাল কোডিং ও বোর্ড প্রস্তুতি",
             statExp: "আইসিটি ও একাডেমিক টিচিং",
             statStudents: "সফল শিক্ষার্থী মেন্টরড",
             whyTitle: "আমার কাছে <span class=\"text-gradient\">কেন শিখবেন?</span>",
@@ -170,7 +178,7 @@ function applyLanguage(lang) {
             whyPt5Title: "এআই (AI) ভিত্তিক স্মার্ট লার্নিং সুযোগ",
             whyPt5Desc: "আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) যুগে কীভাবে ChatGPT, Claude & GitHub Copilot এর মাধ্যমে কঠিন লজিক দ্রুত বোঝা, কোডের ভুল (Bug) ধরা এবং স্মার্ট স্টাডি টেকনিক ব্যবহার করা যায়—তার প্র্যাকটিক্যাল গাইডলাইন দেওয়া হয়।",
             eduTitle: "শিক্ষাগত <span class=\"text-accent-gradient\">যোগ্যতা ও ব্যাকগ্রাউন্ড</span>",
-            eduSubtitle: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE) ব্যাকগ্রাউন্ড ও শিক্ষাগত কৃতিত্ব",
+            eduSubtitle: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE) ব্যাকগ্রাউন্ড ও शिक्षাগত কৃতিত্ব",
             bscDesc: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)-এ বি.এস.সি সম্পন্ন করা (CGPA 3.70+ Out of 4.00)। সফটওয়্যার ইঞ্জিনিয়ারিং, মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android), ডেটা স্ট্রাকচার ও সি প্রোগ্রামিং অ্যালগরিদমে বিশেষ পারদর্শিতা।",
             hscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন। আইসিটি (ICT), গণিত ও পদার্থবিজ্ঞানে বিশেষ কৃতিত্ব।",
             sscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন এবং শ্রীপুর উপজেলায় ১ম স্থান অর্জন।",
@@ -203,7 +211,83 @@ function applyLanguage(lang) {
             contactNameLbl: "আপনার নাম",
             contactPhoneLbl: "ইমেইল / ফোন নম্বর",
             contactMsgLbl: "মেসেজ",
-            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে মেসেজ পাঠান ➔"
+            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে মেসেজ পাঠান ➔",
+            
+            // Syllabus Page Keys
+            sylTag: "Complete ICT Course Curriculum",
+            sylTitle: "৯ম-১০ম ও HSC <span class=\"text-gradient\">আইসিটি সম্পূর্ণ সিলেবাস</span>",
+            sylSub: "বোর্ড কারিকুলাম অনুযায়ী প্রতিটি অধ্যায়ের প্র্যাকটিক্যাল লার্নিং, এআই-সহায়ক স্টাডি প্রম্পটিং এবং বিগত সকল বোর্ডের CQ/MCQ সমাধান (বরমী, শ্রীপুর, মাওনা, গাজীপুর)",
+            ch1Badge: "১ম অধ্যায়",
+            ch1Title: "তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ",
+            ch1t1: "লেটেস্ট তথ্য প্রযুক্তির আধুনিক ধারণা ও বাস্তব ব্যবহার",
+            ch1t2: "বিশ্বগ্রাম (Global Village) ও তথ্য প্রযুক্তির সার্বিক অবদান",
+            ch1t3: "আর্টিফিশিয়াল ইন্টেলিজেন্স (AI), প্রম্পট ইঞ্জিনিয়ারিং, VR ও রোবোটিক্স",
+            ch1t4: "বায়োমেট্রিক্স, বায়োইনফরমেটিক্স ও ন্যানোটেকনোলজি",
+            ch1t5: "ই-লার্নিং, এআই ভিত্তিক স্মার্ট পড়াশোনা ও ফিউচার আইসিটি ক্যারিয়ার",
+            ch1Foot: "থিওরি + প্র্যাকটিক্যাল কনসেপ্ট",
+            ch2Badge: "২য় অধ্যায়",
+            ch2Title: "কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং",
+            ch2t1: "ব্যান্ডউইথ, ডাটা ট্রান্সমিশন স্পিড ও সিমপ্লেক্স/ডুপ্লেক্স মেথড",
+            ch2t2: "ডাটা কমিউনিকেশন মাধ্যম (Optical Fiber, Microwave, Satellite)",
+            ch2t3: "ওয়ারলেস নেটওয়ার্ক প্রযুক্তি (Bluetooth, Wi-Fi, WiMAX, Mobile Gen)",
+            ch2t4: "নেটওয়ার্ক টপোলজি (Star, Ring, Bus, Tree, Mesh & Hybrid)",
+            ch2t5: "ক্লাউড কম্পিউটিং, হাইব্রিড নেটওয়ার্কিং ও সাইবার সিকিউরিটি",
+            ch2Foot: "নেটওয়ার্কিং রিয়েল ডায়াগ্রাম",
+            ch3Badge: "৩য় অধ্যায়",
+            ch3Title: "সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস",
+            ch3t1: "সংখ্যা পদ্ধতির ইতিহাস ও প্রকারভেদ (Binary, Octal, Hex, Dec)",
+            ch3t2: "সংখ্যা পদ্ধতির রূপান্তর এবং ২-এর পরিপূরক (2's Complement)",
+            ch3t3: "মৌলিক ও সার্বজনীন লজিক গেট (AND, OR, NOT, NAND, NOR, XOR)",
+            ch3t4: "এনকোডার, ডিকোডার, অ্যাডার, রেজিস্টার ও কাউন্টার সার্কিট",
+            ch3t5: "বুলিয়ান অ্যালজেব্রা, ডিমরগানের উপপাদ্য ও লজিক ফাংশন সরলীকরণ",
+            ch3Foot: "গাণিতিক ও লজিক সমাধান",
+            ch4Badge: "৪র্থ অধ্যায়",
+            ch4Title: "ওয়েব ডিজাইন পরিচিতি ও HTML",
+            ch4t1: "ওয়েবসাইটের কাঠামো ও লেআউট (Static vs Dynamic Web)",
+            ch4t2: "HTML5 ট্যাগ ব্যবহার করে ওয়েব পেজ তৈরি (Formatting, Hyperlink)",
+            ch4t3: "ওয়েব পেজে ছবি (Image), টেবিল (Table) ও ইনপুট ফরম তৈরি",
+            ch4t4: "CSS স্টাইলিং দিয়ে সুন্দর ডিজাইন ও রেসপন্সিভ মোবাইল ভিউ",
+            ch4t5: "ফ্রিতে ওয়েবসাইট লাইভ ডোমেইন ও হোস্টিং পাবলিশিং",
+            ch4Foot: "লাইভ ওয়েব প্রজেক্ট তৈরি",
+            ch5Badge: "৫ম অধ্যায় — বিশেষ হাইলাইট",
+            ch5Title: "প্রোগ্রামিং ভাষা (C, C++, Java, Python)",
+            ch5t1: "অ্যালগরিদম ও ফ্লোচার্ট (Flowchart) তৈরি ও প্রবলেম সলভিং লজিক",
+            ch5t2: "C প্রোগ্রামিং সম্পূর্ণ: ডাটা টাইপ, ইনপুট/আউটপুট (`printf/scanf`)",
+            ch5t3: "কন্ডিশনাল স্টেটমেন্ট (`if-else`, `switch`), লুপ (`for`, `while`) ও অ্যারে",
+            ch5t4: "ফানশন, পয়েন্টার ও অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP)",
+            ch5t5: "জাভা, পাইথন ও মোবাইল অ্যাপস (Flutter/Android) বেসিকস",
+            ch5Foot: "সরাসরি কম্পিউটারে কোডিং প্র্যাকটিস",
+            ch6Badge: "৬ষ্ঠ অধ্যায়",
+            ch6Title: "ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+            ch6t1: "ডেটাবেজের মৌলিক ধারণা, ফিল্ড, রেকর্ড ও রিলেশনশিপ",
+            ch6t2: "প্রাইমারি কি, ফরেন কি ও রিলেশনাল ডেটাবেজ (RDBMS)",
+            ch6t3: "SQL কোয়েরির কাজ (`SELECT`, `INSERT`, `UPDATE`, `DELETE`)",
+            ch6t4: "ডেটা সিকিউরিটি, এনক্রিপশন ও আইটি ইন্ডাস্ট্রিতে ক্যোয়ারির ব্যবহার",
+            ch6Foot: "SQL ডাটা কোয়েরি সমাধান",
+            boardBannerTitle: "🎯 বিগত সকল বোর্ড পরীক্ষার প্রশ্নপত্র সমাধান",
+            boardBannerSub: "ঢাকা, চট্টগ্রাম, রাজশাহী, কুমিল্লা, দিনাজপুর, যশোর, সিলেট ও বরিশাল বোর্ডের বিগত সকল বছরের <strong>সৃজনশীল (CQ)</strong> ও <strong>বহুনির্বাচনী (MCQ)</strong> প্রশ্ন টাইপ ধরে ধরে নিখুঁতভাবে সলভ করানো হয়।",
+            boardWaBtn: "<i class=\"fa-brands fa-whatsapp\"></i> সরাসরি হোয়াটসঅ্যাপে মেসেজ দিন",
+            boardFormBtn: "<i class=\"fa-solid fa-file-signature\"></i> অনলাইন ফরম পূরণ করুন",
+
+            // Projects Page Keys
+            projTag: "Software & Mobile App Showcase",
+            projTitle: "লাইভ অ্যাপস ও <span class=\"text-gradient\">প্রজেক্ট পোর্টফোলিও</span>",
+            projSub: "গুগল প্লে-স্টোরে প্রকাশিত লাইভ অ্যান্ড্রয়েড অ্যাপ্লিকেশন, আপকামিং সফটওয়্যার ও ওপেন সোর্স গিটহাব সোর্স কোড।",
+            pLiveTag: "Live Mobile App",
+            pLiveTitle: "📱 গুগল প্লে-স্টোরে লাইভ অ্যাপস",
+            pSnakeAppName: "সাপ ও বন্যপ্রাণী — রেসকিউ বিডি",
+            pSnakeAppDesc: "বাংলাদেশ বন্যপ্রাণী ও বিষধর সাপ প্রতিরোধ, উদ্ধার কাজ পরিচালনা এবং সাধারণ মানুষের মধ্যে তাৎক্ষণিক সচেতনতা তৈরির লক্ষ্যে প্রস্তুতকৃত গুগলে প্রকাশিত অফিসিয়াল মোবাইল অ্যাপ্লিকেশন।",
+            pSnakePlayBtn: "<i class=\"fa-brands fa-google-play\"></i> প্লে-স্টোরে অ্যাপটি দেখুন ➔",
+            pSnakeWebBtn: "<i class=\"fa-solid fa-globe\"></i> অ্যাপের ওয়েবসাইট দেখুন",
+            pUpTag: "In Development",
+            pUpTitle: "🚀 আপকামিং প্রজেক্টসমূহ (Upcoming Projects)",
+            pUpSub: "বর্তমানে যেসব উচ্চতর সফটওয়্যার ও প্রজেক্টের কাজ চলছে",
+            pEduTechTitle: "Higher Education and Admission Tracking Software",
+            pEduTechDesc: "উচ্চশিক্ষা, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা, এডমিশন ট্র্যাকিং ও শিক্ষার্থীদের গাইডলাইন প্রদানের জন্য একটি ডিজিটাল ইন্টেলিজেন্ট সফটওয়্যার প্ল্যাটফর্ম।",
+            pWarrantyTitle: "Warranty Book Mobile Application",
+            pWarrantyDesc: "প্রোডাক্ট ও যেকোনো ডিভাইসের ওয়ারেন্টি স্লিপ ট্র্যাকিং, এক্সপায়ারি নোটিফিকেশন ও ডিজিটাল কাস্টমার সাপোর্ট রেকর্ড ম্যানেজমেন্ট অ্যাপ।",
+            pGitTag: "Open Source Code Repositories",
+            pGitTitle: "💻 অন্যান্য প্রজেক্টসমূহ"
         },
         en: {
             brandSubtitle: "ICT & CSE Educator",
@@ -211,16 +295,23 @@ function applyLanguage(lang) {
             navWhy: "Why Me?",
             navEdu: "Education",
             navTuition: "Tuition Subjects",
-            navSyllabus: "Syllabus Page",
-            navProjects: "Projects Page",
+            navSyllabus: "Syllabus",
+            navProjects: "Projects",
             navContact: "Contact",
+            navTalkBtn: "<i class=\"fa-brands fa-whatsapp\"></i> Contact",
+            themeText: "Theme",
             statusBadge: "Specialist ICT Tuition Available in Barmi, Mawna & Sreepur",
             heroTitle: "Hi, I am <span class=\"text-gradient\">Nurul Arefin Nabil</span>",
             heroFocusTag: "<i class=\"fa-solid fa-star\"></i> Specialist ICT Private Educator — Sreepur, Mawna & Barmi",
             heroDesc: "I am a <strong>Computer Science & Engineering (B.Sc in CSE) Graduate</strong>. My primary priority is providing 100% board exam preparation and practical coding for Class 9-10 (SSC) and Class 11-12 (HSC) in <strong>ICT</strong> alongside private tuition for <strong>Bangla, English & Science subjects</strong>.",
             heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> Chat on WhatsApp",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> View Complete SSC & HSC ICT Syllabus ➔",
-            statSreepurRank: "Ranked 1st in Sreepur Upazila (SSC)",
+            statCgpaNum: "3.70+",
+            statOneOnOneNum: "1-on-1",
+            statExpNum: "4+ Yrs",
+            statStudentsNum: "50+",
+            statPersonalCare: "Personal 1-on-1 Care",
+            badgeIctSub: "Practical Coding & Board Prep",
             statExp: "ICT & Academic Teaching Exp.",
             statStudents: "Successful Students Mentored",
             whyTitle: "Why <span class=\"text-gradient\">Learn With Me?</span>",
@@ -269,7 +360,83 @@ function applyLanguage(lang) {
             contactNameLbl: "Your Name",
             contactPhoneLbl: "Email / Phone Number",
             contactMsgLbl: "Message",
-            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> Send Message via WhatsApp ➔"
+            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> Send Message via WhatsApp ➔",
+
+            // Syllabus Page Keys
+            sylTag: "Complete ICT Course Curriculum",
+            sylTitle: "Class 9-10 & HSC <span class=\"text-gradient\">Complete ICT Syllabus</span>",
+            sylSub: "Board curriculum-aligned practical learning, AI-assisted study techniques, and past board CQ/MCQ solutions (Barmi, Sreepur, Mawna, Gazipur)",
+            ch1Badge: "Chapter 1",
+            ch1Title: "Information & Communication Tech: World & Bangladesh",
+            ch1t1: "Modern concepts and practical applications of latest IT",
+            ch1t2: "Global Village concepts and overall contributions of IT",
+            ch1t3: "Artificial Intelligence (AI), Prompt Engineering, VR & Robotics",
+            ch1t4: "Biometrics, Bioinformatics & Nanotechnology",
+            ch1t5: "E-Learning, AI-driven smart study and future ICT careers",
+            ch1Foot: "Theory + Practical Concepts",
+            ch2Badge: "Chapter 2",
+            ch2Title: "Communication Systems & Networking",
+            ch2t1: "Bandwidth, Data Transmission Speed & Simplex/Duplex methods",
+            ch2t2: "Data Communication Media (Optical Fiber, Microwave, Satellite)",
+            ch2t3: "Wireless Network Technologies (Bluetooth, Wi-Fi, WiMAX, 5G)",
+            ch2t4: "Network Topologies (Star, Ring, Bus, Tree, Mesh & Hybrid)",
+            ch2t5: "Cloud Computing, Hybrid Networking & Cybersecurity",
+            ch2Foot: "Networking Real Diagrams",
+            ch3Badge: "Chapter 3",
+            ch3Title: "Number Systems & Digital Devices",
+            ch3t1: "History and types of Number Systems (Binary, Octal, Hex, Dec)",
+            ch3t2: "Number conversions and 2's Complement arithmetic",
+            ch3t3: "Basic & Universal Logic Gates (AND, OR, NOT, NAND, NOR, XOR)",
+            ch3t4: "Encoders, Decoders, Adders, Registers & Counter Circuits",
+            ch3t5: "Boolean Algebra, De Morgan's Laws & Logic Simplification",
+            ch3Foot: "Mathematical & Logic Solving",
+            ch4Badge: "Chapter 4",
+            ch4Title: "Introduction to Web Design & HTML",
+            ch4t1: "Website structures & layouts (Static vs Dynamic Web)",
+            ch4t2: "Building web pages using HTML5 tags (Formatting, Hyperlinks)",
+            ch4t3: "Creating Web Images, Data Tables & HTML Input Forms",
+            ch4t4: "CSS styling for beautiful design & responsive mobile view",
+            ch4t5: "Publishing live website with free domain & hosting",
+            ch4Foot: "Building Live Web Projects",
+            ch5Badge: "Chapter 5 — Special Highlight",
+            ch5Title: "Programming Languages (C, C++, Java, Python)",
+            ch5t1: "Algorithms, Flowcharts & Problem-Solving logic",
+            ch5t2: "Complete C Programming: Data types, Input/Output (`printf/scanf`)",
+            ch5t3: "Conditionals (`if-else`, `switch`), Loops (`for`, `while`) & Arrays",
+            ch5t4: "Functions, Pointers & Object-Oriented Programming (OOP)",
+            ch5t5: "Java, Python & Mobile Apps (Flutter/Android) basics",
+            ch5Foot: "Direct Computer Coding Practice",
+            ch6Badge: "Chapter 6",
+            ch6Title: "Database Management Systems (DBMS)",
+            ch6t1: "Database fundamentals, Fields, Records & Relationships",
+            ch6t2: "Primary Key, Foreign Key & Relational Databases (RDBMS)",
+            ch6t3: "SQL Queries (`SELECT`, `INSERT`, `UPDATE`, `DELETE`)",
+            ch6t4: "Data Security, Encryption & IT Industry query usage",
+            ch6Foot: "SQL Data Query Solutions",
+            boardBannerTitle: "🎯 All Past Board Question Paper Solutions",
+            boardBannerSub: "Comprehensive solution coverage for Creative (CQ) and Multiple Choice (MCQ) questions across all education boards (Dhaka, Chittagong, Rajshahi, Comilla, Dinajpur, Jessore, Sylhet, Barisal).",
+            boardWaBtn: "<i class=\"fa-brands fa-whatsapp\"></i> Message Directly on WhatsApp",
+            boardFormBtn: "<i class=\"fa-solid fa-file-signature\"></i> Fill Online Form",
+
+            // Projects Page Keys
+            projTag: "Software & Mobile App Showcase",
+            projTitle: "Live Apps & <span class=\"text-gradient\">Project Portfolio</span>",
+            projSub: "Live Google Play Store Android applications, upcoming software platforms, and open-source GitHub source codes.",
+            pLiveTag: "Live Mobile App",
+            pLiveTitle: "📱 Live Apps on Google Play Store",
+            pSnakeAppName: "Snakes & Wildlife — Rescue BD",
+            pSnakeAppDesc: "Official Google Play Store mobile application published for wildlife protection, venomous snake rescue operations, and instant public awareness in Bangladesh.",
+            pSnakePlayBtn: "<i class=\"fa-brands fa-google-play\"></i> View App on Play Store ➔",
+            pSnakeWebBtn: "<i class=\"fa-solid fa-globe\"></i> Visit App Website",
+            pUpTag: "In Development",
+            pUpTitle: "🚀 Upcoming Projects",
+            pUpSub: "Advanced software and mobile platforms currently under active development",
+            pEduTechTitle: "Higher Education and Admission Tracking Software",
+            pEduTechDesc: "A digital intelligent software platform designed for tracking university admissions, higher education, and student career guidelines.",
+            pWarrantyTitle: "Warranty Book Mobile Application",
+            pWarrantyDesc: "Digital device warranty tracker, expiry notification, and customer record management app.",
+            pGitTag: "Open Source Code Repositories",
+            pGitTitle: "💻 Open Source GitHub Repositories"
         }
     };
 

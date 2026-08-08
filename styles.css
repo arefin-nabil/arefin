@@ -610,9 +610,9 @@ a {
     padding: 0.4rem;
 }
 
-/* Ensure mobile menu WhatsApp button is strictly hidden on desktop */
+/* Ensure mobile menu elements are strictly hidden on desktop */
 @media (min-width: 769px) {
-    .mobile-menu-whatsapp {
+    .mobile-menu-whatsapp, .mobile-nav-settings {
         display: none !important;
     }
 }
@@ -1505,6 +1505,27 @@ a {
 
     .mobile-toggle {
         display: block;
+    }
+
+    .desktop-only-btn {
+        display: none !important;
+    }
+
+    .mobile-nav-settings {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 0.85rem;
+        margin: 0.5rem 0;
+        padding: 0.55rem 1.1rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-full);
+    }
+
+    [data-theme="light"] .mobile-nav-settings {
+        background: #f1f5f9 !important;
+        border-color: #cbd5e1 !important;
     }
 
     .hero {

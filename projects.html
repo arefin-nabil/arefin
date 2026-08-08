@@ -39,7 +39,7 @@
     <!-- Navigation Header -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="brand-logo">
+            <a href="index.html#home" class="brand-logo">
                 <img src="profile.jpg" alt="Nurul Arefin Nabil Profile Image" class="brand-avatar">
                 <div class="brand-info">
                     <span class="brand-name">Arefin Nabil</span>
@@ -48,32 +48,46 @@
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link" data-i18n="navHome">হোম</a>
+                <a href="index.html#home" class="nav-link" data-i18n="navHome">হোম</a>
                 <a href="index.html#why-me" class="nav-link" data-i18n="navWhy">কেন শিখবেন?</a>
                 <a href="index.html#education" class="nav-link" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
                 <a href="index.html#tuition" class="nav-link" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
-                <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">সিলেবাস পেজ</a>
-                <a href="projects.html" class="nav-link active" data-i18n="navProjects">প্রজেক্টস পেজ</a>
+                <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">সিলেবাস</a>
+                <a href="projects.html" class="nav-link active" data-i18n="navProjects">প্রজেক্ট</a>
                 <a href="index.html#contact" class="nav-link" data-i18n="navContact">যোগাযোগ</a>
-                <a href="https://wa.me/8801881196146" target="_blank" class="btn btn-accent mobile-menu-whatsapp"
-                    style="background: #25D366; border-color: #25D366;">
-                    <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে কথা বলুন
+
+                <!-- Mobile Menu Quick Settings Bar -->
+                <div class="mobile-nav-settings">
+                    <button class="lang-toggle-btn lang-toggle-action" title="Language Switcher (BN / EN)">
+                        <i class="fa-solid fa-language"></i> <span class="langText">EN</span>
+                    </button>
+                    <button class="theme-toggle-btn theme-toggle-action" title="থিম পরিবর্তন করুন">
+                        <i class="fa-solid fa-sun"></i> <span class="themeText" data-i18n="themeText">থিম</span>
+                    </button>
+                </div>
+
+                <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal mobile-menu-whatsapp"
+                    style="background: #25D366; border-color: #25D366;" data-i18n="navTalkBtn">
+                    <i class="fa-brands fa-whatsapp"></i> কথা বলুন
                 </a>
             </nav>
 
             <div class="nav-actions">
-                <!-- Language Switcher Button (BN <-> EN) -->
-                <button class="lang-toggle-btn" id="langToggle" title="Language Switcher">
-                    <i class="fa-solid fa-language"></i> <span id="langText">EN</span>
+                <!-- Desktop Language Switcher Button (BN <-> EN) -->
+                <button class="lang-toggle-btn lang-toggle-action desktop-only-btn" title="Language Switcher (BN / EN)">
+                    <i class="fa-solid fa-language"></i> <span class="langText">EN</span>
                 </button>
 
-                <button class="theme-toggle-btn" id="themeToggle" title="থিম পরিবর্তন করুন">
+                <!-- Desktop Theme Toggle Button -->
+                <button class="theme-toggle-btn theme-toggle-action desktop-only-btn" title="থিম পরিবর্তন করুন">
                     <i class="fa-solid fa-sun"></i>
                 </button>
-                <a href="https://wa.me/8801881196146" target="_blank" class="btn btn-accent nav-whatsapp-btn"
-                    style="background: #25D366; border-color: #25D366;">
-                    <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপ
+
+                <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal nav-whatsapp-btn"
+                    style="background: #25D366; border-color: #25D366;" data-i18n="navTalkBtn">
+                    <i class="fa-brands fa-whatsapp"></i> কথা বলুন
                 </a>
+
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -84,24 +98,22 @@
     <!-- Page Header Banner -->
     <section class="section" style="padding-top: 8rem; padding-bottom: 3rem;">
         <div class="container text-center">
-            <div class="section-tag" style="margin: 0 auto 1rem auto;">Software & Mobile App Showcase</div>
-            <h1 class="section-title" style="font-size: 3rem;">
+            <div class="section-tag" style="margin: 0 auto 1rem auto;" data-i18n="projTag">Software & Mobile App Showcase</div>
+            <h1 class="section-title" style="font-size: 3rem;" data-i18n="projTitle">
                 লাইভ অ্যাপস ও <span class="text-gradient">প্রজেক্ট পোর্টফোলিও</span>
             </h1>
-            <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;">
-                গুগল প্লে-স্টোরে প্রকাশিত লাইভ অ্যান্ড্রয়েড অ্যাপ্লিকেশন, আপকামিং সফটওয়্যার ও ওপেন সোর্স গিটহাব সোর্স
-                কোড।
+            <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;" data-i18n="projSub">
+                গুগল প্লে-স্টোরে প্রকাশিত লাইভ অ্যান্ড্রয়েড অ্যাপ্লিকেশন, আপকামিং সফটওয়্যার ও ওপেন সোর্স গিটহাব সোর্স কোড।
             </p>
         </div>
     </section>
 
     <!-- Section 1: Featured Google Play Store App -->
-    <section class="section" style="padding-top: 1rem;">
+    <section class="section" style="padding-top: 1rem; padding-bottom: 4rem;">
         <div class="container">
             <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
-                <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">Live
-                    Mobile App</span>
-                <h2 style="font-size: 2rem;">📱 গুগল প্লে-স্টোরে লাইভ অ্যাপস</h2>
+                <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);" data-i18n="pLiveTag">Live Mobile App</span>
+                <h2 style="font-size: 2rem;" data-i18n="pLiveTitle">📱 গুগল প্লে-স্টোরে লাইভ অ্যাপস</h2>
             </div>
 
             <div class="glass-card special-card"
@@ -119,28 +131,26 @@
                     <div>
                         <div
                             style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
-                            <h3 style="font-size: 1.7rem;">সাপ ও বন্যপ্রাণী — রেসকিউ বিডি</h3>
+                            <h3 style="font-size: 1.7rem;" data-i18n="pSnakeAppName">সাপ ও বন্যপ্রাণী — রেসকিউ বিডি</h3>
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                                 <span class="skill-chip"
                                     style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Flutter</span>
                                 <span class="skill-chip"
                                     style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Dart</span>
-                                <span class="skill-chip" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Vercel Web
-                                    API</span>
+                                <span class="skill-chip" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Vercel Web API</span>
                             </div>
                         </div>
 
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.75rem 0 1.25rem 0;">
-                            বাংলাদেশ বন্যপ্রাণী ও বিষধর সাপ প্রতিরোধ, উদ্ধার কাজ পরিচালনা এবং সাধারণ মানুষের মধ্যে
-                            তাৎক্ষণিক সচেতনতা তৈরির লক্ষ্যে প্রস্তুতকৃত গুগলে প্রকাশিত অফিসিয়াল মোবাইল অ্যাপ্লিকেশন।
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.75rem 0 1.25rem 0;" data-i18n="pSnakeAppDesc">
+                            বাংলাদেশ বন্যপ্রাণী ও বিষধর সাপ প্রতিরোধ, উদ্ধার কাজ পরিচালনা এবং সাধারণ মানুষের মধ্যে তাৎক্ষণিক সচেতনতা তৈরির লক্ষ্যে প্রস্তুতকৃত গুগলে প্রকাশিত অফিসিয়াল মোবাইল অ্যাপ্লিকেশন।
                         </p>
 
                         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                             <a href="https://play.google.com/store/apps/details?id=bd.snake.app" target="_blank"
-                                class="btn btn-accent" style="background: #01875f; border-color: #01875f;">
+                                class="btn btn-accent" style="background: #01875f; border-color: #01875f;" data-i18n="pSnakePlayBtn">
                                 <i class="fa-brands fa-google-play"></i> প্লে-স্টোরে অ্যাপটি দেখুন ➔
                             </a>
-                            <a href="https://snakeappbd.vercel.app/" target="_blank" class="btn btn-secondary">
+                            <a href="https://snakeappbd.vercel.app/" target="_blank" class="btn btn-secondary" data-i18n="pSnakeWebBtn">
                                 <i class="fa-solid fa-globe"></i> অ্যাপের ওয়েবসাইট দেখুন
                             </a>
                         </div>
@@ -151,36 +161,29 @@
             <!-- Section 2: Upcoming Projects -->
             <div style="margin-bottom: 3.5rem;">
                 <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
-                    <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);">In
-                        Development</span>
-                    <h2 style="font-size: 2rem;">🚀 আপকামিং প্রজেক্টসমূহ (Upcoming Projects)</h2>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">বর্তমানে যেসব উচ্চতর সফটওয়্যার ও প্রজেক্টের
-                        কাজ চলছে</p>
+                    <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);" data-i18n="pUpTag">In Development</span>
+                    <h2 style="font-size: 2rem;" data-i18n="pUpTitle">🚀 আপকামিং প্রজেক্টসমূহ (Upcoming Projects)</h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="pUpSub">বর্তমানে যেসব উচ্চতর সফটওয়্যার ও প্রজেক্টের কাজ চলছে</p>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem;" class="form-row-2col">
                     <!-- Upcoming 1 -->
                     <div class="glass-card" style="padding: 1.75rem; border-top: 4px solid var(--primary);">
                         <span
-                            style="font-size: 0.75rem; font-weight: 700; background: rgba(99, 102, 241, 0.15); color: var(--primary); padding: 0.2rem 0.65rem; border-radius: 99px;">Education
-                            Tech</span>
-                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;">Higher Education and Admission
-                            Tracking Software</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">
-                            উচ্চশিক্ষা, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা, এডমিশন ট্র্যাকিং ও শিক্ষার্থীদের গাইডলাইন প্রদানের
-                            জন্য একটি ডিজিটাল ইন্টেলিজেন্ট সফটওয়্যার প্ল্যাটফর্ম।
+                            style="font-size: 0.75rem; font-weight: 700; background: rgba(99, 102, 241, 0.15); color: var(--primary); padding: 0.2rem 0.65rem; border-radius: 99px;">Education Tech</span>
+                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pEduTechTitle">Higher Education and Admission Tracking Software</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="pEduTechDesc">
+                            উচ্চশিক্ষা, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা, এডমিশন ট্র্যাকিং ও শিক্ষার্থীদের গাইডলাইন প্রদানের জন্য একটি ডিজিটাল ইন্টেলিজেন্ট সফটওয়্যার প্ল্যাটফর্ম।
                         </p>
                     </div>
 
                     <!-- Upcoming 2 -->
                     <div class="glass-card" style="padding: 1.75rem; border-top: 4px solid var(--secondary);">
                         <span
-                            style="font-size: 0.75rem; font-weight: 700; background: rgba(6, 182, 212, 0.15); color: var(--secondary); padding: 0.2rem 0.65rem; border-radius: 99px;">Consumer
-                            Tech</span>
-                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;">Warranty Book Mobile Application</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">
-                            প্রোডাক্ট ও যেকোনো ডিভাইসের ওয়ারেন্টি স্লিপ ট্র্যাকিং, এক্সপায়ারি নোটিফিকেশন ও ডিজিটাল
-                            কাস্টমার সাপোর্ট রেকর্ড ম্যানেজমেন্ট অ্যাপ।
+                            style="font-size: 0.75rem; font-weight: 700; background: rgba(6, 182, 212, 0.15); color: var(--secondary); padding: 0.2rem 0.65rem; border-radius: 99px;">Consumer Tech</span>
+                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pWarrantyTitle">Warranty Book Mobile Application</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="pWarrantyDesc">
+                            প্রোডাক্ট ও যেকোনো ডিভাইসের ওয়ারেন্টি স্লিপ ট্র্যাকিং, এক্সপায়ারি নোটিফিকেশন ও ডিজিটাল কাস্টমার সাপোর্ট রেকর্ড ম্যানেজমেন্ট অ্যাপ।
                         </p>
                     </div>
                 </div>
@@ -189,8 +192,8 @@
             <!-- Section 3: Open Source GitHub Repositories -->
             <div>
                 <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
-                    <span class="section-tag">Open Source Code Repositories</span>
-                    <h2 style="font-size: 2rem;">💻 অন্যান্য প্রজেক্টসমূহ</h2>
+                    <span class="section-tag" data-i18n="pGitTag">Open Source Code Repositories</span>
+                    <h2 style="font-size: 2rem;" data-i18n="pGitTitle">💻 অন্যান্য প্রজেক্টসমূহ</h2>
                 </div>
 
                 <div class="projects-grid" id="projectsGrid">
@@ -203,9 +206,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & Specialist ICT/Coding Educator (বরমী, শ্রীপুর,
-                গাজীপুর) | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span
-                    class="visitor-count-number">784</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & Specialist ICT/Coding Educator (বরমী, শ্রীপুর, গাজীপুর) | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">784</span>+ মোট ওয়েবসাইট ভিজিটর</p>
         </div>
     </footer>
 
