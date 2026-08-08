@@ -135,22 +135,26 @@
                 </div>
 
                 <!-- Quick Stats -->
-                <div class="hero-stats">
+                <div class="hero-stats" id="heroStats">
+                    <!-- Stat 1: 4+ Years Experience -->
                     <div class="stat-item">
-                        <span class="stat-number text-gradient" data-i18n="statCgpaNum">৩.৭০+</span>
-                        <span class="stat-label">CGPA (Out of 4.00)</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number text-accent-gradient" data-i18n="statOneOnOneNum">১-অন-১</span>
-                        <span class="stat-label" data-i18n="statPersonalCare">ব্যক্তিগত স্পেশাল কেয়ার</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number text-warm-gradient" data-i18n="statExpNum">৪+ বছর</span>
+                        <span class="stat-number text-warm-gradient stat-anim" data-target="4" data-suffix="+ বছর" data-suffix-en="+ Yrs" data-i18n="statExpNum">০+ বছর</span>
                         <span class="stat-label" data-i18n="statExp">আইসিটি ও একাডেমিক টিচিং</span>
                     </div>
+                    <!-- Stat 2: 50+ Students Mentored -->
                     <div class="stat-item">
-                        <span class="stat-number text-gradient" data-i18n="statStudentsNum">৫০+</span>
+                        <span class="stat-number text-gradient stat-anim" data-target="50" data-suffix="+" data-suffix-en="+" data-i18n="statStudentsNum">০+</span>
                         <span class="stat-label" data-i18n="statStudents">সফল শিক্ষার্থী মেন্টরড</span>
+                    </div>
+                    <!-- Stat 3: 1-on-1 Personal Care -->
+                    <div class="stat-item">
+                        <span class="stat-number text-accent-gradient stat-anim" data-type="one-on-one" data-i18n="statOneOnOneNum">১-অন-১</span>
+                        <span class="stat-label" data-i18n="statPersonalCare">ব্যক্তিগত স্পেশাল কেয়ার</span>
+                    </div>
+                    <!-- Stat 4: Website Visitor Count -->
+                    <div class="stat-item">
+                        <span class="stat-number text-gradient visitor-count-number stat-anim" data-type="visitor">--</span>
+                        <span class="stat-label" data-i18n="statVisitorLabel">মোট ওয়েবসাইট ভিজিটর</span>
                     </div>
                 </div>
             </div>
@@ -168,7 +172,7 @@
                     </div>
                     <div>
                         <div class="badge-text-title">B.Sc in CSE</div>
-                        <div class="badge-text-sub">CGPA 3.70+ / 4.00</div>
+                        <div class="badge-text-sub" data-i18n="badgeBscSub">কম্পিউটার সায়েন্স গ্র্যাজুয়েট</div>
                     </div>
                 </div>
 

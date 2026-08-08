@@ -1517,9 +1517,9 @@ a {
         left: -100%;
         width: 100%;
         height: calc(100vh - 66px);
-        background: var(--bg-modal);
-        backdrop-filter: blur(28px);
-        -webkit-backdrop-filter: blur(28px);
+        background: rgba(11, 15, 25, 0.98);
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -1530,12 +1530,18 @@ a {
         overflow-y: auto;
         border-top: 1px solid var(--border-color);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        will-change: left;
     }
 
     [data-theme="light"] .nav-menu {
-        background: #ffffff !important;
+        background: rgba(255, 255, 255, 0.98) !important;
         border-top-color: #e2e8f0 !important;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .glass-card {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
     .nav-menu.active {
@@ -1685,8 +1691,48 @@ a {
         height: 220px !important;
     }
 
+    .hero-visual {
+        margin-top: 1rem;
+        padding: 0 10px;
+    }
+
     .floating-badge {
-        display: none !important;
+        display: flex !important;
+        padding: 0.45rem 0.7rem !important;
+        gap: 0.5rem !important;
+        border-radius: var(--radius-sm) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(15, 23, 42, 0.96) !important;
+        z-index: 15 !important;
+    }
+
+    [data-theme="light"] .floating-badge {
+        background: rgba(255, 255, 255, 0.96) !important;
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15) !important;
+    }
+
+    .badge-top {
+        top: -12px !important;
+        left: 2px !important;
+    }
+
+    .badge-bottom {
+        bottom: -12px !important;
+        right: 2px !important;
+    }
+
+    .badge-icon {
+        font-size: 1.15rem !important;
+    }
+
+    .badge-text-title {
+        font-size: 0.75rem !important;
+    }
+
+    .badge-text-sub {
+        font-size: 0.65rem !important;
     }
 
     .section {

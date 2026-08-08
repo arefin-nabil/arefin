@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initGitHubProjects();
     initVisitorCounter();
+    initAnimatedStats();
     initTuitionModal();
 });
 
@@ -79,17 +80,22 @@ function initNavbar() {
 /* ==========================================================================
    2. Refined Dual Theme Switcher (Dark & Light)
    ========================================================================== */
+window.currentTheme = 'dark';
+
 function initTheme() {
     const savedTheme = localStorage.getItem('nabil_portfolio_theme') || 'dark';
+    window.currentTheme = savedTheme;
 
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
 
     const themeBtns = document.querySelectorAll('.theme-toggle-action, #themeToggle');
     themeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        btn.addEventListener('click', (e) => {
+            if (e) e.stopPropagation();
+            const curr = document.documentElement.getAttribute('data-theme') || window.currentTheme;
+            const newTheme = curr === 'dark' ? 'light' : 'dark';
+            window.currentTheme = newTheme;
 
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('nabil_portfolio_theme', newTheme);
@@ -158,11 +164,12 @@ function applyLanguage(lang) {
             heroDesc: "আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল অগ্রাধিকার হল ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের <strong>ICT (আইসিটি)</strong> বিষয়ে প্র্যাকটিক্যাল কোডিং ও ১০০% এ+ উপযোগী প্রস্তুতি প্রদান করা। পাশাপাশি বরমী, মাওনা ও শ্রীপুর এলাকায় <strong>বাংলা, ইংরেজি ও বিজ্ঞান বিষয়সমূহ (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ প্রাইভেট টিচিং দেওয়া হয়।",
             heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে কথা বলুন",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC এর সম্পূর্ণ সিলেবাস পেজ দেখুন ➔",
-            statCgpaNum: "৩.৭০+",
             statOneOnOneNum: "১-অন-১",
             statExpNum: "৪+ বছর",
             statStudentsNum: "৫০+",
             statPersonalCare: "ব্যক্তিগত স্পেশাল কেয়ার",
+            statVisitorLabel: "মোট ওয়েবসাইট ভিজিটর",
+            badgeBscSub: "কম্পিউটার সায়েন্স গ্র্যাজুয়েট",
             badgeIctSub: "প্র্যাকটিক্যাল কোডিং ও বোর্ড প্রস্তুতি",
             statExp: "আইসিটি ও একাডেমিক টিচিং",
             statStudents: "সফল শিক্ষার্থী মেন্টরড",
@@ -308,11 +315,12 @@ function applyLanguage(lang) {
             heroDesc: "I am a <strong>Computer Science & Engineering (B.Sc in CSE) Graduate</strong>. My primary priority is providing 100% board exam preparation and practical coding for Class 9-10 (SSC) and Class 11-12 (HSC) in <strong>ICT</strong> alongside private tuition for <strong>Bangla, English & Science subjects</strong>.",
             heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> Chat on WhatsApp",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> View Complete SSC & HSC ICT Syllabus ➔",
-            statCgpaNum: "3.70+",
             statOneOnOneNum: "1-on-1",
             statExpNum: "4+ Yrs",
             statStudentsNum: "50+",
             statPersonalCare: "Personal 1-on-1 Care",
+            statVisitorLabel: "Total Website Visitors",
+            badgeBscSub: "Computer Science Graduate",
             badgeIctSub: "Practical Coding & Board Prep",
             statExp: "ICT & Academic Teaching Exp.",
             statStudents: "Successful Students Mentored",
@@ -453,23 +461,129 @@ function applyLanguage(lang) {
 }
 
 /* ==========================================================================
-   4. Live Website Visitor Counter System
+   4. Live Global Website Visitor Counter System (Cloud API Integration)
    ========================================================================== */
 function initVisitorCounter() {
-    let count = localStorage.getItem('nabil_visitor_count');
+    const visitorEls = document.querySelectorAll('.visitor-count-number');
+    if (!visitorEls || visitorEls.length === 0) return;
 
-    if (!count) {
-        count = Math.floor(Math.random() * (790 - 750 + 1)) + 750;
-    } else {
-        count = parseInt(count, 10) + 1;
+    const BASE_OFFSET = 780; // Base starting offset
+    let cachedCount = parseInt(localStorage.getItem('nabil_global_visitor_count') || '0', 10);
+
+    if (cachedCount > 0) {
+        updateVisitorUI(cachedCount);
     }
 
-    localStorage.setItem('nabil_visitor_count', count.toString());
+    const counterKey = 'arefin_nabil_portfolio_hits_2026';
+    const apiUrl = `https://countapi.mileshilliard.com/api/v1/hit/${counterKey}`;
 
+    fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+            if (data && typeof data.value === 'number') {
+                const totalGlobalCount = BASE_OFFSET + data.value;
+                localStorage.setItem('nabil_global_visitor_count', totalGlobalCount.toString());
+                updateVisitorUI(totalGlobalCount);
+            }
+        })
+        .catch(err => {
+            console.warn('Global visitor API fallback used:', err);
+            if (!cachedCount) {
+                let fallback = Math.floor(Math.random() * (790 - 750 + 1)) + 750;
+                localStorage.setItem('nabil_global_visitor_count', fallback.toString());
+                updateVisitorUI(fallback);
+            }
+        });
+}
+
+function updateVisitorUI(count) {
     const visitorEls = document.querySelectorAll('.visitor-count-number');
+    const lang = localStorage.getItem('nabil_lang') || 'bn';
+    const isBn = lang === 'bn';
+
+    function toBnDigits(num) {
+        const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        return num.toString().replace(/\d/g, d => bnDigits[d]);
+    }
+
     visitorEls.forEach(el => {
-        el.textContent = count.toLocaleString('bn-BD');
+        if (isBn) {
+            el.textContent = `${toBnDigits(count)}+`;
+        } else {
+            el.textContent = `${count.toLocaleString('en-US')}+`;
+        }
     });
+}
+
+/* ==========================================================================
+   4b. Animated Count-Up Engine for Hero Stats
+   ========================================================================== */
+function initAnimatedStats() {
+    const statsContainer = document.getElementById('heroStats');
+    if (!statsContainer) return;
+
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                runCountUpAnimation();
+            }
+        });
+    }, { threshold: 0.15 });
+
+    observer.observe(statsContainer);
+}
+
+function runCountUpAnimation() {
+    const lang = localStorage.getItem('nabil_lang') || 'bn';
+    const isBn = lang === 'bn';
+
+    const statElements = document.querySelectorAll('.hero-stats .stat-anim');
+    const duration = 1800; // 1.8 seconds animation
+    const startTime = performance.now();
+
+    function toBnDigits(num) {
+        const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        return num.toString().replace(/\d/g, d => bnDigits[d]);
+    }
+
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+
+        statElements.forEach(el => {
+            const type = el.getAttribute('data-type');
+            const targetAttr = el.getAttribute('data-target');
+
+            if (type === 'visitor') {
+                const totalVisitors = parseInt(localStorage.getItem('nabil_global_visitor_count') || '785', 10);
+                const val = Math.floor(easeProgress * totalVisitors);
+                el.textContent = isBn ? `${toBnDigits(val)}+` : `${val.toLocaleString('en-US')}+`;
+            } else if (type === 'one-on-one') {
+                if (progress >= 1) {
+                    el.textContent = isBn ? '১-অন-১' : '1-on-1';
+                } else {
+                    const val = Math.floor(easeProgress * 1);
+                    el.textContent = isBn ? `${toBnDigits(val)}-অন-১` : `${val}-on-1`;
+                }
+            } else if (targetAttr) {
+                const target = parseInt(targetAttr, 10);
+                const val = Math.floor(easeProgress * target);
+                const suffixBn = el.getAttribute('data-suffix') || '';
+                const suffixEn = el.getAttribute('data-suffix-en') || suffixBn;
+                el.textContent = isBn ? `${toBnDigits(val)}${suffixBn}` : `${val}${suffixEn}`;
+            }
+        });
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
 }
 
 /* ==========================================================================
@@ -517,7 +631,7 @@ function initBackgroundParticles() {
         }
 
         draw() {
-            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            const isLight = window.currentTheme === 'light';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
             ctx.fillStyle = isLight ? 'rgba(99, 102, 241, 0.45)' : 'rgba(99, 102, 241, 0.65)';
@@ -553,7 +667,7 @@ function initBackgroundParticles() {
 
     function animate() {
         ctx.clearRect(0, 0, width, height);
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const isLight = window.currentTheme === 'light';
 
         for (let i = 0; i < particles.length; i++) {
             particles[i].update();
@@ -583,6 +697,11 @@ function initBackgroundParticles() {
    6. Custom Cursor Ring & Follower
    ========================================================================== */
 function initCustomCursor() {
+    // Disable custom cursor on mobile/touch screens to save GPU/CPU and prevent touch interference
+    if (window.innerWidth <= 768 || ('ontouchstart' in window && !window.matchMedia('(pointer: fine)').matches)) {
+        return;
+    }
+
     const cursor = document.getElementById('customCursor');
     const follower = document.getElementById('cursorFollower');
     if (!cursor || !follower) return;
