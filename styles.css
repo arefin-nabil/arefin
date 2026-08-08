@@ -52,34 +52,37 @@
 }
 
 /* Light / Day Theme Overrides — High Contrast & Clear Text Guarantee */
+/* Light / Day Theme Overrides — High Contrast & Premium Parity Guarantee */
 [data-theme="light"] {
     --bg-dark: #f8fafc;
-    --bg-card: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.92);
     --bg-card-hover: #ffffff;
     --bg-modal: #ffffff;
-    --border-color: #e2e8f0;
-    --border-glow: rgba(99, 102, 241, 0.3);
+    --border-color: rgba(99, 102, 241, 0.18);
+    --border-glow: rgba(99, 102, 241, 0.35);
     
     --text-main: #0f172a;
     --text-muted: #334155;
     --text-sub: #475569;
     
     --grad-card: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
-    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    --shadow-card: 0 10px 30px -5px rgba(99, 102, 241, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
     --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.15);
     --form-bg: #ffffff;
 }
 
 [data-theme="light"] .glass-card {
-    background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(99, 102, 241, 0.2) !important;
+    box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03) !important;
 }
 
 [data-theme="light"] .glass-card:hover {
     background: #ffffff !important;
     border-color: var(--primary) !important;
-    box-shadow: 0 16px 35px -8px rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 16px 35px -8px rgba(99, 102, 241, 0.22), 0 0 20px rgba(99, 102, 241, 0.12) !important;
 }
 
 [data-theme="light"] .form-control, 
@@ -115,8 +118,9 @@
 }
 
 [data-theme="light"] .special-card {
-    background: linear-gradient(145deg, rgba(99, 102, 241, 0.08) 0%, #ffffff 100%) !important;
-    border: 2px solid rgba(99, 102, 241, 0.4) !important;
+    background: linear-gradient(145deg, rgba(99, 102, 241, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
+    border: 2px solid rgba(99, 102, 241, 0.35) !important;
+    box-shadow: 0 14px 35px -6px rgba(99, 102, 241, 0.15) !important;
 }
 
 [data-theme="light"] .subject-title,
@@ -901,6 +905,30 @@ a {
     line-height: 1.5;
 }
 
+/* Page Banner & Responsive Grid Layouts */
+.page-banner {
+    padding-top: 7.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.page-title {
+    font-size: 2.75rem;
+    line-height: 1.25;
+}
+
+.live-app-grid {
+    display: grid;
+    grid-template-columns: 0.35fr 1.65fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.upcoming-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+}
+
 /* ICT Syllabus Chapter Cards */
 .chapter-grid {
     display: grid;
@@ -1532,6 +1560,50 @@ a {
         padding-top: 5.5rem !important;
         padding-bottom: 2.5rem !important;
         min-height: auto;
+    }
+
+    .page-banner {
+        padding-top: 5.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .page-title {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .live-app-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .live-app-grid > div {
+        text-align: center !important;
+    }
+
+    .live-app-grid h3 {
+        font-size: 1.35rem !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .live-app-grid div[style*="display: flex"] {
+        justify-content: center !important;
+    }
+
+    .upcoming-projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .chapter-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .chapter-card {
+        padding: 1.5rem !important;
     }
 
     .hero-title {

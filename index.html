@@ -54,7 +54,7 @@
                 <a href="index.html#why-me" class="nav-link" data-i18n="navWhy">কেন শিখবেন?</a>
                 <a href="index.html#education" class="nav-link" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
                 <a href="index.html#tuition" class="nav-link" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
-                <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">সিলেবাস</a>
+                <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">ICT সিলেবাস</a>
                 <a href="projects.html" class="nav-link" data-i18n="navProjects">প্রজেক্ট</a>
                 <a href="index.html#contact" class="nav-link" data-i18n="navContact">যোগাযোগ</a>
                 
@@ -351,9 +351,9 @@
 
                 <div class="subject-grid-academic"
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;">
-                    <!-- Subject 1: ICT (SSC & HSC) — Top Highlighted Card -->
-                    <div class="glass-card subject-card special-card"
-                        style="border: 2px solid var(--accent) !important; background: linear-gradient(145deg, rgba(16, 185, 129, 0.12) 0%, rgba(18, 25, 41, 0.9) 100%);">
+                    <!-- Subject 1: ICT (SSC & HSC) — Top Highlighted Clickable Card -->
+                    <a href="syllabus.html" class="glass-card subject-card special-card"
+                        style="text-decoration: none; cursor: pointer; border: 2px solid var(--accent) !important; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <div class="subject-icon"
@@ -375,7 +375,10 @@
                                 প্রস্তুতি।
                             </p>
                         </div>
-                    </div>
+                        <div style="margin-top: 1.25rem; color: var(--accent); font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                            <span data-i18n="cardViewSyllabusBtn">সম্পূর্ণ আইসিটি সিলেবাস পেজ দেখুন ➔</span>
+                        </div>
+                    </a>
 
                     <!-- Subject 2: Bangla & English -->
                     <div class="glass-card subject-card">

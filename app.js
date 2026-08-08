@@ -4,7 +4,7 @@
  */
 
 // 📱 আপনার নিজস্ব হোয়াটসঅ্যাপ নম্বর (01881196146)
-const MY_WHATSAPP_NUMBER = '8801881196146';
+var MY_WHATSAPP_NUMBER = window.MY_WHATSAPP_NUMBER || '8801881196146';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
@@ -146,10 +146,11 @@ function applyLanguage(lang) {
             navWhy: "কেন শিখবেন?",
             navEdu: "শিক্ষাগত যোগ্যতা",
             navTuition: "টিউশন বিষয়সমূহ",
-            navSyllabus: "সিলেবাস",
+            navSyllabus: "ICT সিলেবাস",
             navProjects: "প্রজেক্ট",
             navContact: "যোগাযোগ",
             navTalkBtn: "<i class=\"fa-brands fa-whatsapp\"></i> কথা বলুন",
+            cardViewSyllabusBtn: "সম্পূর্ণ আইসিটি সিলেবাস পেজ দেখুন ➔",
             themeText: "থিম",
             statusBadge: "বরমী, মাওনা ও শ্রীপুরে ICT (আইসিটি) স্পেশালিস্ট টিউশন চালু আছে",
             heroTitle: "হাই, আমি <span class=\"text-gradient\">নূরুল আরেফিন নাবিল</span>",
@@ -295,10 +296,11 @@ function applyLanguage(lang) {
             navWhy: "Why Me?",
             navEdu: "Education",
             navTuition: "Tuition Subjects",
-            navSyllabus: "Syllabus",
+            navSyllabus: "ICT Syllabus",
             navProjects: "Projects",
             navContact: "Contact",
             navTalkBtn: "<i class=\"fa-brands fa-whatsapp\"></i> Contact",
+            cardViewSyllabusBtn: "View Complete ICT Syllabus ➔",
             themeText: "Theme",
             statusBadge: "Specialist ICT Tuition Available in Barmi, Mawna & Sreepur",
             heroTitle: "Hi, I am <span class=\"text-gradient\">Nurul Arefin Nabil</span>",
