@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="bn" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurul Arefin Nabil — App Developer & Tech Educator Portfolio</title>
-    <meta name="description" content="Official portfolio and private tuition booking portal for Nurul Arefin Nabil. Mobile App Developer, Web Engineer, and STEM/Coding Tutor with 3+ years experience.">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nurul Arefin Nabil — B.Sc in CSE, Specialist ICT & Academic Tutor</title>
+    <meta name="description"
+        content="Official portfolio & private tuition booking portal for Nurul Arefin Nabil. B.Sc in Computer Science & Engineering (CSE), Specialist Tutor for Class 9-10 & HSC ICT, Bangla, English, Science, C/C++ Programming, and Flutter Mobile App Development in Barmi, Sreepur, Maona & Gazipur.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- Interactive Particle Canvas Background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Custom Glowing Mouse Cursor Ring & Follower -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-follower" id="cursorFollower"></div>
 
     <!-- Ambient Glowing Orbs Background -->
     <div class="ambient-glow glow-1"></div>
@@ -30,29 +42,42 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="#home" class="brand-logo">
-                <img src="https://avatars.githubusercontent.com/u/177818249?v=4" alt="Nurul Arefin Nabil Avatar" class="brand-avatar">
+                <img src="profile.jpg" alt="Nurul Arefin Nabil Profile Image" class="brand-avatar">
                 <div class="brand-info">
                     <span class="brand-name">Arefin Nabil</span>
-                    <span class="brand-subtitle">Developer & Tutor</span>
+                    <span class="brand-subtitle" data-i18n="brandSubtitle">ICT & CSE Educator</span>
                 </div>
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">হোম</a>
-                <a href="#about" class="nav-link">অভিজ্ঞতা</a>
-                <a href="#tuition" class="nav-link">শিক্ষকতা ও টিউশনি</a>
-                <a href="#projects" class="nav-link">গিটহাব প্রজেক্টস</a>
-                <a href="#contact" class="nav-link">যোগাযোগ</a>
+                <a href="#home" class="nav-link active" data-i18n="navHome">হোম</a>
+                <a href="#why-me" class="nav-link" data-i18n="navWhy">কেন শিখবেন?</a>
+                <a href="#education" class="nav-link" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
+                <a href="#tuition" class="nav-link" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
+                <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">সিলেবাস পেজ</a>
+                <a href="projects.html" class="nav-link" data-i18n="navProjects">প্রজেক্টস পেজ</a>
+                <a href="#contact" class="nav-link" data-i18n="navContact">যোগাযোগ</a>
+                <a href="#tuition-apply" class="btn btn-accent open-tuition-modal mobile-menu-whatsapp"
+                    style="background: #25D366; border-color: #25D366;">
+                    <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে কথা বলুন
+                </a>
             </nav>
 
             <div class="nav-actions">
+                <!-- Language Switcher Button (BN <-> EN) -->
+                <button class="lang-toggle-btn" id="langToggle" title="Language Switcher (BN / EN)">
+                    <i class="fa-solid fa-language"></i> <span id="langText">EN</span>
+                </button>
+
+                <!-- Theme Toggle Button -->
                 <button class="theme-toggle-btn" id="themeToggle" title="থিম পরিবর্তন করুন">
                     <i class="fa-solid fa-sun"></i>
                 </button>
-                <a href="#tuition-apply" class="btn btn-primary open-tuition-modal">
-                    <i class="fa-solid fa-graduation-cap"></i> টিউশনির আবেদন
+                <a href="#tuition-apply" class="btn btn-accent open-tuition-modal nav-whatsapp-btn"
+                    style="background: #25D366; border-color: #25D366;">
+                    <i class="fa-brands fa-whatsapp"></i> টিউশন আবেদন
                 </a>
-                <button class="mobile-toggle" id="mobileToggle">
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -60,46 +85,54 @@
     </header>
 
     <!-- ==========================================================================
-         Hero Section
+         Hero Section — Profile & Academic Focus
          ========================================================================== -->
     <section class="hero" id="home">
         <div class="container hero-grid">
             <div class="hero-content">
                 <div class="status-badge">
                     <span class="status-dot"></span>
-                    <span>টিউশন ও প্রজেক্টের জন্য উন্মুক্ত (Open to Hire & Tuition)</span>
+                    <span data-i18n="statusBadge">বরমী, মাওনা ও শ্রীপুরে ICT বিষয়ে টিউশন চালু আছে</span>
                 </div>
 
-                <h1 class="hero-title">
+                <h1 class="hero-title" data-i18n="heroTitle">
                     হাই, আমি <span class="text-gradient">নূরুল আরেফিন নাবিল</span>
                 </h1>
 
-                <p class="hero-description">
-                    আমি একজন প্যাশনেট <strong>অ্যাপ ও ওয়েব ডেভেলপার</strong> (Binary Bard) এবং গত <strong>৩+ বছর ধরে</strong> উচ্চতর গণিত, পদার্থবিজ্ঞান, আইসিটি ও প্রোগ্রামিং-এর সফল <strong>প্রাইভেট টিউটর ও মেন্টর</strong>।
+                <p class="hero-description" data-i18n="heroDesc">
+                    আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল
+                    বাসস্থান <strong>বরমী (শ্রীপুর, গাজীপুর)</strong>। গত ৩+ বছর ধরে ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC)
+                    লেভেলের <strong>ICT (আইসিটি)</strong>, <strong>বাংলা ও ইংরেজি</strong> এবং <strong>বিজ্ঞান বিষয়সমূহ
+                        (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ স্পেশালিস্ট প্রাইভেট টিউটর। পাশাপাশি প্রোগ্রামিং ও
+                    মোবাইল অ্যাপস তৈরি শেখানো হয়।
                 </p>
 
                 <div class="hero-cta">
-                    <button class="btn btn-primary btn-lg open-tuition-modal">
-                        <i class="fa-solid fa-paper-plane"></i> টিউশনির জন্য এপ্লাই করুন
-                    </button>
-                    <a href="#projects" class="btn btn-secondary btn-lg">
-                        <i class="fa-brands fa-github"></i> গিটহাব প্রজেক্টস দেখুন
+                    <button class="btn btn-accent btn-lg open-tuition-modal"
+                        style="background: #25D366; border-color: #25D366;" data-i18n="heroBtnTalk">
+                        <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে কথা বলুন</button>
+                    <a href="syllabus.html" class="btn btn-secondary btn-lg" data-i18n="heroBtnSyllabus">
+                        <i class="fa-solid fa-book-open"></i> SSC ও HSC এর সম্পূর্ণ সিলেবাস পেজ দেখুন ➔
                     </a>
                 </div>
 
-                <!-- Quick Stats -->
+                <!-- Quick Stats with CGPA 3.70 / 4.00 Scale -->
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number text-gradient">৩+ বছর</span>
-                        <span class="stat-label">টিউশনি ও টিচিং অভিজ্ঞতা</span>
+                        <span class="stat-number text-gradient">৩.৭০+</span>
+                        <span class="stat-label">CGPA (Out of 4.00)</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number text-accent-gradient">৩৭+</span>
-                        <span class="stat-label">গিটহাব রেপো ও প্রজেক্ট</span>
+                        <span class="stat-number text-accent-gradient">৩+ বছর</span>
+                        <span class="stat-label" data-i18n="statExp">আইসিটি ও একাডেমিক টিচিং</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number text-warm-gradient">৫০+</span>
-                        <span class="stat-label">সফল শিক্ষার্থী মেন্টরড</span>
+                        <span class="stat-label" data-i18n="statStudents">সফল শিক্ষার্থী মেন্টরড</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number text-gradient visitor-count-number">784</span>
+                        <span class="stat-label" data-i18n="statVisitors">ওয়েবসাইট লাইভ ভিজিটর</span>
                     </div>
                 </div>
             </div>
@@ -107,27 +140,27 @@
             <!-- Hero Visual Frame -->
             <div class="hero-visual">
                 <div class="avatar-frame">
-                    <img src="https://avatars.githubusercontent.com/u/177818249?v=4" alt="Nurul Arefin Nabil Profile" class="hero-avatar-img">
+                    <img src="profile.jpg" alt="Nurul Arefin Nabil Profile Image" class="hero-avatar-img">
                 </div>
-                
+
                 <!-- Floating Badges -->
                 <div class="floating-badge badge-top">
                     <div class="badge-icon" style="color: #6366f1;">
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <div>
-                        <div class="badge-text-title">Binary Bard</div>
-                        <div class="badge-text-sub">App Developer</div>
+                        <div class="badge-text-title">B.Sc in CSE</div>
+                        <div class="badge-text-sub">CGPA 3.70+ / 4.00</div>
                     </div>
                 </div>
 
                 <div class="floating-badge badge-bottom">
                     <div class="badge-icon" style="color: #10b981;">
-                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-book-bookmark"></i>
                     </div>
                     <div>
-                        <div class="badge-text-title">Top Tutor</div>
-                        <div class="badge-text-sub">Math, Physics & Coding</div>
+                        <div class="badge-text-title">Specialist Private Tutor</div>
+                        <div class="badge-text-sub">Barmi, Mawna & Sreepur</div>
                     </div>
                 </div>
             </div>
@@ -135,346 +168,310 @@
     </section>
 
     <!-- ==========================================================================
-         About & Experience Section
+         Single Master Section: "Why Choose Me?" (আমার কাছে কেন পড়বেন?)
          ========================================================================== -->
-    <section class="section" id="about">
+    <section class="section" id="why-me" style="background: rgba(0,0,0,0.15);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">About & Journey</span>
-                <h2 class="section-title">আমার <span class="text-gradient">অভিজ্ঞতা ও ব্যাকগ্রাউন্ড</span></h2>
-                <p class="section-subtitle">ডেভেলপমেন্টের সাথে সাথে শিক্ষকতার চমৎকার অভিজ্ঞতা</p>
+                <span class="section-tag">Teaching Methodology</span>
+                <h2 class="section-title" data-i18n="whyTitle">আমার কাছে <span class="text-gradient">কেন শিখবেন?</span>
+                </h2>
+                <p class="section-subtitle" data-i18n="whySubtitle">অন্ধের মতো মুখস্থ নয়, প্র্যাকটিক্যালি কোডিং ও
+                    প্রযুক্তিকে ভালোবাসতে শেখানোই আমার মূল লক্ষ্য</p>
             </div>
 
-            <div class="about-grid">
-                <!-- Bio & Tech Stack -->
-                <div class="glass-card about-bio-card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">আমার পরিচয় ও প্যাশন</h3>
-                    <p class="about-bio-text">
-                        আমি ঢাকার একজন জুনিয়র অ্যাপ ডেভেলপার ও প্রাতিষ্ঠানিক টিউটর। টেকনোলজি শেখার পাশাপাশি জটিল গাণিতিক ও সায়েন্টিফিক কনসেপ্টকে শিক্ষার্থীদের সামনে সহজ ভাষায় উপস্থাপন করাই আমার মূল আনন্দ।
-                    </p>
-                    <p class="about-bio-text">
-                        সফটওয়্যার ডেভেলপমেন্টে <strong>Flutter, Java, PHP, C++</strong> নিয়ে কাজ করার কারণে প্রোগ্রামিং লজিক তৈরি ও রিয়েল-লাইভ প্রবলেম সলভিং আমার দৈনন্দিন জীবনের অংশ।
-                    </p>
-
-                    <h4 class="skills-heading">আমার প্রযুক্তিগত দক্ষতা (Skills):</h4>
-                    <div class="skills-grid">
-                        <span class="skill-chip"><i class="fa-brands fa-flutter" style="color: #02569B;"></i> Flutter & Dart</span>
-                        <span class="skill-chip"><i class="fa-brands fa-java" style="color: #f89820;"></i> Java & OOP</span>
-                        <span class="skill-chip"><i class="fa-brands fa-php" style="color: #777BB4;"></i> PHP Web Backend</span>
-                        <span class="skill-chip"><i class="fa-solid fa-code" style="color: #00599C;"></i> C / C++ Algorithm</span>
-                        <span class="skill-chip"><i class="fa-brands fa-js" style="color: #F7DF1E;"></i> JavaScript</span>
-                        <span class="skill-chip"><i class="fa-solid fa-database" style="color: #4479A1;"></i> MySQL Database</span>
-                        <span class="skill-chip"><i class="fa-brands fa-git-alt" style="color: #F05032;"></i> Git & GitHub</span>
+            <div class="why-us-grid">
+                <!-- Point 1 -->
+                <div class="glass-card why-card">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
                     </div>
+                    <h3 class="why-title" data-i18n="whyPt1Title">কম্পিউটার/ল্যাপটপে প্র্যাকটিক্যাল কোডিং</h3>
+                    <p class="why-desc" data-i18n="whyPt1Desc">
+                        পড়ার টেবিলে বসেই নিজের ল্যাপটপ ও কম্পিউটারের মাধ্যমে সরাসরি কোড টাইপ করে স্ক্রীনে আউটপুট দেখা
+                        এবং প্র্যাকটিক্যালি শেখানো হয়।
+                    </p>
                 </div>
 
-                <!-- Timeline -->
-                <div class="timeline">
-                    <!-- Item 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="glass-card timeline-card">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-role">Junior App Developer</h3>
-                                    <span class="timeline-org">Binary Bard</span>
-                                </div>
-                                <span class="timeline-date">২০২৪ - বর্তমান</span>
-                            </div>
-                            <p class="timeline-desc">
-                                মোবাইল ও ওয়েব অ্যাপ্লিকেশন ডিজাইন, ইউজার ইন্টারফেস (UI/UX) ডেভেলপমেন্ট এবং ব্যাকএন্ড এপিআই ইন্টিগ্রেশন।
-                            </p>
-                        </div>
+                <!-- Point 2 -->
+                <div class="glass-card why-card" style="border-top-color: var(--secondary);">
+                    <div class="why-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary);">
+                        <i class="fa-solid fa-note-sticky"></i>
                     </div>
+                    <h3 class="why-title" data-i18n="whyPt2Title">হ্যান্ডরাইটিং ও ডিজিটাল স্পেশাল নোটস</h3>
+                    <p class="why-desc" data-i18n="whyPt2Desc">
+                        প্রতিটি অধ্যায়ের সহজ ভাষায় গোছানো স্পেশাল নোটস তৈরি করে দেওয়া হয়, যা পরীক্ষার আগে রিভিশনের জন্য
+                        অত্যন্ত কার্যকরী।
+                    </p>
+                </div>
 
-                    <!-- Item 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="border-color: var(--secondary); box-shadow: 0 0 10px var(--secondary);"></div>
-                        <div class="glass-card timeline-card">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-role">প্রাইভেট একাডেমীক ও কোডিং টিউটর</h3>
-                                    <span class="timeline-org">ঢাকা ও অনলাইন</span>
-                                </div>
-                                <span class="timeline-date">২০২২ - বর্তমান (৩+ বছর)</span>
-                            </div>
-                            <p class="timeline-desc">
-                                ৮ম-১২শ শ্রেণী (SSC/HSC) এর উচ্চতর গণিত, পদার্থবিজ্ঞান, আইসিটি এবং বিগিনার টু ইন্টারমিডিয়েট প্রোগ্রামিং (C, C++, Java, Web) ব্যাচ ও হোম টিউশনি পরিচালনা।
-                            </p>
-                        </div>
+                <!-- Point 3 -->
+                <div class="glass-card why-card" style="border-top-color: var(--accent);">
+                    <div class="why-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">
+                        <i class="fa-solid fa-list-check"></i>
                     </div>
+                    <h3 class="why-title" data-i18n="whyPt3Title">অধ্যায়ভিত্তিক কুইজ ও মডেল টেস্ট</h3>
+                    <p class="why-desc" data-i18n="whyPt3Desc">
+                        প্রতিটি অধ্যায় শেষ হওয়ার পর CQ ও MCQ প্রশ্নের ওপর স্পেশাল টেস্ট নেওয়া হয় এবং প্রতিটি ভুলের আলাদা
+                        সলিউশন শিট দেওয়া হয়।
+                    </p>
+                </div>
 
-                    <!-- Item 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="border-color: var(--accent); box-shadow: 0 0 10px var(--accent);"></div>
-                        <div class="glass-card timeline-card">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-role">অ্যালগরিদম ও প্রবলেম সলভার</h3>
-                                    <span class="timeline-org">Phitron & Self-Guided</span>
-                                </div>
-                                <span class="timeline-date">২০২৪ - বর্তমান</span>
-                            </div>
-                            <p class="timeline-desc">
-                                ডেটা স্ট্রাকচার, গ্রাফ অ্যালগরিদম ও কম্পিউটার সায়েন্সের মৌলিক বিষয়বস্তু নিয়ে নিয়মিত অনুশীলন ও প্রজেক্ট ইমপ্লিমেন্টেশন।
-                            </p>
-                        </div>
+                <!-- Point 4 -->
+                <div class="glass-card why-card" style="border-top-color: var(--amber);">
+                    <div class="why-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);">
+                        <i class="fa-solid fa-award"></i>
                     </div>
+                    <h3 class="why-title" data-i18n="whyPt4Title">বিগত সালের বোর্ড প্রশ্ন সমাধান</h3>
+                    <p class="why-desc" data-i18n="whyPt4Desc">
+                        ঢাকা, চট্টগ্রাম, রাজশাহী সহ সকল শিক্ষা বোর্ডের বিগত ৫-১০ বছরের প্রশ্নপত্র টাইপ ধরে ধরে
+                        পারফেক্টভাবে সমাধান করানো হয়।
+                    </p>
+                </div>
+
+                <!-- Point 5: AI-Driven Learning Opportunity -->
+                <div class="glass-card why-card special-card" style="border-top-color: #ec4899;">
+                    <div class="why-icon" style="background: rgba(236, 72, 153, 0.2); color: #ec4899;">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <span
+                        style="font-size: 0.75rem; font-weight: 700; background: var(--grad-warm); color: #fff; padding: 0.15rem 0.6rem; border-radius: 99px; margin-bottom: 0.5rem;">Exclusive
+                        AI Feature</span>
+                    <h3 class="why-title" data-i18n="whyPt5Title">এআই (AI) ভিত্তিক স্মার্ট লার্নিং সুযোগ</h3>
+                    <p class="why-desc" data-i18n="whyPt5Desc">
+                        আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) যুগে কীভাবে ChatGPT, Claude & GitHub Copilot এর মাধ্যমে কঠিন
+                        লজিক দ্রুত বোঝা, কোডের ভুল (Bug) ধরা এবং স্মার্ট স্টাডি টেকনিক ব্যবহার করা যায়—তার
+                        প্র্যাকটিক্যাল গাইডলাইন দেওয়া হয়।
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-         Tuition & Academic Mentorship Section
+         Academic Qualifications & Education Background
+         ========================================================================== -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title" data-i18n="eduTitle">শিক্ষাগত <span class="text-accent-gradient">যোগ্যতা ও
+                        ব্যাকগ্রাউন্ড</span></h2>
+                <p class="section-subtitle" data-i18n="eduSubtitle">কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)
+                    ব্যাকগ্রাউন্ড ও শিক্ষাগত কৃতিত্ব</p>
+            </div>
+
+            <div class="edu-grid">
+                <!-- B.Sc in CSE (CGPA 3.70 / 4.00) -->
+                <div class="glass-card edu-card" style="border-top-color: var(--primary);">
+                    <span class="edu-badge">Graduation / Bachelor</span>
+                    <h3 class="edu-title">B.Sc in Computer Science & Engineering (CSE)</h3>
+                    <div class="edu-score">CGPA 3.70 <span
+                            style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/ 4.00</span></div>
+                    <p class="edu-desc" data-i18n="bscDesc">
+                        কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)-এ বি.এস.সি সম্পন্ন করা (CGPA 3.70+ Out of 4.00)।
+                        সফটওয়্যার ইঞ্জিনিয়ারিং, মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android), ডেটা স্ট্রাকচার ও সি
+                        প্রোগ্রামিং অ্যালগরিদমে বিশেষ পারদর্শিতা।
+                    </p>
+                </div>
+
+                <!-- HSC -->
+                <div class="glass-card edu-card" style="border-top-color: var(--secondary);">
+                    <span class="edu-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary);">Higher
+                        Secondary (HSC)</span>
+                    <h3 class="edu-title">উচ্চ মাধ্যমিক (HSC — Science)</h3>
+                    <div class="edu-score" style="color: var(--secondary);">GPA 5.00 <span
+                            style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/ 5.00</span></div>
+                    <p class="edu-desc" data-i18n="hscDesc">
+                        বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন। আইসিটি (ICT), গণিত ও
+                        পদার্থবিজ্ঞানে বিশেষ কৃতিত্ব।
+                    </p>
+                </div>
+
+                <!-- SSC -->
+                <div class="glass-card edu-card" style="border-top-color: var(--accent);">
+                    <span class="edu-badge"
+                        style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">Secondary School
+                        (SSC)</span>
+                    <h3 class="edu-title">মাধ্যমিক (SSC — Science)</h3>
+                    <div class="edu-score" style="color: var(--accent);">GPA 5.00 <span
+                            style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/ 5.00</span></div>
+                    <p class="edu-desc" data-i18n="sscDesc">
+                        বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন এবং শ্রীপুর উপজেলায় ১ম স্থান
+                        অর্জন।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Tuition Subjects & Teaching Offerings (Refined 5 Cards Grid Layout)
          ========================================================================== -->
     <section class="section" id="tuition">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Teaching & Tutoring</span>
-                <h2 class="section-title">শিক্ষকতা ও <span class="text-accent-gradient">টিউশনি সেবা</span></h2>
-                <p class="section-subtitle">কনসেপ্ট ক্লিয়ারিং, নিয়মিত এক্সাম ও ক্যারিয়ার ওরিয়েন্টেড টিচিং মেথডোলজি</p>
+                <span class="section-tag">Private Tuition Offerings</span>
+                <h2 class="section-title" data-i18n="tuitionTitle">টিউশন <span class="text-accent-gradient">বিষয়সমূহ ও
+                        সেবা</span></h2>
+                <p class="section-subtitle" data-i18n="tuitionSubtitle">৯ম-১০ম ও একাদশ-দ্বাদশ শ্রেণীর বিষয়ভিত্তিক বিশেষ
+                    টিচিং সার্ভিসেস</p>
             </div>
 
-            <!-- Tuition Overview Banner -->
-            <div class="tuition-banner">
-                <div>
-                    <h3 class="tuition-banner-title">কেন আমার কাছে টিউশনি পড়বেন?</h3>
-                    <p style="color: var(--text-muted); font-size: 1.05rem;">
-                        গত <strong>৩ বছরের বেশি সময়</strong> ধরে ৫০+ এরও বেশি শিক্ষার্থীকে পড়ানোর অভিজ্ঞতা রয়েছে। শুধু মুখস্থ নয়, বাস্তব জীবনের সাথে মিলিয়ে গণিত ও বিজ্ঞানের কঠিন কনসেপ্ট অতি সহজে বুঝিয়ে দেওয়া আমার মূল বৈশিষ্ট্য।
-                    </p>
-                    <div class="tuition-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon"><i class="fa-solid fa-check"></i></div>
-                            <span>সপ্তাহে ৩/৪ দিন নিবিড় যত্ন ও আলাদা এক্সাম</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon"><i class="fa-solid fa-check"></i></div>
-                            <span>হোম টিউশনি (ঢাকা) ও অনলাইন লাইভ ক্লাস</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon"><i class="fa-solid fa-check"></i></div>
-                            <span>বোর্ড পরীক্ষার প্রশ্ন সমাধান ও সাজেশন</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon"><i class="fa-solid fa-check"></i></div>
-                            <span>মডেল টেস্ট ও স্পেশাল শিট দেওয়া হয়</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tuition-cta-box">
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">টিউশনির সিট বুকিং</h4>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">সীমিত সংখ্যক স্টুডেন্ট নেওয়া হয়</p>
-                    <button class="btn btn-accent btn-lg open-tuition-modal" style="width: 100%;">
-                        <i class="fa-solid fa-file-signature"></i> সরাসরি আবেদন করুন
-                    </button>
-                </div>
-            </div>
-
-            <!-- Subjects Offer Grid -->
+            <!-- Subjects Offer Grid (Symmetrical 3 + 2 Layout — No Priority Word) -->
             <div class="subject-grid">
-                <!-- Subject 1 -->
-                <div class="glass-card subject-card">
-                    <div class="subject-icon">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <h3 class="subject-title">উচ্চতর গণিত (Higher Math)</h3>
-                    <span class="subject-level">Class 9, 10 (SSC) & HSC (1st/2nd Year)</span>
-                    <p class="subject-desc">
-                        বীজগণিত, ত্রিকোণমিতি, ক্যালকুলাস, স্থানাংক জ্যামিতি ও ভেক্টর-এর প্রতিটি সূত্রের বেসিক ব্যাখ্যা ও প্রচুর প্র্যাকটিস।
-                    </p>
-                </div>
-
-                <!-- Subject 2 -->
-                <div class="glass-card subject-card">
-                    <div class="subject-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary); border-color: rgba(6, 182, 212, 0.3);">
-                        <i class="fa-solid fa-atom"></i>
-                    </div>
-                    <h3 class="subject-title">পদার্থবিজ্ঞান (Physics)</h3>
-                    <span class="subject-level">SSC & HSC Science Group</span>
-                    <p class="subject-desc">
-                        গতিবিদ্যা, বলবিদ্যা, তরঙ্গ, আলোকবিজ্ঞান ও আধুনিক পদার্থবিজ্ঞানের ম্যাথমেটিকাল প্রবলেম সলভিং।
-                    </p>
-                </div>
-
-                <!-- Subject 3 -->
-                <div class="glass-card subject-card">
-                    <div class="subject-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent); border-color: rgba(16, 185, 129, 0.3);">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <h3 class="subject-title">তথ্য ও যোগাযোগ প্রযুক্তি (ICT)</h3>
-                    <span class="subject-level">HSC Board Curriculum & Class 8-10</span>
-                    <p class="subject-desc">
-                        সংখ্যা পদ্ধতি (Number System), HTML ওয়েব ডিজাইন, C প্রোগ্রামিং এবং ডেটাবেজ ম্যানেজমেন্ট পারফেক্টভাবে শেখানো।
-                    </p>
-                </div>
-
-                <!-- Subject 4 -->
-                <div class="glass-card subject-card">
-                    <div class="subject-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="subject-title">কোডিং ও সায়েন্স (CS & Programming)</h3>
-                    <span class="subject-level">Beginners to University Level</span>
-                    <p class="subject-desc">
-                        C, C++, Java, Flutter App Dev ও অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP) হাতে-কলমে প্রজেক্ট সহ শেখানো।
-                    </p>
-                </div>
-            </div>
-
-            <!-- Interactive Fee Estimator -->
-            <div class="glass-card calculator-box">
-                <div class="section-header" style="margin-bottom: 2rem;">
-                    <h3 class="section-title" style="font-size: 1.8rem;">ইন্টারেক্টিভ <span class="text-gradient">টিউশন ফি ক্যালকুলেটর</span></h3>
-                    <p class="section-subtitle">আপনার শ্রেণী, সাপ্তাহিক দিন ও মোড সিলেক্ট করে আনুমানিক সম্মানী দেখে নিন</p>
-                </div>
-
-                <div class="calc-grid">
+                <!-- Subject 1: ICT (SSC & HSC) -->
+                <div class="glass-card subject-card special-card">
                     <div>
-                        <div class="form-group">
-                            <label class="form-label" for="calcClass">শ্রেণী / কোর্স নির্বাচন করুন:</label>
-                            <select class="form-select" id="calcClass">
-                                <option value="8-10">Class 8, 9, 10 (SSC Level)</option>
-                                <option value="hsc" selected>HSC 1st / 2nd Year (Higher Math / Physics / ICT)</option>
-                                <option value="admission">HSC Admission / Science Special</option>
-                                <option value="coding">Programming & App Development Course</option>
-                            </select>
+                        <div class="subject-icon"
+                            style="background: rgba(16, 185, 129, 0.15); color: var(--accent); border-color: rgba(16, 185, 129, 0.3);">
+                            <i class="fa-solid fa-microchip"></i>
                         </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="calcDays">সাপ্তাহিক ক্লাস দিন:</label>
-                            <select class="form-select" id="calcDays">
-                                <option value="2">সপ্তাহে ২ দিন (Month Basis)</option>
-                                <option value="3" selected>সপ্তাহে ৩ দিন (Standard)</option>
-                                <option value="4">সপ্তাহে ৪ দিন (Intense Exam & Problem Solving)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="calcMode">টিচিং মোড / মাধ্যম:</label>
-                            <select class="form-select" id="calcMode">
-                                <option value="home" selected>হোম টিউশনি (In-Person Home Visit, Dhaka)</option>
-                                <option value="online">অনলাইন লাইভ ক্লাস (Google Meet / Zoom - 20% Off)</option>
-                            </select>
-                        </div>
+                        <span class="subject-tag-badge" style="background: var(--grad-accent); color: #fff;">SSC & HSC
+                            Board Special</span>
+                        <h3 class="subject-title">ICT — আইসিটি (Class 9-10 & HSC)</h3>
+                        <span class="subject-level">SSC & HSC ICT Board Preparation</span>
+                        <p class="subject-desc" data-i18n="subjIctDesc">
+                            C প্রোগ্রামিং, HTML ওয়েব পেজ, সংখ্যা পদ্ধতি (Binary/Hex), লজিক গেট, বুলিয়ান অ্যালজেব্রা এবং
+                            ডেটাবেজ (SQL)-এর এ টু জেড ১০০% পারফেক্ট প্রস্তুতি।
+                        </p>
                     </div>
+                </div>
 
-                    <div class="calc-result-card">
-                        <span style="font-size: 0.9rem; color: var(--text-muted);">আনুমানিক মাসিক টিউশন ফি:</span>
-                        <div class="calc-amount" id="calcResult">৳ ৬,০০০ / মাস</div>
-                        <p class="calc-note">* লোকেশন ও বিষয়ভেদে চূড়ান্ত ফি আলোচনা সাপেক্ষে নির্ধারিত হতে পারে।</p>
-                        <button class="btn btn-primary open-tuition-modal">
-                            <i class="fa-solid fa-paper-plane"></i> এই প্ল্যানে আবেদন করুন
-                        </button>
+                <!-- Subject 2: Bangla & English -->
+                <div class="glass-card subject-card">
+                    <div>
+                        <div class="subject-icon" style="background: rgba(99, 102, 241, 0.2); color: var(--primary);">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <span class="subject-tag-badge" style="background: var(--grad-primary); color: #fff;">Grammar &
+                            Literature</span>
+                        <h3 class="subject-title">বাংলা ও ইংরেজি (Bangla & English)</h3>
+                        <span class="subject-level">Class 9-10 & HSC General Curriculum</span>
+                        <p class="subject-desc" data-i18n="subjBanglaDesc">
+                            ব্যাকরণ, গ্রামার, ফ্রি রাইটিং, রিডিং কমপ্রিহেনশন এবং সাহিত্য অংশের পূর্ণাঙ্গ ক্লাস ও নিয়মিত
+                            হোমওয়ার্ক চেকিং।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Subject 3: Science Subjects -->
+                <div class="glass-card subject-card">
+                    <div>
+                        <div class="subject-icon"
+                            style="background: rgba(245, 158, 11, 0.15); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <span class="subject-tag-badge" style="background: var(--grad-warm); color: #fff;">Science Group
+                            Special</span>
+                        <h3 class="subject-title">বিজ্ঞান বিষয়সমূহ (Science Group)</h3>
+                        <span class="subject-level">Physics, Chemistry, Higher Math & General Science</span>
+                        <p class="subject-desc" data-i18n="subjScienceDesc">
+                            পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিতের মূল থিওরি, গাণিতিক প্রবলেম সলভিং এবং CQ গাণিতিক
+                            কনসেপ্ট ক্লিয়ারিং।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Subject 4: Mobile App Dev -->
+                <div class="glass-card subject-card">
+                    <div>
+                        <div class="subject-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary);">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <span class="subject-tag-badge"
+                            style="background: rgba(6, 182, 212, 0.2); color: var(--secondary);">Practical App
+                            Building</span>
+                        <h3 class="subject-title">মোবাইল অ্যাপ ডেভেলপমেন্ট</h3>
+                        <span class="subject-level">Flutter, Dart & Android Building</span>
+                        <p class="subject-desc" data-i18n="subjAppDesc">
+                            নিজের ফোনে রান করার মতো রিয়েল অ্যাপ বানানো, UI কাস্টমাইজেশন ও বেসিক মোবাইল অ্যাপস
+                            ডেভেলপমেন্ট কোর্স।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Subject 5: Programming & Logic -->
+                <div class="glass-card subject-card">
+                    <div>
+                        <div class="subject-icon" style="background: rgba(236, 72, 153, 0.15); color: var(--pink);">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <span class="subject-tag-badge"
+                            style="background: rgba(236, 72, 153, 0.2); color: var(--pink);">Programming Logic</span>
+                        <h3 class="subject-title">C / C++ প্রোগ্রামিং ও লজিক</h3>
+                        <span class="subject-level">Logic Building & Problem Solving</span>
+                        <p class="subject-desc" data-i18n="subjCppDesc">
+                            প্রোগ্রামিংয়ের লজিক তৈরি, লুপ, অ্যারে, পয়েন্টার, ফাংশন ও বেসিক অবজেক্ট ওরিয়েন্টেড কনসেপ্ট।
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- ==========================================================================
-         Dedicated "Apply for Tuition" Form Section
+         SINGLE UNIFIED TUITION & FREE DEMO CLASS APPLICATION HUB
          ========================================================================== -->
     <section class="section" id="tuition-apply" style="background: rgba(0,0,0,0.2);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Quick Application</span>
-                <h2 class="section-title">টিউশনির জন্য <span class="text-accent-gradient">আবেদন করুন</span></h2>
-                <p class="section-subtitle">নিচের ফরমে আপনার তথ্য পূরণ করুন, আমি খুব শীঘ্রই যোগাযোগ করব</p>
+                <span class="section-tag">Direct WhatsApp Form</span>
+                <h2 class="section-title" data-i18n="formTitle">টিউশন ও ফ্রি ডেমো ক্লাসের <span
+                        class="text-accent-gradient">সহজ আবেদন</span></h2>
+                <p class="section-subtitle" data-i18n="formSubtitle">মাত্র ৪টি তথ্য পূরণ করে ১-ক্লিকে হোয়াটসঅ্যাপে
+                    আবেদন বা ফ্রি ডেমো ক্লাস বুক করুন</p>
             </div>
 
-            <div class="glass-card" style="max-width: 800px; margin: 0 auto; padding: 3rem;">
+            <div class="glass-card" style="max-width: 650px; margin: 0 auto; padding: 2.25rem;">
                 <form id="tuitionApplyForm">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                        <div class="form-group">
-                            <label class="form-label" for="appStudentName">শিক্ষার্থীর নাম *</label>
-                            <input type="text" class="form-control" id="appStudentName" placeholder="উদা: তাহমিদ আহমেদ" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="appPhone">অভিভাবক / শিক্ষার্থী ফোন নম্বর *</label>
-                            <input type="tel" class="form-control" id="appPhone" placeholder="017XXXXXXXX" required>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                        <div class="form-group">
-                            <label class="form-label" for="appClass">শ্রেণী / লেভেল *</label>
-                            <select class="form-select" id="appClass">
-                                <option value="Class 8">Class 8</option>
-                                <option value="Class 9 (SSC)">Class 9 (SSC Candidate)</option>
-                                <option value="Class 10 (SSC)">Class 10 (SSC Candidate)</option>
-                                <option value="HSC 1st Year" selected>HSC 1st Year</option>
-                                <option value="HSC 2nd Year">HSC 2nd Year / Examinee</option>
-                                <option value="Admission Candidate">Engineering / Varsities Admission</option>
-                                <option value="Coding / CS">Programming & CS Learner</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="appMedium">পড়াশোনার মাধ্যম *</label>
-                            <select class="form-select" id="appMedium">
-                                <option value="বাংলা মাধ্যম (Bangla Medium)" selected>বাংলা মাধ্যম (Bangla Medium)</option>
-                                <option value="English Version">English Version (National Curriculum)</option>
-                                <option value="English Medium">English Medium (Edexcel/Cambridge)</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label class="form-label" for="appStudentName" data-i18n="lblStudentName">১. শিক্ষার্থীর নাম
+                            *</label>
+                        <input type="text" class="form-control" id="appStudentName"
+                            placeholder="আপনার বা শিক্ষার্থীর নাম লিখুন" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">প্রয়োজনীয় বিষয়সমূহ (অন্তত ১টি সিলেক্ট করুন) *</label>
-                        <div class="checkbox-grid">
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="subject" value="উচ্চতর গণিত (Higher Math)" checked>
-                                <span>উচ্চতর গণিত (Higher Math)</span>
-                            </label>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="subject" value="পদার্থবিজ্ঞান (Physics)">
-                                <span>পদার্থবিজ্ঞান (Physics)</span>
-                            </label>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="subject" value="তথ্য ও যোগাযোগ প্রযুক্তি (ICT)">
-                                <span>তথ্য ও যোগাযোগ প্রযুক্তি (ICT)</span>
-                            </label>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="subject" value="প্রোগ্রামিং ও অ্যাপ (Programming)">
-                                <span>প্রোগ্রামিং ও অ্যাপ (Programming)</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                        <div class="form-group">
-                            <label class="form-label" for="appMode">পছন্দের পদ্ধতি</label>
-                            <select class="form-select" id="appMode">
-                                <option value="Home Tuition (Dhaka)">হোম টিউশনি (ঢাকা বাসা)</option>
-                                <option value="Online Live Class">অনলাইন লাইভ ক্লাস</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="appSchedule">সপ্তাহে পছন্দের দিন</label>
-                            <select class="form-select" id="appSchedule">
-                                <option value="সপ্তাহে ৩ দিন (Standard)">সপ্তাহে ৩ দিন (Standard)</option>
-                                <option value="সপ্তাহে ২ দিন">সপ্তাহে ২ দিন</option>
-                                <option value="সপ্তাহে ৪ দিন">সপ্তাহে ৪ দিন</option>
-                            </select>
-                        </div>
+                        <label class="form-label" for="appPhone" data-i18n="lblPhone">২. মোবাইল নম্বর *</label>
+                        <input type="tel" class="form-control" id="appPhone" placeholder="017XXXXXXXX" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="appLocation">আপনার লোকেশন / এলাকা (ঢাকার ভেতর)</label>
-                        <input type="text" class="form-control" id="appLocation" placeholder="উদা: ধানমন্ডি, মিরপুর, মোহাম্মদপুর, বাড্ডা ইত্যাদি">
+                        <label class="form-label" for="appClass" data-i18n="lblSubject">৩. প্রয়োজনীয় বিষয় / ডেমো ক্লাস
+                            নির্বাচন করুন *</label>
+                        <select class="form-select" id="appClass">
+                            <option value="HSC ICT (স্পেশাল ব্যাচ)" selected>HSC ICT — আইসিটি স্পেশাল ব্যাচ</option>
+                            <option value="Class 9-10 SSC ICT">Class 9-10 (SSC ICT প্রস্তুতি)</option>
+                            <option value="বাংলা ও ইংরেজি বিষয়সমূহ">বাংলা ও ইংরেজি বিষয়সমূহ</option>
+                            <option value="বিজ্ঞান বিষয়সমূহ">বিজ্ঞান বিষয়সমূহ — পদার্থ, রসায়ন, গণিত</option>
+                            <option value="Mobile App Development">মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android)</option>
+                            <option value="C / C++ Logic Building">C / C++ প্রোগ্রামিং ও লজিক বিল্ডিং</option>
+                            <option value="ফ্রি ১-অন-১ ডেমো ক্লাস বুকিং">ফ্রি ১-অন-১ ডেমো ক্লাস বুকিং (Free Demo)
+                            </option>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="appNotes">অতিরিক্ত তথ্য বা নোট (ঐচ্ছিক)</label>
-                        <textarea class="form-control" id="appNotes" rows="3" placeholder="কোন বিশেষ চ্যাপ্টার বা বিষয় সম্পর্কে জানাতে চাইলে লিখুন..."></textarea>
+                        <label class="form-label" for="appLocation" data-i18n="lblArea">৪. আপনার এলাকা *</label>
+                        <select class="form-select" id="appLocation">
+                            <option value="বরমী (Barmi)" selected>বরমী (Barmi)</option>
+                            <option value="মাওনা (Maona)">মাওনা (Maona)</option>
+                            <option value="শ্রীপুর (Sreepur)">শ্রীপুর (Sreepur)</option>
+                            <option value="বরামা (Barama)">বরামা (Barama)</option>
+                            <option value="গোসিংগা (Gosinga)">গোসিংগা (Gosinga)</option>
+                            <option value="সোহাদিয়া (Sohadia)">সোহাদিয়া (Sohadia)</option>
+                            <option value="শিমুলতলী (Shimultoli)">শিমুলতলী (Shimultoli)</option>
+                            <option value="অন্যান্য / অনলাইন (Online Live Class)">অন্যান্য এলাকা / অনলাইন ক্লাসের জন্য
+                            </option>
+                        </select>
                     </div>
 
-                    <button type="submit" class="btn btn-accent btn-lg" style="width: 100%; margin-top: 1rem;">
-                        <i class="fa-solid fa-paper-plane"></i> আবেদন সাবমিট করুন
+                    <button type="submit" class="btn btn-accent btn-lg"
+                        style="width: 100%; margin-top: 1.25rem; background: #25D366; border-color: #25D366;"
+                        data-i18n="btnSubmitForm">
+                        <i class="fa-brands fa-whatsapp"></i> সরাসরি হোয়াটসঅ্যাপে কথা বলুন ➔
                     </button>
                 </form>
             </div>
@@ -482,53 +479,53 @@
     </section>
 
     <!-- ==========================================================================
-         GitHub Featured Projects Showcase
+         Projects Quick Preview Box (Pointing to dedicated projects.html)
          ========================================================================== -->
     <section class="section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Code Portfolio</span>
-                <h2 class="section-title">গিটহাব <span class="text-gradient">প্রজেক্টসমূহ</span></h2>
-                <p class="section-subtitle">আমার ওপেন-সোর্স কোড ও রিয়েল-ওয়ার্ল্ড অ্যাপ্লিকেশনসমূহ</p>
-            </div>
-
-            <!-- Project Category Filters -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">সব প্রজেক্ট (All)</button>
-                <button class="filter-btn" data-filter="web">Web & PHP</button>
-                <button class="filter-btn" data-filter="java">Java & Android</button>
-                <button class="filter-btn" data-filter="cpp">C++ Algorithms</button>
-            </div>
-
-            <!-- Projects Dynamic Grid -->
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Javascript will dynamically render projects here -->
+        <div class="container text-center">
+            <div class="glass-card"
+                style="padding: 3rem 2rem; border-color: rgba(99, 102, 241, 0.35); background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);">
+                <span class="section-tag" style="margin-bottom: 1rem;">Software & App Portfolio</span>
+                <h2 class="section-title" style="font-size: 2.2rem;" data-i18n="projPreviewTitle">লাইভ অ্যাপস ও <span
+                        class="text-gradient">প্রজেক্টসমূহ</span></h2>
+                <p class="section-subtitle" style="max-width: 650px; margin: 0 auto 2rem auto;"
+                    data-i18n="projPreviewSub">
+                    প্লে-স্টোরে লাইভ মোবাইল অ্যাপ "সাপ ও বন্যপ্রাণী রেসকিউ বিডি", আপকামিং প্রজেক্টস ও গিটহাব সোর্স কোড
+                    আলাদা পেজে দেখুন
+                </p>
+                <a href="projects.html" class="btn btn-primary btn-lg" data-i18n="btnViewAllProjects">
+                    <i class="fa-solid fa-laptop-code"></i> সকল প্রজেক্টস ও লাইভ অ্যাপস পেজে যান ➔
+                </a>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-         Contact & Footer Section
+         Contact & Footer Section (With Facebook & LinkedIn, No Twitter)
          ========================================================================== -->
     <section class="section" id="contact">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Get in Touch</span>
-                <h2 class="section-title">সরাসরি <span class="text-gradient">যোগাযোগ করুন</span></h2>
-                <p class="section-subtitle">টিউশনি বা প্রজেক্ট সংক্রান্ত যেকোনো প্রয়োজনে মেসেজ দিন</p>
+                <h2 class="section-title" data-i18n="contactTitle">সরাসরি <span class="text-gradient">যোগাযোগ
+                        করুন</span></h2>
+                <p class="section-subtitle" data-i18n="contactSubtitle">আইসিটি ও একাডেমিক টিউশনি বা প্রজেক্টের বিষয়ে কথা
+                    বলুন</p>
             </div>
 
             <div class="contact-grid">
                 <div class="glass-card contact-info-card">
-                    <h3 style="font-size: 1.4rem;">যোগাযোগের ঠিকানা</h3>
-                    
+                    <h3 style="font-size: 1.4rem;" data-i18n="contactCardTitle">যোগাযোগের ঠিকানা</h3>
+
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-location-dot"></i>
+                        <div class="contact-icon"
+                            style="background: rgba(37, 211, 102, 0.15); color: #25D366; border-color: rgba(37, 211, 102, 0.3);">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </div>
                         <div>
-                            <div class="contact-label">বর্তমান অবস্থান</div>
-                            <div class="contact-val">ঢাকা, বাংলাদেশ (Dhaka, Bangladesh)</div>
+                            <div class="contact-label">হোয়াটসঅ্যাপ (Direct Message / Call)</div>
+                            <div class="contact-val"><a href="https://wa.me/8801881196146" target="_blank"
+                                    style="color: #25D366; font-weight: 700;">+880 1881-196146</a></div>
                         </div>
                     </div>
 
@@ -538,7 +535,8 @@
                         </div>
                         <div>
                             <div class="contact-label">ইমেইল ঠিকানা</div>
-                            <div class="contact-val">arefin@binarybardbd.com</div>
+                            <div class="contact-val"><a
+                                    href="mailto:nurularefinnabil@gmail.com">nurularefinnabil@gmail.com</a></div>
                         </div>
                     </div>
 
@@ -548,20 +546,43 @@
                         </div>
                         <div>
                             <div class="contact-label">ব্যক্তিগত ওয়েবসাইট</div>
-                            <div class="contact-val">arefin.binarybardbd.com</div>
+                            <div class="contact-val"><a href="https://areefin.me" target="_blank">areefin.me</a></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <div class="contact-label">বর্তমান অবস্থান / মূল বাসস্থান</div>
+                            <div class="contact-val">বরমী, শ্রীপুর, গাজীপুর (Barmi, Sreepur, Gazipur)
+                            </div>
                         </div>
                     </div>
 
                     <div>
                         <div class="contact-label" style="margin-bottom: 0.5rem;">সোশ্যাল প্রোফাইল:</div>
                         <div class="social-links">
-                            <a href="https://github.com/arefin-nabil" target="_blank" class="social-icon-btn" title="GitHub">
+                            <!-- Facebook -->
+                            <a href="https://web.facebook.com/N.ArefinNabil/" target="_blank" class="social-icon-btn"
+                                title="Facebook"
+                                style="background: rgba(24, 119, 242, 0.12); color: #1877f2; border-color: rgba(24, 119, 242, 0.3);">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/n-arefin-nabil/" target="_blank"
+                                class="social-icon-btn" title="LinkedIn"
+                                style="background: rgba(10, 102, 194, 0.12); color: #0a66c2; border-color: rgba(10, 102, 194, 0.3);">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <!-- GitHub -->
+                            <a href="https://github.com/arefin-nabil" target="_blank" class="social-icon-btn"
+                                title="GitHub">
                                 <i class="fa-brands fa-github"></i>
                             </a>
-                            <a href="https://twitter.com/N_ArefinNabil" target="_blank" class="social-icon-btn" title="Twitter">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                            <a href="https://arefin.binarybardbd.com/" target="_blank" class="social-icon-btn" title="Website">
+                            <!-- Website -->
+                            <a href="https://areefin.me" target="_blank" class="social-icon-btn" title="Website">
                                 <i class="fa-solid fa-globe"></i>
                             </a>
                         </div>
@@ -571,7 +592,8 @@
                 <!-- Quick Message Form -->
                 <div class="glass-card" style="padding: 2.5rem;">
                     <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem;">মেসেজ পাঠান</h3>
-                    <form onsubmit="event.preventDefault(); alert('ধন্যবাদ! আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে।'); this.reset();">
+                    <form
+                        onsubmit="event.preventDefault(); alert('ধন্যবাদ! আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে।'); this.reset();">
                         <div class="form-group">
                             <label class="form-label">আপনার নাম</label>
                             <input type="text" class="form-control" placeholder="আপনার নাম লিখুন" required>
@@ -582,7 +604,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">মেসেজ</label>
-                            <textarea class="form-control" rows="4" placeholder="আপনার কথাগুলো লিখুন..." required></textarea>
+                            <textarea class="form-control" rows="4" placeholder="আপনার কথাগুলো লিখুন..."
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i class="fa-solid fa-paper-plane"></i> মেসেজ পাঠান
@@ -596,7 +619,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 <strong>Nurul Arefin Nabil</strong>. All rights reserved | Developed with ❤️ for App Development & Teaching excellence.</p>
+            <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator (বরমী, শ্রীপুর, গাজীপুর) | <i
+                    class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span
+                    class="visitor-count-number">784</span>+ মোট ওয়েবসাইট ভিজিটর</p>
         </div>
     </footer>
 
@@ -610,17 +635,19 @@
             </button>
 
             <div class="modal-header">
-                <h2 class="modal-title">টিউশনির জন্য আবেদন</h2>
+                <h2 class="modal-title">আইসিটি ও একাডেমিক আবেদন</h2>
                 <p class="modal-subtitle">সহজেই আপনার বা আপনার সন্তানের টিউশন আবেদন জমা দিন</p>
             </div>
 
             <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                আবেদন জমা দিলে সরাসরি <strong>১-ক্লিক হোয়াটসঅ্যাপ নিশ্চিতকরণ</strong> লিংক পেয়ে যাবেন।
+                আবেদন জমা দিলে সরাসরি <strong>হোয়াটসঅ্যাপ চ্যাটে</strong> আবেদনের বিবরণ সহ ওপেন হয়ে যাবে।
             </p>
 
             <div style="text-align: center;">
-                <a href="#tuition-apply" class="btn btn-accent btn-lg" onclick="document.getElementById('tuitionModal').classList.remove('active');">
-                    <i class="fa-solid fa-pen-to-square"></i> ফরমে যান এবং আবেদন করুন
+                <a href="#tuition-apply" class="btn btn-accent btn-lg"
+                    style="background: #25D366; border-color: #25D366;"
+                    onclick="document.getElementById('tuitionModal').classList.remove('active');">
+                    <i class="fa-brands fa-whatsapp"></i> ফরমে যান এবং কথা বলুন
                 </a>
             </div>
         </div>
@@ -629,4 +656,5 @@
     <!-- Scripts -->
     <script src="app.js"></script>
 </body>
+
 </html>

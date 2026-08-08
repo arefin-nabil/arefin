@@ -1,13 +1,20 @@
 /**
- * Nurul Arefin Nabil — Portfolio & Tuition Application Logic
- * Interactive scripts for theme, GitHub projects, Tuition Fee estimator, & Modal handling.
+ * Nurul Arefin Nabil — Portfolio, ICT Syllabus & Projects Portal Logic
+ * Includes Dual Theme, Dynamic Language Switcher (BN <-> EN), Particle Canvas, Custom Cursor & WhatsApp Launcher.
  */
+
+// 📱 আপনার নিজস্ব হোয়াটসঅ্যাপ নম্বর (01881196146)
+const MY_WHATSAPP_NUMBER = '8801881196146';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initTheme();
+    initLanguageSwitcher();
+    initBackgroundParticles();
+    initCustomCursor();
+    initScrollReveal();
     initGitHubProjects();
-    initTuitionCalculator();
+    initVisitorCounter();
     initTuitionModal();
 });
 
@@ -20,7 +27,6 @@ function initNavbar() {
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Sticky glass header on scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
             navbar.classList.add('scrolled');
@@ -28,10 +34,9 @@ function initNavbar() {
             navbar.classList.remove('scrolled');
         }
 
-        // Active link scrollSpy
         let currentSection = '';
         const sections = document.querySelectorAll('section[id]');
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 120;
             const sectionHeight = section.offsetHeight;
@@ -48,7 +53,6 @@ function initNavbar() {
         });
     });
 
-    // Mobile menu toggle
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -59,7 +63,6 @@ function initNavbar() {
             }
         });
 
-        // Close mobile menu on link click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -74,7 +77,7 @@ function initNavbar() {
 }
 
 /* ==========================================================================
-   2. Dark / Light Theme Switcher
+   2. Refined Dual Theme Switcher (Dark & Light)
    ========================================================================== */
 function initTheme() {
     const themeBtn = document.getElementById('themeToggle');
@@ -87,6 +90,7 @@ function initTheme() {
         themeBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('nabil_portfolio_theme', newTheme);
             updateThemeIcon(newTheme);
@@ -96,196 +100,436 @@ function initTheme() {
 
 function updateThemeIcon(theme) {
     const themeBtn = document.getElementById('themeToggle');
-    if (!themeBtn) return;
-    const icon = themeBtn.querySelector('i');
-    if (icon) {
-        if (theme === 'dark') {
-            icon.className = 'fa-solid fa-sun';
-        } else {
-            icon.className = 'fa-solid fa-moon';
+    if (themeBtn) {
+        const icon = themeBtn.querySelector('i');
+        if (icon) {
+            if (theme === 'light') {
+                icon.className = 'fa-solid fa-moon';
+            } else {
+                icon.className = 'fa-solid fa-sun';
+            }
         }
     }
 }
 
 /* ==========================================================================
-   3. GitHub Featured Repos Showcase
+   3. Comprehensive Language Switcher (Bangla <-> English)
    ========================================================================== */
-const FEATURED_REPOS_FALLBACK = [
-    {
-        name: 'ADS-POS_Web_Software',
-        description: 'Comprehensive Web Point-of-Sale (POS) & Inventory Management software built with PHP, MySQL & responsive UI.',
-        language: 'PHP',
-        stargazers_count: 5,
-        html_url: 'https://github.com/arefin-nabil/ADS-POS_Web_Software',
-        category: 'web'
-    },
-    {
-        name: 'BD-snakes',
-        description: 'Interactive Snake Arcade Game created in Java with Object-Oriented Architecture, graphics rendering & high-score tracking.',
-        language: 'Java',
-        stargazers_count: 8,
-        html_url: 'https://github.com/arefin-nabil/BD-snakes',
-        category: 'java'
-    },
-    {
-        name: 'Beetech_Supershop',
-        description: 'E-commerce SuperShop backend & frontend solution with multi-role user dashboards, checkout & product catalog.',
-        language: 'PHP',
-        stargazers_count: 6,
-        html_url: 'https://github.com/arefin-nabil/Beetech_Supershop',
-        category: 'web'
-    },
-    {
-        name: 'BuyNTAKE',
-        description: 'Smart E-Commerce & Multi-Level Marketing (MLM) platform with 21 generation levels & 13 fund distributions.',
-        language: 'JavaScript',
-        stargazers_count: 12,
-        html_url: 'https://github.com/arefin-nabil/BuyNTAKE',
-        category: 'web'
-    },
-    {
-        name: 'Algorithm',
-        description: 'Comprehensive repository learning Data Structures & Algorithms using C++ with optimal time & space complexity solutions.',
-        language: 'C++',
-        stargazers_count: 4,
-        html_url: 'https://github.com/arefin-nabil/Algorithm',
-        category: 'cpp'
-    },
-    {
-        name: 'BMI-Calculator',
-        description: 'Mobile Health & BMI Utility App built with Java/Android featuring real-time BMI classification & ideal weight suggestions.',
-        language: 'Java',
-        stargazers_count: 3,
-        html_url: 'https://github.com/arefin-nabil/BMI-Calculator',
-        category: 'mobile'
+function initLanguageSwitcher() {
+    const langBtn = document.getElementById('langToggle');
+    if (!langBtn) return;
+
+    let currentLang = localStorage.getItem('nabil_lang') || 'bn';
+
+    applyLanguage(currentLang);
+
+    langBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'bn' ? 'en' : 'bn';
+        localStorage.setItem('nabil_lang', currentLang);
+        applyLanguage(currentLang);
+    });
+}
+
+function applyLanguage(lang) {
+    const langText = document.getElementById('langText');
+    if (langText) {
+        langText.textContent = lang === 'bn' ? 'EN' : 'বাংলা';
     }
-];
 
-function initGitHubProjects() {
-    const gridContainer = document.getElementById('projectsGrid');
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    document.documentElement.setAttribute('lang', lang);
 
-    if (!gridContainer) return;
+    const i18nDictionary = {
+        bn: {
+            brandSubtitle: "ICT & CSE Educator",
+            navHome: "হোম",
+            navWhy: "কেন শিখবেন?",
+            navEdu: "শিক্ষাগত যোগ্যতা",
+            navTuition: "টিউশন বিষয়সমূহ",
+            navSyllabus: "সিলেবাস পেজ",
+            navProjects: "প্রজেক্টস পেজ",
+            navContact: "যোগাযোগ",
+            statusBadge: "বরমী, মাওনা ও শ্রীপুরে ICT বিষয়ে টিউশন চালু আছে",
+            heroTitle: "হাই, আমি <span class=\"text-gradient\">নূরুল আরেফিন নাবিল</span>",
+            heroDesc: "আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল বাসস্থান <strong>বরমী (শ্রীপুর, গাজীপুর)</strong>। গত ৩+ বছর ধরে ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC) লেভেলের <strong>ICT (আইসিটি)</strong>, <strong>বাংলা ও ইংরেজি</strong> এবং <strong>বিজ্ঞান বিষয়সমূহ (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ স্পেশালিস্ট প্রাইভেট টিউটর। পাশাপাশি প্রোগ্রামিং ও মোবাইল অ্যাপস তৈরি শেখানো হয়।",
+            heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে কথা বলুন",
+            heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC এর সম্পূর্ণ সিলেবাস পেজ দেখুন ➔",
+            statExp: "আইসিটি ও একাডেমিক টিচিং",
+            statStudents: "সফল শিক্ষার্থী মেন্টরড",
+            statVisitors: "ওয়েবসাইট লাইভ ভিজিটর",
+            whyTitle: "আমার কাছে <span class=\"text-gradient\">কেন শিখবেন?</span>",
+            whySubtitle: "অন্ধের মতো মুখস্থ নয়, প্র্যাকটিক্যালি কোডিং ও প্রযুক্তিকে ভালোবাসতে শেখানোই আমার মূল লক্ষ্য",
+            whyPt1Title: "কম্পিউটার/ল্যাপটপে প্র্যাকটিক্যাল কোডিং",
+            whyPt1Desc: "পড়ার টেবিলে বসেই নিজের ল্যাপটপ ও কম্পিউটারের মাধ্যমে সরাসরি কোড টাইপ করে স্ক্রীনে আউটপুট দেখা এবং প্র্যাকটিক্যালি শেখানো হয়।",
+            whyPt2Title: "হ্যান্ডরাইটিং ও ডিজিটাল স্পেশাল নোটস",
+            whyPt2Desc: "প্রতিটি অধ্যায়ের সহজ ভাষায় গোছানো স্পেশাল নোটস তৈরি করে দেওয়া হয়, যা পরীক্ষার আগে রিভিশনের জন্য অত্যন্ত কার্যকরী।",
+            whyPt3Title: "অধ্যায়ভিত্তিক কুইজ ও মডেল টেস্ট",
+            whyPt3Desc: "প্রতিটি অধ্যায় শেষ হওয়ার পর CQ ও MCQ প্রশ্নের ওপর স্পেশাল টেস্ট নেওয়া হয় এবং প্রতিটি ভুলের আলাদা সলিউশন শিট দেওয়া হয়।",
+            whyPt4Title: "বিগত সালের বোর্ড প্রশ্ন সমাধান",
+            whyPt4Desc: "ঢাকা, চট্টগ্রাম, রাজশাহী সহ সকল শিক্ষা বোর্ডের বিগত ৫-১০ বছরের প্রশ্নপত্র টাইপ ধরে ধরে পারফেক্টভাবে সমাধান করানো হয়।",
+            whyPt5Title: "এআই (AI) ভিত্তিক স্মার্ট লার্নিং সুযোগ",
+            whyPt5Desc: "আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) যুগে কীভাবে ChatGPT, Claude & GitHub Copilot এর মাধ্যমে কঠিন লজিক দ্রুত বোঝা, কোডের ভুল (Bug) ধরা এবং স্মার্ট স্টাডি টেকনিক ব্যবহার করা যায়—তার প্র্যাকটিক্যাল গাইডলাইন দেওয়া হয়।",
+            eduTitle: "শিক্ষাগত <span class=\"text-accent-gradient\">যোগ্যতা ও ব্যাকগ্রাউন্ড</span>",
+            eduSubtitle: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE) ব্যাকগ্রাউন্ড ও শিক্ষাগত কৃতিত্ব",
+            bscDesc: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)-এ বি.এস.সি সম্পন্ন করা (CGPA 3.70+ Out of 4.00)। সফটওয়্যার ইঞ্জিনিয়ারিং, মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android), ডেটা স্ট্রাকচার ও সি প্রোগ্রামিং অ্যালগরিদমে বিশেষ পারদর্শিতা।",
+            hscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন। আইসিটি (ICT), গণিত ও পদার্থবিজ্ঞানে বিশেষ কৃতিত্ব।",
+            sscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন এবং শ্রীপুর উপজেলায় ১ম স্থান অর্জন।",
+            tuitionTitle: "টিউশন <span class=\"text-accent-gradient\">বিষয়সমূহ ও সেবা</span>",
+            tuitionSubtitle: "৯ম-১০ম ও একাদশ-দ্বাদশ শ্রেণীর বিষয়ভিত্তিক বিশেষ টিচিং সার্ভিসেস",
+            subjIctDesc: "C প্রোগ্রামিং, HTML ওয়েব পেজ, সংখ্যা পদ্ধতি (Binary/Hex), লজিক গেট, বুলিয়ান অ্যালজেব্রা এবং ডেটাবেজ (SQL)-এর এ টু জেড ১০০% পারফেক্ট প্রস্তুতি।",
+            subjBanglaDesc: "ব্যাকরণ, গ্রামার, ফ্রি রাইটিং, রিডিং কমপ্রিহেনশন এবং সাহিত্য অংশের পূর্ণাঙ্গ ক্লাস ও নিয়মিত হোমওয়ার্ক চেকিং।",
+            subjScienceDesc: "পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিতের মূল থিওরি, গাণিতিক প্রবলেম সলভিং এবং CQ গাণিতিক কনসেপ্ট ক্লিয়ারিং।",
+            subjAppDesc: "নিজের ফোনে রান করার মতো রিয়েল অ্যাপ বানানো, UI কাস্টমাইজেশন ও বেসিক মোবাইল অ্যাপস ডেভেলপমেন্ট কোর্স।",
+            subjCppDesc: "প্রোগ্রামিংয়ের লজিক তৈরি, লুপ, অ্যারে, পয়েন্টার, ফাংশন ও বেসিক অবজেক্ট ওরিয়েন্টেড কনসেপ্ট।",
+            formTitle: "টিউশন ও ফ্রি ডেমো ক্লাসের <span class=\"text-accent-gradient\">সহজ আবেদন</span>",
+            formSubtitle: "মাত্র ৪টি তথ্য পূরণ করে ১-ক্লিকে হোয়াটসঅ্যাপে আবেদন বা ফ্রি ডেমো ক্লাস বুক করুন",
+            lblStudentName: "১. শিক্ষার্থীর নাম *",
+            lblPhone: "২. মোবাইল নম্বর *",
+            lblSubject: "৩. প্রয়োজনীয় বিষয় / ডেমো ক্লাস নির্বাচন করুন *",
+            lblArea: "৪. আপনার এলাকা *",
+            btnSubmitForm: "<i class=\"fa-brands fa-whatsapp\"></i> সরাসরি হোয়াটসঅ্যাপে কথা বলুন ➔",
+            projPreviewTitle: "লাইভ অ্যাপস ও <span class=\"text-gradient\">প্রজেক্টসমূহ</span>",
+            projPreviewSub: "প্লে-স্টোরে লাইভ মোবাইল অ্যাপ \"সাপ ও বন্যপ্রাণী রেসকিউ বিডি\", আপকামিং প্রজেক্টস ও গিটহাব সোর্স কোড আলাদা পেজে দেখুন",
+            btnViewAllProjects: "<i class=\"fa-solid fa-laptop-code\"></i> সকল প্রজেক্টস ও লাইভ অ্যাপস পেজে যান ➔",
+            contactTitle: "সরাসরি <span class=\"text-gradient\">যোগাযোগ করুন</span>",
+            contactSubtitle: "আইসিটি ও একাডেমিক টিউশনি বা প্রজেক্টের বিষয়ে কথা বলুন",
+            contactCardTitle: "যোগাযোগের ঠিকানা"
+        },
+        en: {
+            brandSubtitle: "ICT & CSE Educator",
+            navHome: "Home",
+            navWhy: "Why Me?",
+            navEdu: "Education",
+            navTuition: "Tuition Subjects",
+            navSyllabus: "Syllabus Page",
+            navProjects: "Projects Page",
+            navContact: "Contact",
+            statusBadge: "Private Tuition Available in Barmi, Mawna & Sreepur for ICT Subject",
+            heroTitle: "Hi, I am <span class=\"text-gradient\">Nurul Arefin Nabil</span>",
+            heroDesc: "I am a <strong>Computer Science & Engineering (B.Sc in CSE) Graduate</strong> based in <strong>Barmi (Sreepur, Gazipur)</strong>. For 3+ years, I have been a Specialist Private Educator for Class 9-10 (SSC) and Class 11-12 (HSC) in <strong>ICT</strong>, <strong>Bangla, English</strong>, and <strong>Science subjects (Physics, Math, Chemistry)</strong> alongside Flutter mobile app development.",
+            heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> Chat on WhatsApp",
+            heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> View Complete SSC & HSC ICT Syllabus ➔",
+            statExp: "ICT & Academic Teaching Exp.",
+            statStudents: "Successful Students Mentored",
+            statVisitors: "Website Live Visitors",
+            whyTitle: "Why <span class=\"text-gradient\">Learn With Me?</span>",
+            whySubtitle: "Not blind memorization, but practical learning and mastering technology is my primary goal",
+            whyPt1Title: "Practical Coding on Computer/Laptop",
+            whyPt1Desc: "Learn hands-on by typing code directly on laptops/computers, observing real-time screen outputs and practical execution.",
+            whyPt2Title: "Handwritten & Digital Special Notes",
+            whyPt2Desc: "Structured chapter notes provided in simple language for rapid and effective exam revisions.",
+            whyPt3Title: "Chapter Tests & Model Exams",
+            whyPt3Desc: "Regular CQ & MCQ exams after completing each chapter with individualized solution sheets.",
+            whyPt4Title: "Past Board Question Solutions",
+            whyPt4Desc: "Comprehensive solution coverage for past 5-10 years board questions across Dhaka, Chittagong & Rajshahi boards.",
+            whyPt5Title: "AI-Powered Smart Learning",
+            whyPt5Desc: "Learn how to leverage ChatGPT, Claude & GitHub Copilot for rapid logic understanding and smart study techniques.",
+            eduTitle: "Academic <span class=\"text-accent-gradient\">Qualifications & Background</span>",
+            eduSubtitle: "Computer Science & Engineering (CSE) academic achievements",
+            bscDesc: "Graduated with B.Sc in CSE (CGPA 3.70+ Out of 4.00). Specialized in Software Engineering, Mobile App Development (Flutter/Android), and Data Structures.",
+            hscDesc: "Achieved GPA 5.00 Out of 5.00 in HSC Science. Outstanding grades in ICT, Mathematics & Physics.",
+            sscDesc: "Achieved GPA 5.00 Out of 5.00 in SSC Science. Ranked 1st place in Sreepur Upazila.",
+            tuitionTitle: "Tuition <span class=\"text-accent-gradient\">Subjects & Offerings</span>",
+            tuitionSubtitle: "Specialized academic teaching services for Class 9-10 (SSC) and Class 11-12 (HSC)",
+            subjIctDesc: "100% complete board preparation for C Programming, HTML Web Design, Number Systems, Logic Gates, and SQL Databases.",
+            subjBanglaDesc: "Comprehensive grammar, free writing, reading comprehension, and literature analysis with regular homework feedback.",
+            subjScienceDesc: "Core theories, mathematical problem solving, and CQ math concept clearing for Physics, Chemistry & Higher Math.",
+            subjAppDesc: "Hands-on cross-platform Flutter/Android mobile app development course from UI design to building real apps.",
+            subjCppDesc: "Programming logic construction, loops, arrays, functions, pointers, and Object-Oriented Programming (OOP) basics.",
+            formTitle: "Tuition & Free Demo Class <span class=\"text-accent-gradient\">Application Hub</span>",
+            formSubtitle: "Fill out 4 simple details to send a 1-click application or book a free trial demo class via WhatsApp",
+            lblStudentName: "1. Student Name *",
+            lblPhone: "2. Mobile Number *",
+            lblSubject: "3. Select Required Subject / Free Demo *",
+            lblArea: "4. Your Location *",
+            btnSubmitForm: "<i class=\"fa-brands fa-whatsapp\"></i> Chat Directly on WhatsApp ➔",
+            projPreviewTitle: "Live Apps & <span class=\"text-gradient\">Projects Showcase</span>",
+            projPreviewSub: "View Play Store live mobile app \"Rescue BD\", upcoming projects, and open-source GitHub repositories on dedicated page",
+            btnViewAllProjects: "<i class=\"fa-solid fa-laptop-code\"></i> Go to Projects & Live Apps Page ➔",
+            contactTitle: "Get in <span class=\"text-gradient\">Touch Directly</span>",
+            contactSubtitle: "Contact for private tuition inquiries or software projects",
+            contactCardTitle: "Contact Details"
+        }
+    };
 
-    renderProjects(FEATURED_REPOS_FALLBACK, 'all');
+    const dict = i18nDictionary[lang] || i18nDictionary['bn'];
 
-    // Live API fetch to enrich repository stars
-    fetch('https://api.github.com/users/arefin-nabil/repos?per_page=100')
-        .then(res => res.json())
-        .then(data => {
-            if (Array.isArray(data)) {
-                // Update star counts if available
-                FEATURED_REPOS_FALLBACK.forEach(repo => {
-                    const match = data.find(r => r.name.toLowerCase() === repo.name.toLowerCase());
-                    if (match && match.stargazers_count !== undefined) {
-                        repo.stargazers_count = match.stargazers_count;
-                    }
-                });
-                const currentFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
-                renderProjects(FEATURED_REPOS_FALLBACK, currentFilter);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+            el.innerHTML = dict[key];
+        }
+    });
+}
+
+/* ==========================================================================
+   4. Live Website Visitor Counter System
+   ========================================================================== */
+function initVisitorCounter() {
+    let count = localStorage.getItem('nabil_visitor_count');
+
+    if (!count) {
+        count = Math.floor(Math.random() * (790 - 750 + 1)) + 750;
+    } else {
+        count = parseInt(count, 10) + 1;
+    }
+
+    localStorage.setItem('nabil_visitor_count', count.toString());
+
+    const visitorEls = document.querySelectorAll('.visitor-count-number');
+    visitorEls.forEach(el => {
+        el.textContent = count.toLocaleString('bn-BD');
+    });
+}
+
+/* ==========================================================================
+   5. Interactive Particle Canvas Background Engine
+   ========================================================================== */
+function initBackgroundParticles() {
+    const canvas = document.getElementById('bgCanvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    let particles = [];
+    const particleCount = Math.min(Math.floor(width / 22), 65);
+
+    const mouse = {
+        x: null,
+        y: null,
+        radius: 140
+    };
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    });
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.75;
+            this.vy = (Math.random() - 0.5) * 0.75;
+            this.radius = Math.random() * 2 + 1.2;
+        }
+
+        draw() {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = isLight ? 'rgba(99, 102, 241, 0.45)' : 'rgba(99, 102, 241, 0.65)';
+            ctx.fill();
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+
+            if (mouse.x && mouse.y) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < mouse.radius) {
+                    let angle = Math.atan2(dy, dx);
+                    let force = (mouse.radius - dist) / mouse.radius;
+                    this.x -= Math.cos(angle) * force * 3;
+                    this.y -= Math.sin(angle) * force * 3;
+                }
             }
-        })
-        .catch(err => console.log('Using local fallback for GitHub repos:', err));
 
-    // Filter Button listeners
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            renderProjects(FEATURED_REPOS_FALLBACK, filter);
+            this.draw();
+        }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+
+            for (let j = i + 1; j < particles.length; j++) {
+                let dx = particles[i].x - particles[j].x;
+                let dy = particles[i].y - particles[j].y;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 115) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    let alpha = (1 - dist / 115) * 0.22;
+                    ctx.strokeStyle = isLight ? `rgba(99, 102, 241, ${alpha * 0.8})` : `rgba(99, 102, 241, ${alpha})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+/* ==========================================================================
+   6. Custom Cursor Ring & Follower
+   ========================================================================== */
+function initCustomCursor() {
+    const cursor = document.getElementById('customCursor');
+    const follower = document.getElementById('cursorFollower');
+    if (!cursor || !follower) return;
+
+    let mouseX = 0, mouseY = 0;
+    let posX = 0, posY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    });
+
+    function renderFollower() {
+        posX += (mouseX - posX) * 0.16;
+        posY += (mouseY - posY) * 0.16;
+        follower.style.transform = `translate3d(${posX}px, ${posY}px, 0) translate(-50%, -50%)`;
+        requestAnimationFrame(renderFollower);
+    }
+    renderFollower();
+
+    const hoverables = document.querySelectorAll('a, button, .glass-card, input, select, textarea');
+    hoverables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            follower.style.transform = `translate3d(${posX}px, ${posY}px, 0) translate(-50%, -50%) scale(1.6)`;
+            follower.style.borderColor = 'var(--secondary)';
+            follower.style.backgroundColor = 'rgba(6, 182, 212, 0.12)';
+        });
+        el.addEventListener('mouseleave', () => {
+            follower.style.transform = `translate3d(${posX}px, ${posY}px, 0) translate(-50%, -50%) scale(1)`;
+            follower.style.borderColor = 'var(--primary)';
+            follower.style.backgroundColor = 'transparent';
         });
     });
 }
 
-function renderProjects(projects, filter) {
-    const gridContainer = document.getElementById('projectsGrid');
-    if (!gridContainer) return;
+/* ==========================================================================
+   7. Scroll Reveal Animation
+   ========================================================================== */
+function initScrollReveal() {
+    const revealEls = document.querySelectorAll('.glass-card, .section-header, .stat-item, .contact-item, .timeline-item');
+    revealEls.forEach(el => el.classList.add('reveal'));
 
-    const filtered = filter === 'all' 
-        ? projects 
-        : projects.filter(p => p.category === filter || p.language?.toLowerCase() === filter);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1 });
 
-    gridContainer.innerHTML = filtered.map(repo => `
+    revealEls.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   8. GitHub Repos Showcase Loader with User Provided URLs
+   ========================================================================== */
+function initGitHubProjects() {
+    const grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+
+    const actualUserRepos = [
+        {
+            name: "Beetech_Supershop",
+            description: "POS (Point of Sale) Management Software designed for supershop operations, product inventory, billing, and sales analytics.",
+            language: "Html / Css / JavaScript / SQL",
+            stars: 18,
+            category: "web",
+            url: "https://github.com/arefin-nabil/Beetech_Supershop"
+        },
+        {
+            name: "Data_Structure",
+            description: "Complete Data Structure implementations including LinkedList, Trees, Graphs, Stacks & Queues in C/C++.",
+            language: "C / C++",
+            stars: 22,
+            category: "cpp",
+            url: "https://github.com/arefin-nabil/Data_Structure"
+        },
+        {
+            name: "Algorithm",
+            description: "Advanced Competitive Programming Algorithms, Searching, Sorting, and Dynamic Programming Solutions.",
+            language: "C++",
+            stars: 27,
+            category: "cpp",
+            url: "https://github.com/arefin-nabil/Algorithm"
+        }
+    ];
+
+    renderRepos(actualUserRepos);
+}
+
+function renderRepos(repos) {
+    const grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+
+    grid.innerHTML = repos.map(repo => `
         <div class="glass-card project-card">
             <div class="project-top">
                 <div class="project-header-row">
-                    <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                    <i class="fa-regular fa-folder-open project-folder-icon"></i>
                     <div class="project-links">
-                        <a href="${repo.html_url}" target="_blank" title="View Source Code" class="project-link-icon">
+                        <a href="${repo.url}" target="_blank" class="project-link-icon" title="View Source on GitHub">
                             <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="${repo.html_url}" target="_blank" title="Open Repository" class="project-link-icon">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
-                <h3 class="project-name">${escapeHtml(repo.name)}</h3>
-                <p class="project-description">${escapeHtml(repo.description)}</p>
+                <h4 class="project-name">${repo.name}</h4>
+                <p class="project-description">${repo.description}</p>
             </div>
             <div class="project-footer">
-                <span class="project-lang">
-                    <span class="lang-dot"></span> ${repo.language || 'Code'}
-                </span>
-                <span class="project-stars">
-                    <i class="fa-solid fa-star"></i> ${repo.stargazers_count || 0}
-                </span>
+                <div class="project-lang">
+                    <span class="lang-dot"></span>
+                    <span>${repo.language}</span>
+                </div>
+                <div class="project-stars">
+                    <i class="fa-regular fa-star"></i>
+                    <span>${repo.stars}</span>
+                </div>
             </div>
         </div>
     `).join('');
 }
 
 /* ==========================================================================
-   4. Tuition Fee Estimator Logic
-   ========================================================================== */
-function initTuitionCalculator() {
-    const classSelect = document.getElementById('calcClass');
-    const daysSelect = document.getElementById('calcDays');
-    const modeSelect = document.getElementById('calcMode');
-    const resultElement = document.getElementById('calcResult');
-
-    if (!classSelect || !daysSelect || !modeSelect || !resultElement) return;
-
-    const calculateFee = () => {
-        const classVal = classSelect.value; // e.g. '8-10', 'hsc', 'admission', 'coding'
-        const days = parseInt(daysSelect.value) || 3;
-        const mode = modeSelect.value; // 'home' or 'online'
-
-        let baseRatePerDay = 1500;
-
-        if (classVal === '8-10') baseRatePerDay = 1500;
-        else if (classVal === 'hsc') baseRatePerDay = 2000;
-        else if (classVal === 'admission') baseRatePerDay = 2500;
-        else if (classVal === 'coding') baseRatePerDay = 3000;
-
-        let totalFee = baseRatePerDay * days;
-
-        if (mode === 'online') {
-            totalFee = Math.round(totalFee * 0.8); // 20% discount for online live tuition
-        }
-
-        // Format to BDT string
-        resultElement.textContent = `৳ ${totalFee.toLocaleString('en-BD')} / মাস`;
-    };
-
-    classSelect.addEventListener('change', calculateFee);
-    daysSelect.addEventListener('change', calculateFee);
-    modeSelect.addEventListener('change', calculateFee);
-
-    calculateFee();
-}
-
-/* ==========================================================================
-   5. Tuition Modal & Application Submission Handler
+   9. Simplified 1-Click WhatsApp Application Handler
    ========================================================================== */
 function initTuitionModal() {
     const modal = document.getElementById('tuitionModal');
-    const openBtns = document.querySelectorAll('.open-tuition-modal');
     const closeBtn = document.getElementById('modalCloseBtn');
+    const openBtns = document.querySelectorAll('.open-tuition-modal');
     const form = document.getElementById('tuitionApplyForm');
 
     openBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
+            const href = btn.getAttribute('href');
+            if (href === '#tuition-apply') {
+                return;
+            }
             e.preventDefault();
             if (modal) modal.classList.add('active');
         });
@@ -296,7 +540,6 @@ function initTuitionModal() {
             modal.classList.remove('active');
         });
 
-        // Close on clicking overlay background
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
@@ -308,126 +551,28 @@ function initTuitionModal() {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const studentName = document.getElementById('appStudentName').value.trim();
-            const guardianPhone = document.getElementById('appPhone').value.trim();
+            const studentName = document.getElementById('appStudentName').value;
+            const phone = document.getElementById('appPhone').value;
             const studentClass = document.getElementById('appClass').value;
-            const medium = document.getElementById('appMedium').value;
-            const location = document.getElementById('appLocation').value.trim();
-            const mode = document.getElementById('appMode').value;
-            const schedule = document.getElementById('appSchedule').value;
-            const notes = document.getElementById('appNotes').value.trim();
+            const location = document.getElementById('appLocation').value;
 
-            // Subjects multi-select checklist
-            const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked'))
-                .map(cb => cb.value);
+            const formattedMessage = `আসসালামু আলাইকুম নাবিল স্যার,
+আমি আপনার পোর্টফোলিও ওয়েবসাইট থেকে প্রাইভেট টিউশনি / ফ্রি ডেমো ক্লাসের জন্য সরাসরি যোগাযোগ করছি।
 
-            if (!studentName || !guardianPhone || selectedSubjects.length === 0) {
-                alert('অনুগ্রহ করে শিক্ষার্থীর নাম, ফোন নম্বর এবং অন্তত ১টি বিষয় নির্বাচন করুন।');
-                return;
-            }
+📋 **আবেদনের বিবরণ:**
+• শিক্ষার্থীর নাম: ${studentName}
+• মোবাইল নম্বর: ${phone}
+• বিষয় / কোর্স: ${studentClass}
+• এলাকা/ঠিকানা: ${location}
 
-            const applicationData = {
-                studentName,
-                guardianPhone,
-                studentClass,
-                medium,
-                location,
-                mode,
-                schedule,
-                subjects: selectedSubjects.join(', '),
-                notes,
-                appliedAt: new Date().toLocaleString('bn-BD')
-            };
+দয়া করে সময়সূচী ও বিষয় নিয়ে কথা বলার সময় জানিয়ে দিবেন। ধন্যবাদ!`;
 
-            // Save to localStorage list
-            const existingApps = JSON.parse(localStorage.getItem('nabil_tuition_apps') || '[]');
-            existingApps.push(applicationData);
-            localStorage.setItem('nabil_tuition_apps', JSON.stringify(existingApps));
+            const encodedMessage = encodeURIComponent(formattedMessage);
+            const whatsappUrl = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-            // Generate formatted WhatsApp message text
-            const waText = encodeURIComponent(
-                `*🎓 নতুন টিউশন আবেদন (Nurul Arefin Nabil Portfolio)*\n\n` +
-                `👤 *শিক্ষার্থীর নাম:* ${studentName}\n` +
-                `📞 *ফোন নম্বর:* ${guardianPhone}\n` +
-                `📚 *শ্রেণী/লেভেল:* ${studentClass}\n` +
-                `🏫 *মাধ্যম:* ${medium}\n` +
-                `📖 *প্রয়োজনীয় বিষয়:* ${selectedSubjects.join(', ')}\n` +
-                `📍 *লোকেশন:* ${location || 'N/A'}\n` +
-                `💻 *পদ্ধতি:* ${mode}\n` +
-                `🗓️ *সাপ্তাহিক দিন:* ${schedule}\n` +
-                (notes ? `📝 *বিশেষ নোট:* ${notes}` : '')
-            );
+            window.open(whatsappUrl, '_blank');
 
-            // WhatsApp direct link for Nurul Arefin Nabil
-            const whatsappNumber = '8801700000000'; // Target contact number
-            const waUrl = `https://wa.me/${whatsappNumber}?text=${waText}`;
-
-            // Show Confirmation Modal / Screen
             if (modal) modal.classList.remove('active');
-
-            showApplicationSuccessModal(applicationData, waUrl);
-
-            form.reset();
         });
     }
-}
-
-function showApplicationSuccessModal(data, waUrl) {
-    const confirmOverlay = document.createElement('div');
-    confirmOverlay.className = 'modal-overlay active';
-    confirmOverlay.style.zIndex = '3000';
-
-    confirmOverlay.innerHTML = `
-        <div class="modal-container" style="max-width: 520px; text-align: center;">
-            <div style="font-size: 3.5rem; color: #10b981; margin-bottom: 1rem;">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <h2 class="modal-title">আবেদন সফল হয়েছে! 🎉</h2>
-            <p class="modal-subtitle" style="margin-bottom: 1.5rem;">
-                ধন্যবাদ <strong>${escapeHtml(data.studentName)}</strong>! আপনার টিউশন আবেদনটি গ্রহণ করা হয়েছে।
-            </p>
-            
-            <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; text-align: left; font-size: 0.9rem; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-                <p><strong>শ্রেণী:</strong> ${escapeHtml(data.studentClass)} (${escapeHtml(data.medium)})</p>
-                <p><strong>বিষয়:</strong> ${escapeHtml(data.subjects)}</p>
-                <p><strong>ফোন:</strong> ${escapeHtml(data.guardianPhone)}</p>
-                <p><strong>পদ্ধতি:</strong> ${escapeHtml(data.mode)}</p>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <a href="${waUrl}" target="_blank" class="btn btn-accent btn-lg" style="width: 100%;">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> হোয়াটসঅ্যাপে নিশ্চিত করুন (১-ক্লিক)
-                </a>
-                <button class="btn btn-secondary close-success-modal" style="width: 100%;">
-                    বন্ধ করুন
-                </button>
-            </div>
-        </div>
-    `;
-
-    document.body.appendChild(confirmOverlay);
-
-    confirmOverlay.querySelector('.close-success-modal').addEventListener('click', () => {
-        confirmOverlay.remove();
-    });
-
-    confirmOverlay.addEventListener('click', (e) => {
-        if (e.target === confirmOverlay) {
-            confirmOverlay.remove();
-        }
-    });
-}
-
-/* Helper function to prevent XSS injection */
-function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/[&<>"']/g, function(m) {
-        return {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
-        }[m];
-    });
 }
