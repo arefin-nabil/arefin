@@ -272,8 +272,6 @@ function applyLanguage(lang) {
             btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> Send Message via WhatsApp ➔"
         }
     };
-        }
-    };
 
     const dict = i18nDictionary[lang] || i18nDictionary['bn'];
 
