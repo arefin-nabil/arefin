@@ -148,14 +148,15 @@ function applyLanguage(lang) {
             navSyllabus: "সিলেবাস পেজ",
             navProjects: "প্রজেক্টস পেজ",
             navContact: "যোগাযোগ",
-            statusBadge: "বরমী, মাওনা ও শ্রীপুরে ICT বিষয়ে টিউশন চালু আছে",
+            statusBadge: "বরমী, মাওনা ও শ্রীপুরে ICT (আইসিটি) স্পেশালিস্ট টিউশন চালু আছে",
             heroTitle: "হাই, আমি <span class=\"text-gradient\">নূরুল আরেফিন নাবিল</span>",
-            heroDesc: "আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল বাসস্থান <strong>বরমী (শ্রীপুর, গাজীপুর)</strong>। গত ৩+ বছর ধরে ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC) লেভেলের <strong>ICT (আইসিটি)</strong>, <strong>বাংলা ও ইংরেজি</strong> এবং <strong>বিজ্ঞান বিষয়সমূহ (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ স্পেশালিস্ট প্রাইভেট টিউটর। পাশাপাশি প্রোগ্রামিং ও মোবাইল অ্যাপস তৈরি শেখানো হয়।",
+            heroFocusTag: "<i class=\"fa-solid fa-star\"></i> ICT (আইসিটি) স্পেশালিস্ট প্রাইভেট টিউটর — শ্রীপুর, মাওনা ও বরমী",
+            heroDesc: "আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল অগ্রাধিকার হল ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের <strong>ICT (আইসিটি)</strong> বিষয়ে প্র্যাকটিক্যাল কোডিং ও ১০০% এ+ উপযোগী প্রস্তুতি প্রদান করা। পাশাপাশি বরমী, মাওনা ও শ্রীপুর এলাকায় <strong>বাংলা, ইংরেজি ও বিজ্ঞান বিষয়সমূহ (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ প্রাইভেট টিচিং দেওয়া হয়।",
             heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে কথা বলুন",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC এর সম্পূর্ণ সিলেবাস পেজ দেখুন ➔",
+            statSreepurRank: "SSC-তে শ্রীপুর উপজেলায় ১ম স্থান",
             statExp: "আইসিটি ও একাডেমিক টিচিং",
             statStudents: "সফল শিক্ষার্থী মেন্টরড",
-            statVisitors: "ওয়েবসাইট লাইভ ভিজিটর",
             whyTitle: "আমার কাছে <span class=\"text-gradient\">কেন শিখবেন?</span>",
             whySubtitle: "অন্ধের মতো মুখস্থ নয়, প্র্যাকটিক্যালি কোডিং ও প্রযুক্তিকে ভালোবাসতে শেখানোই আমার মূল লক্ষ্য",
             whyPt1Title: "কম্পিউটার/ল্যাপটপে প্র্যাকটিক্যাল কোডিং",
@@ -175,11 +176,15 @@ function applyLanguage(lang) {
             sscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন এবং শ্রীপুর উপজেলায় ১ম স্থান অর্জন।",
             tuitionTitle: "টিউশন <span class=\"text-accent-gradient\">বিষয়সমূহ ও সেবা</span>",
             tuitionSubtitle: "৯ম-১০ম ও একাদশ-দ্বাদশ শ্রেণীর বিষয়ভিত্তিক বিশেষ টিচিং সার্ভিসেস",
-            subjIctDesc: "C প্রোগ্রামিং, HTML ওয়েব পেজ, সংখ্যা পদ্ধতি (Binary/Hex), লজিক গেট, বুলিয়ান অ্যালজেব্রা এবং ডেটাবেজ (SQL)-এর এ টু জেড ১০০% পারফেক্ট প্রস্তুতি।",
+            catAcademicTitle: "একাডেমিক টিউশন (মূল প্রায়োরিটি)",
+            catSkillTitle: "স্কিল ডেভেলপমেন্ট ও প্রোগ্রামিং (অতিরিক্ত সেবা)",
+            subjIctDesc: "C প্রোগ্রামিং, HTML ওয়েব পেজ, সংখ্যা পদ্ধতি (Binary/Hex), লজিক গেট, বুলিয়ান অ্যালজেব্রা এবং ডেটাবেজ (SQL)-এর এ টু জেড প্র্যাকটিক্যালি ল্যাপটপে কোড টাইপ করে ১০০% পারফেক্ট প্রস্তুতি।",
             subjBanglaDesc: "ব্যাকরণ, গ্রামার, ফ্রি রাইটিং, রিডিং কমপ্রিহেনশন এবং সাহিত্য অংশের পূর্ণাঙ্গ ক্লাস ও নিয়মিত হোমওয়ার্ক চেকিং।",
             subjScienceDesc: "পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিতের মূল থিওরি, গাণিতিক প্রবলেম সলভিং এবং CQ গাণিতিক কনসেপ্ট ক্লিয়ারিং।",
             subjAppDesc: "নিজের ফোনে রান করার মতো রিয়েল অ্যাপ বানানো, UI কাস্টমাইজেশন ও বেসিক মোবাইল অ্যাপস ডেভেলপমেন্ট কোর্স।",
             subjCppDesc: "প্রোগ্রামিংয়ের লজিক তৈরি, লুপ, অ্যারে, পয়েন্টার, ফাংশন ও বেসিক অবজেক্ট ওরিয়েন্টেড কনসেপ্ট।",
+            teachingModeHeading: "🏠 কোথায় কোথায় পড়ানো হয়?",
+            parentAssuranceHeading: "👨‍👩‍👧 অভিভাবকদের প্রতি নিশ্চয়তা",
             formTitle: "টিউশন ও ফ্রি ডেমো ক্লাসের <span class=\"text-accent-gradient\">সহজ আবেদন</span>",
             formSubtitle: "মাত্র ৪টি তথ্য পূরণ করে ১-ক্লিকে হোয়াটসঅ্যাপে আবেদন বা ফ্রি ডেমো ক্লাস বুক করুন",
             lblStudentName: "১. শিক্ষার্থীর নাম *",
@@ -192,7 +197,13 @@ function applyLanguage(lang) {
             btnViewAllProjects: "<i class=\"fa-solid fa-laptop-code\"></i> সকল প্রজেক্টস ও লাইভ অ্যাপস পেজে যান ➔",
             contactTitle: "সরাসরি <span class=\"text-gradient\">যোগাযোগ করুন</span>",
             contactSubtitle: "আইসিটি ও একাডেমিক টিউশনি বা প্রজেক্টের বিষয়ে কথা বলুন",
-            contactCardTitle: "যোগাযোগের ঠিকানা"
+            contactCardTitle: "যোগাযোগের ঠিকানা",
+            directMessageTitle: "সরাসরি মেসেজ পাঠান",
+            directMessageDesc: "ফরম পূরণ করে সাবমিট করলেই ১-ক্লিকে হোয়াটসঅ্যাপ মেসেজ তৈরি হয়ে যাবে।",
+            contactNameLbl: "আপনার নাম",
+            contactPhoneLbl: "ইমেইল / ফোন নম্বর",
+            contactMsgLbl: "মেসেজ",
+            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে মেসেজ পাঠান ➔"
         },
         en: {
             brandSubtitle: "ICT & CSE Educator",
@@ -203,14 +214,15 @@ function applyLanguage(lang) {
             navSyllabus: "Syllabus Page",
             navProjects: "Projects Page",
             navContact: "Contact",
-            statusBadge: "Private Tuition Available in Barmi, Mawna & Sreepur for ICT Subject",
+            statusBadge: "Specialist ICT Tuition Available in Barmi, Mawna & Sreepur",
             heroTitle: "Hi, I am <span class=\"text-gradient\">Nurul Arefin Nabil</span>",
-            heroDesc: "I am a <strong>Computer Science & Engineering (B.Sc in CSE) Graduate</strong> based in <strong>Barmi (Sreepur, Gazipur)</strong>. For 3+ years, I have been a Specialist Private Educator for Class 9-10 (SSC) and Class 11-12 (HSC) in <strong>ICT</strong>, <strong>Bangla, English</strong>, and <strong>Science subjects (Physics, Math, Chemistry)</strong> alongside Flutter mobile app development.",
+            heroFocusTag: "<i class=\"fa-solid fa-star\"></i> Specialist ICT Private Educator — Sreepur, Mawna & Barmi",
+            heroDesc: "I am a <strong>Computer Science & Engineering (B.Sc in CSE) Graduate</strong>. My primary priority is providing 100% board exam preparation and practical coding for Class 9-10 (SSC) and Class 11-12 (HSC) in <strong>ICT</strong> alongside private tuition for <strong>Bangla, English & Science subjects</strong>.",
             heroBtnTalk: "<i class=\"fa-brands fa-whatsapp\"></i> Chat on WhatsApp",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> View Complete SSC & HSC ICT Syllabus ➔",
+            statSreepurRank: "Ranked 1st in Sreepur Upazila (SSC)",
             statExp: "ICT & Academic Teaching Exp.",
             statStudents: "Successful Students Mentored",
-            statVisitors: "Website Live Visitors",
             whyTitle: "Why <span class=\"text-gradient\">Learn With Me?</span>",
             whySubtitle: "Not blind memorization, but practical learning and mastering technology is my primary goal",
             whyPt1Title: "Practical Coding on Computer/Laptop",
@@ -230,11 +242,15 @@ function applyLanguage(lang) {
             sscDesc: "Achieved GPA 5.00 Out of 5.00 in SSC Science. Ranked 1st place in Sreepur Upazila.",
             tuitionTitle: "Tuition <span class=\"text-accent-gradient\">Subjects & Offerings</span>",
             tuitionSubtitle: "Specialized academic teaching services for Class 9-10 (SSC) and Class 11-12 (HSC)",
-            subjIctDesc: "100% complete board preparation for C Programming, HTML Web Design, Number Systems, Logic Gates, and SQL Databases.",
+            catAcademicTitle: "Academic Tuition (Primary Priority)",
+            catSkillTitle: "Skill Development & Coding (Secondary Priority)",
+            subjIctDesc: "100% complete board preparation for C Programming, HTML Web Design, Number Systems, Logic Gates, and SQL Databases with practical laptop coding.",
             subjBanglaDesc: "Comprehensive grammar, free writing, reading comprehension, and literature analysis with regular homework feedback.",
             subjScienceDesc: "Core theories, mathematical problem solving, and CQ math concept clearing for Physics, Chemistry & Higher Math.",
             subjAppDesc: "Hands-on cross-platform Flutter/Android mobile app development course from UI design to building real apps.",
             subjCppDesc: "Programming logic construction, loops, arrays, functions, pointers, and Object-Oriented Programming (OOP) basics.",
+            teachingModeHeading: "🏠 Teaching Locations & Modes",
+            parentAssuranceHeading: "👨‍👩‍👧 Assurance to Parents",
             formTitle: "Tuition & Free Demo Class <span class=\"text-accent-gradient\">Application Hub</span>",
             formSubtitle: "Fill out 4 simple details to send a 1-click application or book a free trial demo class via WhatsApp",
             lblStudentName: "1. Student Name *",
@@ -247,7 +263,15 @@ function applyLanguage(lang) {
             btnViewAllProjects: "<i class=\"fa-solid fa-laptop-code\"></i> Go to Projects & Live Apps Page ➔",
             contactTitle: "Get in <span class=\"text-gradient\">Touch Directly</span>",
             contactSubtitle: "Contact for private tuition inquiries or software projects",
-            contactCardTitle: "Contact Details"
+            contactCardTitle: "Contact Details",
+            directMessageTitle: "Send Direct Message",
+            directMessageDesc: "Fill form and submit to create a 1-click WhatsApp message.",
+            contactNameLbl: "Your Name",
+            contactPhoneLbl: "Email / Phone Number",
+            contactMsgLbl: "Message",
+            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> Send Message via WhatsApp ➔"
+        }
+    };
         }
     };
 
@@ -557,15 +581,15 @@ function initTuitionModal() {
             const location = document.getElementById('appLocation').value;
 
             const formattedMessage = `আসসালামু আলাইকুম নাবিল স্যার,
-আমি আপনার পোর্টফোলিও ওয়েবসাইট থেকে প্রাইভেট টিউশনি / ফ্রি ডেমো ক্লাসের জন্য সরাসরি যোগাযোগ করছি।
+আমি আপনার পোর্টফোলিও ওয়েবসাইট থেকে প্রাইভেট টিউশনি / ফ্রি ডেমো ক্লাসের জন্য আবেদন করছি।
 
 📋 **আবেদনের বিবরণ:**
 • শিক্ষার্থীর নাম: ${studentName}
 • মোবাইল নম্বর: ${phone}
-• বিষয় / কোর্স: ${studentClass}
+• বিষয় / ডেমো ক্লাস: ${studentClass}
 • এলাকা/ঠিকানা: ${location}
 
-দয়া করে সময়সূচী ও বিষয় নিয়ে কথা বলার সময় জানিয়ে দিবেন। ধন্যবাদ!`;
+দয়া করে বিষয় ও সময়সূচী নিয়ে কথা বলার উপযুক্ত সময়টি জানিয়ে দিবেন। ধন্যবাদ!`;
 
             const encodedMessage = encodeURIComponent(formattedMessage);
             const whatsappUrl = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodedMessage}`;
@@ -573,6 +597,33 @@ function initTuitionModal() {
             window.open(whatsappUrl, '_blank');
 
             if (modal) modal.classList.remove('active');
+        });
+    }
+
+    const directContactForm = document.getElementById('directContactForm');
+    if (directContactForm) {
+        directContactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const msg = document.getElementById('contactMsg').value;
+
+            const formattedMessage = `আসসালামু আলাইকুম নাবিল ভাই/স্যার,
+আমি ওয়েবসাইট থেকে সরাসরি মেসেজ পাঠাচ্ছি:
+
+👤 নাম: ${name}
+📞 মোবাইল/ইমেইল: ${phone}
+💬 মেসেজ:
+"${msg}"
+
+ধন্যবাদ!`;
+
+            const encodedMessage = encodeURIComponent(formattedMessage);
+            const whatsappUrl = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+            directContactForm.reset();
         });
     }
 }

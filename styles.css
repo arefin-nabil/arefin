@@ -976,6 +976,18 @@ a {
     margin-bottom: 3.5rem;
 }
 
+.subject-grid-academic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+.subject-grid-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
 @media (min-width: 992px) {
     .subject-grid {
         grid-template-columns: repeat(6, 1fr);
@@ -988,6 +1000,12 @@ a {
     }
     .subject-card:nth-child(5) {
         grid-column: span 3;
+    }
+    .subject-grid-academic {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .subject-grid-skills {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
