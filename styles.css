@@ -55,24 +55,24 @@
 /* Light / Day Theme Overrides — High Contrast & Premium Parity Guarantee */
 [data-theme="light"] {
     --bg-dark: #f8fafc;
-    --bg-card: rgba(255, 255, 255, 0.92);
-    --bg-card-hover: #ffffff;
-    --bg-modal: #ffffff;
-    --border-color: rgba(99, 102, 241, 0.18);
+    --bg-card: rgba(255, 255, 255, 0.78);
+    --bg-card-hover: rgba(255, 255, 255, 0.92);
+    --bg-modal: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(99, 102, 241, 0.2);
     --border-glow: rgba(99, 102, 241, 0.35);
     
     --text-main: #0f172a;
     --text-muted: #334155;
     --text-sub: #475569;
     
-    --grad-card: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+    --grad-card: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(241, 245, 249, 0.6) 100%);
     --shadow-card: 0 10px 30px -5px rgba(99, 102, 241, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
     --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.15);
-    --form-bg: #ffffff;
+    --form-bg: rgba(255, 255, 255, 0.85);
 }
 
 [data-theme="light"] .glass-card {
-    background: rgba(255, 255, 255, 0.92) !important;
+    background: rgba(255, 255, 255, 0.78) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(99, 102, 241, 0.2) !important;
@@ -80,47 +80,98 @@
 }
 
 [data-theme="light"] .glass-card:hover {
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.92) !important;
     border-color: var(--primary) !important;
-    box-shadow: 0 16px 35px -8px rgba(99, 102, 241, 0.22), 0 0 20px rgba(99, 102, 241, 0.12) !important;
+    box-shadow: 0 16px 35px -8px rgba(99, 102, 241, 0.2), 0 0 20px rgba(99, 102, 241, 0.12) !important;
 }
 
+/* Light / Day Theme Footer Overrides */
+[data-theme="light"] .footer {
+    background: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .footer h3,
+[data-theme="light"] .footer h4 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .footer p,
+[data-theme="light"] .footer li,
+[data-theme="light"] .footer a {
+    color: #334155 !important;
+}
+
+[data-theme="light"] .footer a:hover {
+    color: var(--primary) !important;
+}
+
+/* Explicit Top Accent Border Preservations for Education Timeline Cards */
+.timeline-item:nth-child(1) .glass-card,
+.timeline-card:nth-child(1) {
+    border-top: 4px solid var(--primary) !important;
+}
+
+.timeline-item:nth-child(2) .glass-card,
+.timeline-card:nth-child(2) {
+    border-top: 4px solid var(--secondary) !important;
+}
+
+.timeline-item:nth-child(3) .glass-card,
+.timeline-card:nth-child(3) {
+    border-top: 4px solid var(--accent) !important;
+}
+
+/* Translucent Glowing Glass Form Controls for Light Mode */
 [data-theme="light"] .form-control, 
 [data-theme="light"] .form-select {
-    background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1.5px solid rgba(99, 102, 241, 0.32) !important;
     color: #0f172a !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08) !important;
 }
 
 [data-theme="light"] .form-control:focus, 
 [data-theme="light"] .form-select:focus {
+    background: rgba(255, 255, 255, 0.95) !important;
     border-color: var(--primary) !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.3), 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
 }
 
 [data-theme="light"] .custom-checkbox {
-    background: #f8fafc !important;
-    border-color: #cbd5e1 !important;
+    background: rgba(255, 255, 255, 0.65) !important;
+    border-color: rgba(99, 102, 241, 0.32) !important;
     color: #0f172a !important;
+}
+
+[data-theme="light"] .section-tag {
+    background: rgba(99, 102, 241, 0.12) !important;
+    border: 1.5px solid rgba(99, 102, 241, 0.35) !important;
+    color: #4f46e5 !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12) !important;
 }
 
 [data-theme="light"] .hero-avatar-img {
     background: #f1f5f9;
 }
 
-/* Special Featured Cards High Contrast Fix */
+/* Special Featured Cards High Contrast Opaque Fix */
 .special-card {
-    border-color: var(--primary) !important;
+    border-color: #ec4899 !important;
 }
 
 [data-theme="dark"] .special-card {
-    background: linear-gradient(145deg, rgba(99, 102, 241, 0.15) 0%, rgba(18, 25, 41, 0.88) 100%) !important;
+    background: #0f1523 !important;
+    border: 2px solid #ec4899 !important;
+    box-shadow: 0 22px 55px -8px rgba(236, 72, 153, 0.4), 0 0 30px rgba(236, 72, 153, 0.25) !important;
 }
 
 [data-theme="light"] .special-card {
-    background: linear-gradient(145deg, rgba(99, 102, 241, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
-    border: 2px solid rgba(99, 102, 241, 0.35) !important;
-    box-shadow: 0 14px 35px -6px rgba(99, 102, 241, 0.15) !important;
+    background: #ffffff !important;
+    border: 2px solid #ec4899 !important;
+    box-shadow: 0 20px 45px -8px rgba(236, 72, 153, 0.3), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
 }
 
 [data-theme="light"] .subject-title,
@@ -147,7 +198,6 @@
 }
 
 html, body {
-    overflow-x: hidden;
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -157,6 +207,11 @@ html, body {
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: clip;
 }
 
 body {
@@ -175,6 +230,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, div, label {
     overflow-wrap: break-word;
     word-wrap: break-word;
     max-width: 100%;
+}
+
+/* Fixed Top Glowing Scroll Progress Indicator Bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, #6366f1 0%, #06b6d4 33%, #10b981 66%, #ec4899 100%);
+    z-index: 10001;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.8), 0 0 24px rgba(236, 72, 153, 0.7);
+    transition: width 0.08s ease-out;
 }
 
 /* Particle Canvas Background */
@@ -436,7 +504,7 @@ a {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-card);
-    transition: var(--trans-normal);
+    transition: var(--trans-spring);
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -444,9 +512,9 @@ a {
 
 .glass-card:hover {
     background: var(--bg-card-hover);
-    border-color: var(--border-glow);
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px -10px rgba(99, 102, 241, 0.2);
+    border-color: var(--primary) !important;
+    transform: translateY(-10px) scale(1.025);
+    box-shadow: 0 20px 45px rgba(99, 102, 241, 0.22), 0 0 25px rgba(99, 102, 241, 0.15) !important;
 }
 
 /* ==========================================================================
@@ -476,9 +544,67 @@ a {
 }
 
 .nav-container {
-    display: flex;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+.mobile-toggle {
+    display: none;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--text-main);
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    font-size: 1.25rem;
+    cursor: pointer;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    transition: var(--trans-fast);
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .mobile-toggle {
+        display: flex !important;
+    }
+}
+
+/* Universal Top Header & Hero Clearance Fix (prevents fixed navbar overlap on ALL pages) */
+.hero,
+.page-banner {
+    margin-top: 85px !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+}
+
+@media (max-width: 991px) {
+    .hero,
+    .page-banner {
+        margin-top: 80px !important;
+        padding-top: 3.25rem !important;
+        padding-bottom: 2.75rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero,
+    .page-banner {
+        margin-top: 75px !important;
+        padding-top: 3rem !important;
+        padding-bottom: 2.25rem !important;
+    }
 }
 
 .brand-logo {
@@ -811,6 +937,200 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-bottom: 3.5rem;
+}
+
+/* ==========================================================================
+   Mobile-Only Sticky Card Stacking Effect Utility & Desktop Grid Setup
+   ========================================================================== */
+@media (max-width: 991px) {
+    .why-us-stack.stack-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto 3.5rem auto;
+    }
+
+    .why-us-stack .stacked-card {
+        position: sticky;
+        top: calc(85px + var(--card-index, 0) * 36px);
+        background: #0f1523 !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: var(--radius-lg);
+        transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease;
+        box-shadow: 0 22px 50px -10px rgba(0, 0, 0, 0.75), 0 0 25px rgba(99, 102, 241, 0.18);
+        will-change: position, top;
+        margin-bottom: 2.75rem;
+        padding: 2.25rem 2rem !important;
+    }
+
+    [data-theme="light"] .why-us-stack .stacked-card {
+        background: #ffffff !important;
+        border-color: rgba(99, 102, 241, 0.25) !important;
+        box-shadow: 0 18px 45px -10px rgba(99, 102, 241, 0.18), 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@media (min-width: 992px) {
+    .why-us-stack {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.75rem;
+        margin-bottom: 3.5rem;
+    }
+    .why-us-stack .why-card {
+        grid-column: span 2;
+    }
+    .why-us-stack .why-card:nth-child(4) {
+        grid-column: span 3;
+    }
+    .why-us-stack .why-card:nth-child(5) {
+        grid-column: span 3;
+    }
+}
+
+.stack-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+.stack-step-badge {
+    font-size: 0.725rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 99px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   Tuition Subjects & Services Grid Layout System (Optimized for PC & Mobile)
+   ========================================================================== */
+.subject-grid-academic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+.subject-grid-skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .subject-grid-academic {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .subject-grid-skills {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .subject-grid-academic,
+    .subject-grid-skills {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+}
+
+/* ==========================================================================
+   Alternating Left/Right/Up Scroll Reveal Animations
+   ========================================================================== */
+.reveal-left {
+    opacity: 0;
+    transform: perspective(1000px) translateX(-80px) rotateY(-8deg) scale(0.96);
+    filter: blur(4px);
+    transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1), transform 1.25s cubic-bezier(0.16, 1, 0.3, 1), filter 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: perspective(1000px) translateX(80px) rotateY(8deg) scale(0.96);
+    filter: blur(4px);
+    transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1), transform 1.25s cubic-bezier(0.16, 1, 0.3, 1), filter 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: perspective(1000px) translateY(80px) rotateX(8deg) scale(0.96);
+    filter: blur(4px);
+    transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1), transform 1.25s cubic-bezier(0.16, 1, 0.3, 1), filter 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-up.revealed {
+    opacity: 1;
+    transform: perspective(1000px) translate(0, 0) rotateX(0deg) rotateY(0deg) scale(1);
+    filter: blur(0);
+}
+
+/* Safe grid container reveal — opacity ONLY, NO transform (transform breaks grid layout) */
+.reveal-grid {
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-grid.revealed {
+    opacity: 1;
+}
+
+/* Staggered Delay for grid items loaded with reveal classes */
+.subject-grid-academic > *:nth-child(1) { transition-delay: 0.05s; }
+.subject-grid-academic > *:nth-child(2) { transition-delay: 0.18s; }
+.subject-grid-academic > *:nth-child(3) { transition-delay: 0.32s; }
+
+.subject-grid-skills > *:nth-child(1) { transition-delay: 0.05s; }
+.subject-grid-skills > *:nth-child(2) { transition-delay: 0.18s; }
+
+.projects-grid > *:nth-child(1) { transition-delay: 0.05s; }
+.projects-grid > *:nth-child(2) { transition-delay: 0.15s; }
+.projects-grid > *:nth-child(3) { transition-delay: 0.25s; }
+.projects-grid > *:nth-child(4) { transition-delay: 0.35s; }
+.projects-grid > *:nth-child(5) { transition-delay: 0.45s; }
+.projects-grid > *:nth-child(6) { transition-delay: 0.55s; }
+
+.upcoming-projects-grid > *:nth-child(1) { transition-delay: 0.05s; }
+.upcoming-projects-grid > *:nth-child(2) { transition-delay: 0.20s; }
+
+.stack-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+.stack-step-badge {
+    font-size: 0.725rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 99px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 992px) {
@@ -1467,11 +1787,11 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .why-us-grid, .subject-grid {
+    .why-us-grid {
         grid-template-columns: 1fr;
     }
 
-    .why-card, .subject-card {
+    .why-card {
         grid-column: auto !important;
     }
 }
@@ -1766,4 +2086,182 @@ a {
         grid-template-columns: 1fr !important;
         gap: 1.25rem !important;
     }
+}
+
+/* ==========================================================================
+   Universal PC/Desktop Grid Rule (Guarantees Side-by-Side PC Display everywhere)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .subject-grid-academic {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+    }
+
+    .subject-grid-skills {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+    }
+
+    /* Reset legacy column spans to prevent vertical stacking */
+    .subject-grid-academic .subject-card,
+    .subject-grid-skills .subject-card {
+        grid-column: auto !important;
+    }
+}
+
+/* ==========================================================================
+   Premium Extensions & Interactive Enhancements
+   ========================================================================== */
+
+/* 1. Animated Nav Link Underline */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--grad-primary);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* 2. Floating Scroll-to-Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--grad-primary);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
+    z-index: 990;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.85);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.65);
+}
+
+/* 3. Sticky Section Progress Dots (Desktop Left Side) */
+.section-progress-dots {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    z-index: 980;
+}
+
+.progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-glow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+[data-theme="light"] .progress-dot {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+.progress-dot.active,
+.progress-dot:hover {
+    background: var(--primary);
+    box-shadow: 0 0 12px var(--primary);
+    transform: scale(1.4);
+}
+
+@media (max-width: 1100px) {
+    .section-progress-dots {
+        display: none !important;
+    }
+}
+
+/* 4. Typewriter Effect Cursor */
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--accent);
+    margin-left: 2px;
+    animation: blink 0.8s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 5. Animated Skill Progress Bars */
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 0.25rem;
+}
+
+[data-theme="light"] .progress-track {
+    background: rgba(99, 102, 241, 0.12);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 6. Card Mouse-Tracking Spotlight Glow */
+.glass-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 7. Section Wave Divider */
+.section-divider-wave {
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.section-divider-wave svg {
+    width: 100%;
+    height: 45px;
 }

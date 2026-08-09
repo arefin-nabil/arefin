@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software & Mobile Apps Portfolio — Nurul Arefin Nabil</title>
     <meta name="description"
         content="Live Play Store Android Apps, Upcoming Software Projects, and GitHub Repositories developed by Nurul Arefin Nabil (B.Sc in CSE).">
@@ -19,10 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 
 <body>
+
+    <!-- Fixed Top Glowing Scroll Progress Indicator Bar -->
+    <div id="scrollProgressBar" class="scroll-progress-bar"></div>
 
     <!-- Interactive Particle Canvas Background -->
     <canvas id="bgCanvas"></canvas>
@@ -116,7 +119,7 @@
                 <h2 style="font-size: 2rem;" data-i18n="pLiveTitle">📱 গুগল প্লে-স্টোরে লাইভ অ্যাপস</h2>
             </div>
 
-            <div class="glass-card special-card"
+            <div class="glass-card special-card reveal-up"
                 style="padding: 2.25rem; margin-bottom: 3.5rem; border-color: var(--primary);">
                 <div class="live-app-grid">
                     <div style="text-align: center;">
@@ -167,7 +170,7 @@
 
                 <div class="upcoming-projects-grid">
                     <!-- Upcoming 1 -->
-                    <div class="glass-card" style="padding: 1.75rem; border-top: 4px solid var(--primary);">
+                    <div class="glass-card reveal-left" style="padding: 1.75rem; border-top: 4px solid var(--primary);">
                         <span
                             style="font-size: 0.75rem; font-weight: 700; background: rgba(99, 102, 241, 0.15); color: var(--primary); padding: 0.2rem 0.65rem; border-radius: 99px;">Education Tech</span>
                         <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pEduTechTitle">Higher Education and Admission Tracking Software</h4>
@@ -177,7 +180,7 @@
                     </div>
 
                     <!-- Upcoming 2 -->
-                    <div class="glass-card" style="padding: 1.75rem; border-top: 4px solid var(--secondary);">
+                    <div class="glass-card reveal-right" style="padding: 1.75rem; border-top: 4px solid var(--secondary);">
                         <span
                             style="font-size: 0.75rem; font-weight: 700; background: rgba(6, 182, 212, 0.15); color: var(--secondary); padding: 0.2rem 0.65rem; border-radius: 99px;">Consumer Tech</span>
                         <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pWarrantyTitle">Warranty Book Mobile Application</h4>
@@ -202,10 +205,53 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Multi-Column Premium Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & Specialist ICT/Coding Educator (বরমী, শ্রীপুর, গাজীপুর) | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">784</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+                <!-- Column 1: Brand Info -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <img src="profile.jpg" alt="Arefin Nabil" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                        <div>
+                            <h3 style="font-size: 1.15rem; margin: 0; color: var(--text-main);">Arefin Nabil</h3>
+                            <span style="font-size: 0.8rem; color: var(--accent);">B.Sc in CSE & ICT Educator</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">কুইক লিংকস</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম পেজ</a></li>
+                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন শিখবেন?</a></li>
+                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔ শিক্ষাগত যোগ্যতা</a></li>
+                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔ টিউশন বিষয়সমূহ</a></li>
+                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT সিলেবাস হাব</a></li>
+                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ প্রজেক্টস</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Summary -->
+                <div>
+                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">সরাসরি যোগাযোগ</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
+                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880 1881-196146</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i> nurularefinnabil@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i> বরমী, শ্রীপুর, গাজীপুর</li>
+                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i> areefin.me</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">--</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            </div>
         </div>
     </footer>
 

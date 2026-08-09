@@ -12,11 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     initLanguageSwitcher();
     initBackgroundParticles();
     initCustomCursor();
-    initScrollReveal();
     initGitHubProjects();
+    initScrollReveal();
     initVisitorCounter();
     initAnimatedStats();
+    initStickyCardStacking();
+    initScrollProgressBar();
     initTuitionModal();
+    initTypewriter();
+    initCardSpotlightHover();
+    initScrollToTopButton();
+    initSectionProgressDots();
 });
 
 /* ==========================================================================
@@ -587,6 +593,33 @@ function runCountUpAnimation() {
 }
 
 /* ==========================================================================
+   4c. Sticky Card Stacking Auto Indexer
+   ========================================================================== */
+function initStickyCardStacking() {
+    const stackWrappers = document.querySelectorAll('.stack-cards-wrapper');
+    stackWrappers.forEach(wrapper => {
+        const cards = wrapper.querySelectorAll('.stacked-card');
+        cards.forEach((card, index) => {
+            card.style.setProperty('--card-index', index);
+        });
+    });
+}
+
+function initScrollProgressBar() {
+    const progressBar = document.getElementById('scrollProgressBar');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (scrollHeight > 0) {
+            const progress = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+    });
+}
+
+/* ==========================================================================
    5. Interactive Particle Canvas Background Engine
    ========================================================================== */
 function initBackgroundParticles() {
@@ -634,7 +667,7 @@ function initBackgroundParticles() {
             const isLight = window.currentTheme === 'light';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = isLight ? 'rgba(99, 102, 241, 0.45)' : 'rgba(99, 102, 241, 0.65)';
+            ctx.fillStyle = isLight ? 'rgba(99, 102, 241, 0.42)' : 'rgba(99, 102, 241, 0.65)';
             ctx.fill();
         }
 
@@ -681,9 +714,9 @@ function initBackgroundParticles() {
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    let alpha = (1 - dist / 115) * 0.22;
-                    ctx.strokeStyle = isLight ? `rgba(99, 102, 241, ${alpha * 0.8})` : `rgba(99, 102, 241, ${alpha})`;
-                    ctx.lineWidth = 0.8;
+                    let alpha = (1 - dist / 115) * 0.24;
+                    ctx.strokeStyle = isLight ? `rgba(99, 102, 241, ${alpha * 0.85})` : `rgba(99, 102, 241, ${alpha})`;
+                    ctx.lineWidth = 0.75;
                     ctx.stroke();
                 }
             }
@@ -742,16 +775,25 @@ function initCustomCursor() {
    7. Scroll Reveal Animation
    ========================================================================== */
 function initScrollReveal() {
-    const revealEls = document.querySelectorAll('.glass-card, .section-header, .stat-item, .contact-item, .timeline-item');
-    revealEls.forEach(el => el.classList.add('reveal'));
+    const revealEls = document.querySelectorAll('.glass-card, .section-header, .stat-item, .contact-item, .timeline-item, .reveal-left, .reveal-right, .reveal-up, .reveal-grid');
+    revealEls.forEach(el => {
+        if (!el.classList.contains('reveal-left') && !el.classList.contains('reveal-right') && !el.classList.contains('reveal-up') && !el.classList.contains('reveal-grid')) {
+            el.classList.add('reveal');
+        }
+    });
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
+                // Unobserve once revealed to eliminate any possibility of layout feedback loops or jumping
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -5% 0px'
+    });
 
     revealEls.forEach(el => observer.observe(el));
 }
@@ -798,7 +840,7 @@ function renderRepos(repos) {
     if (!grid) return;
 
     grid.innerHTML = repos.map(repo => `
-        <div class="glass-card project-card">
+        <div class="glass-card project-card reveal-up">
             <div class="project-top">
                 <div class="project-header-row">
                     <i class="fa-regular fa-folder-open project-folder-icon"></i>
@@ -912,4 +954,130 @@ function initTuitionModal() {
             directContactForm.reset();
         });
     }
+}
+
+/* ==========================================================================
+   13. Hero Dynamic Typewriter Animation
+   ========================================================================== */
+function initTypewriter() {
+    const el = document.getElementById('typewriterText');
+    if (!el) return;
+
+    const roles = [
+        "ICT (আইসিটি) স্পেশালিস্ট প্রাইভেট টিউটর",
+        "B.Sc in CSE Graduate (CGPA 3.70)",
+        "প্র্যাকটিক্যাল কোডিং ও অ্যাপ ডেভেলপার",
+        "বরমী, মাওনা ও শ্রীপুর এলাকার শিক্ষক"
+    ];
+
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let speed = 80;
+
+    function type() {
+        const currentRole = roles[roleIdx];
+
+        if (isDeleting) {
+            el.textContent = currentRole.substring(0, charIdx - 1);
+            charIdx--;
+            speed = 40;
+        } else {
+            el.textContent = currentRole.substring(0, charIdx + 1);
+            charIdx++;
+            speed = 90;
+        }
+
+        if (!isDeleting && charIdx === currentRole.length) {
+            speed = 1800; // Pause at full word
+            isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+            isDeleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+            speed = 400;
+        }
+
+        setTimeout(type, speed);
+    }
+
+    type();
+}
+
+/* ==========================================================================
+   14. Card Mouse-Tracking Spotlight Glow Effect
+   ========================================================================== */
+function initCardSpotlightHover() {
+    const cards = document.querySelectorAll('.glass-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const isLight = window.currentTheme === 'light';
+
+            const glowColor = isLight 
+                ? `radial-gradient(circle at ${x}px ${y}px, rgba(99, 102, 241, 0.18) 0%, rgba(255, 255, 255, 0.78) 70%)`
+                : `radial-gradient(circle at ${x}px ${y}px, rgba(99, 102, 241, 0.22) 0%, rgba(18, 25, 41, 0.75) 70%)`;
+
+            card.style.background = glowColor;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.background = '';
+        });
+    });
+}
+
+/* ==========================================================================
+   15. Floating Scroll-to-Top Button
+   ========================================================================== */
+function initScrollToTopButton() {
+    const btn = document.getElementById('scrollTopBtn');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 280) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/* ==========================================================================
+   16. Sticky Section Progress Dots (Left Side Desktop Indicator)
+   ========================================================================== */
+function initSectionProgressDots() {
+    const dotsContainer = document.getElementById('sectionDots');
+    if (!dotsContainer) return;
+
+    const dots = dotsContainer.querySelectorAll('.progress-dot');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+            if (dot.getAttribute('href') === `#${current}`) {
+                dot.classList.add('active');
+            }
+        });
+    });
 }

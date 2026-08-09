@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICT & Programming Complete Syllabus — Nurul Arefin Nabil</title>
     <meta name="description"
         content="Detailed chapter-by-chapter ICT curriculum breakdown for Class 9-10 (SSC) and Class 11-12 (HSC) taught by Nurul Arefin Nabil in Barmi, Sreepur, Maona & Gazipur.">
@@ -19,10 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 
 <body>
+
+    <!-- Fixed Top Glowing Scroll Progress Indicator Bar -->
+    <div id="scrollProgressBar" class="scroll-progress-bar"></div>
 
     <!-- Interactive Particle Canvas Background -->
     <canvas id="bgCanvas"></canvas>
@@ -113,7 +116,7 @@
         <div class="container">
             <div class="chapter-grid">
                 <!-- Chapter 1 -->
-                <div class="glass-card chapter-card">
+                <div class="glass-card chapter-card reveal-left" style="border-top: 4px solid var(--primary);">
                     <div>
                         <span class="chapter-badge" data-i18n="ch1Badge">১ম অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch1Title">তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ</h3>
@@ -131,7 +134,7 @@
                 </div>
 
                 <!-- Chapter 2 -->
-                <div class="glass-card chapter-card">
+                <div class="glass-card chapter-card reveal-up" style="border-top: 4px solid var(--secondary);">
                     <div>
                         <span class="chapter-badge" style="background: rgba(99, 102, 241, 0.12); color: var(--primary); border-color: rgba(99, 102, 241, 0.3);" data-i18n="ch2Badge">২য় অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch2Title">কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3>
@@ -149,7 +152,7 @@
                 </div>
 
                 <!-- Chapter 3 -->
-                <div class="glass-card chapter-card">
+                <div class="glass-card chapter-card reveal-right" style="border-top: 4px solid var(--amber);">
                     <div>
                         <span class="chapter-badge" style="background: rgba(245, 158, 11, 0.12); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);" data-i18n="ch3Badge">৩য় অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch3Title">সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</h3>
@@ -167,7 +170,7 @@
                 </div>
 
                 <!-- Chapter 4 -->
-                <div class="glass-card chapter-card">
+                <div class="glass-card chapter-card reveal-left" style="border-top: 4px solid var(--accent);">
                     <div>
                         <span class="chapter-badge" style="background: rgba(16, 185, 129, 0.12); color: var(--accent); border-color: rgba(16, 185, 129, 0.3);" data-i18n="ch4Badge">৪র্থ অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch4Title">ওয়েব ডিজাইন পরিচিতি ও HTML</h3>
@@ -185,7 +188,7 @@
                 </div>
 
                 <!-- Chapter 5 -->
-                <div class="glass-card chapter-card special-card">
+                <div class="glass-card chapter-card special-card reveal-up" style="border-top: 4px solid #ec4899;">
                     <div>
                         <span class="chapter-badge" style="background: var(--grad-primary); color: #fff;" data-i18n="ch5Badge">৫ম অধ্যায় — বিশেষ হাইলাইট</span>
                         <h3 class="chapter-title" data-i18n="ch5Title">প্রোগ্রামিং ভাষা (C, C++, Java, Python)</h3>
@@ -203,7 +206,7 @@
                 </div>
 
                 <!-- Chapter 6 -->
-                <div class="glass-card chapter-card">
+                <div class="glass-card chapter-card reveal-right" style="border-top: 4px solid var(--secondary);">
                     <div>
                         <span class="chapter-badge" style="background: rgba(236, 72, 153, 0.12); color: var(--pink); border-color: rgba(236, 72, 153, 0.3);" data-i18n="ch6Badge">৬ষ্ঠ অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch6Title">ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)</h3>
@@ -238,10 +241,53 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Multi-Column Premium Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & Specialist ICT/Coding Educator (বরমী, শ্রীপুর, গাজীপুর) | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">784</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+                <!-- Column 1: Brand Info -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <img src="profile.jpg" alt="Arefin Nabil" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                        <div>
+                            <h3 style="font-size: 1.15rem; margin: 0; color: var(--text-main);">Arefin Nabil</h3>
+                            <span style="font-size: 0.8rem; color: var(--accent);">B.Sc in CSE & ICT Educator</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">কুইক লিংকস</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম পেজ</a></li>
+                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন শিখবেন?</a></li>
+                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔ শিক্ষাগত যোগ্যতা</a></li>
+                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔ টিউশন বিষয়সমূহ</a></li>
+                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT সিলেবাস হাব</a></li>
+                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ প্রজেক্টস</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Summary -->
+                <div>
+                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">সরাসরি যোগাযোগ</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
+                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880 1881-196146</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i> nurularefinnabil@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i> বরমী, শ্রীপুর, গাজীপুর</li>
+                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i> areefin.me</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">--</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            </div>
         </div>
     </footer>
 

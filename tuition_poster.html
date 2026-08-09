@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Flyer Concept — Arefin Nabil</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #4f46e5;     /* Indigo */
+            --secondary: #0891b2;   /* Teal/Cyan */
+            --text-main: #0f172a;   /* Slate 900 */
+            --text-muted: #475569;  /* Slate 600 */
+            --bg-card: #f8fafc;     /* Slate 50 */
+            --border-color: #e2e8f0;/* Slate 200 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Outfit', sans-serif;
+            background-color: #e2e8f0;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        /* A4 Page Container Optimized for View & Print */
+        .flyer-page {
+            background-color: #ffffff;
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm 15mm;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Minimal Design Accents */
+        .flyer-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* Header Area */
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.08);
+            border: 1px dashed var(--primary);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .headline {
+            font-size: 2.35rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .headline span {
+            color: var(--primary);
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Grid Layout for Tuition Offerings */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px auto;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .card-level {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Middle Features / Highlight Section */
+        .features-section {
+            background: rgba(79, 70, 229, 0.03);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+
+        .features-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            list-style: none;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .feature-item i {
+            color: var(--secondary);
+            font-size: 1.05rem;
+            margin-top: 3px;
+        }
+
+        /* Tutor Profile Highlight */
+        .tutor-highlight {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+        }
+
+        .tutor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        .tutor-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .tutor-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Call To Action Footer */
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--text-main);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 20px 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-item i {
+            font-size: 1.15rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-item.wa i { color: #25D366; }
+        .contact-item.web i { color: #06b6d4; }
+        .contact-item.loc i { color: #f59e0b; }
+
+        .qr-code-box {
+            text-align: center;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .qr-code-img {
+            width: 75px;
+            height: 75px;
+            margin-bottom: 4px;
+        }
+
+        .qr-code-text {
+            font-size: 0.65rem;
+            color: var(--text-main);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* Print Settings to Fit Perfectly on A4 Paper */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .flyer-page {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                padding: 15mm 10mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Print-optimized A4 Flyer -->
+    <div class="flyer-page">
+        
+        <!-- Header -->
+        <div class="header">
+            <span class="brand-badge">ICT & ACADEMIC PRIVATE TUITION</span>
+            <h1 class="headline">কোডিং ও আইসিটি-তে<br>গড়ুন <span>নিখুঁত ও সফল প্রস্তুতি</span></h1>
+            <p class="subtitle">৯ম-১০ম ও একাদশ-দ্বাদশ (SSC & HSC) স্পেশাল ব্যাচ</p>
+        </div>
+
+        <!-- Tutor Profile Highlights -->
+        <div class="tutor-highlight">
+            <img src="profile.jpg" alt="Arefin Nabil Profile" class="tutor-avatar">
+            <div class="tutor-info">
+                <h3>নুরুল আরেফিন নাবিল (Arefin Nabil)</h3>
+                <p style="font-weight: 600; color: var(--primary);">B.Sc in Computer Science & Engineering (CSE)</p>
+                <p>আইসিটি ও কোডিং ট্রেইনার | বরমী, শ্রীপুর ও মাওনা অঞ্চলের স্পেশাল একাডেমিক টিউটর</p>
+            </div>
+        </div>
+
+        <!-- Subjects Grid -->
+        <div class="grid-container">
+            <!-- Subject 1 -->
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h4 class="card-title">ICT — আইসিটি</h4>
+                <span class="card-level">SSC & HSC 100% Board Prep</span>
+                <p class="card-desc">C প্রোগ্রামিং, HTML, লজিক গেট, সংখ্যা পদ্ধতি ও ডেটাবেজ ল্যাপটপে টাইপ করে প্র্যাকটিক্যাল শেখানো হয়।</p>
+            </div>
+            
+            <!-- Subject 2 -->
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+                <h4 class="card-title">বিজ্ঞান বিভাগ</h4>
+                <span class="card-level">Class 9-10 (SSC Group)</span>
+                <p class="card-desc">পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিতের মূল থিওরি, গাণিতিক প্রবলেম সলভিং ও সৃজনশীল (CQ) লেকচার শিট।</p>
+            </div>
+
+            <!-- Subject 3 -->
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                <h4 class="card-title">প্রোগ্রামিং ও লজিক</h4>
+                <span class="card-level">C/C++ & Mobile Apps</span>
+                <p class="card-desc">যাঁরা একাডেমিক পড়াশোনার পাশাপাশি রিয়েল-ওয়ার্ল্ড কোডিং ও প্রজেক্ট তৈরি করে ক্যারিয়ার গড়তে আগ্রহী।</p>
+            </div>
+        </div>
+
+        <!-- Key Features/USPs -->
+        <div class="features-section">
+            <h3 class="features-title">✨ কেন আমাদের ব্যাচে ভর্তি হবেন?</h3>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span><strong>ল্যাপটপ প্র্যাকটিক্যাল ক্লাস:</strong> শুধু থিওরি মুখস্থ নয়, সরাসরি কোডিং কোড টাইপ করে শেখানো।</span>
+                </li>
+                <li class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span><strong>পরীক্ষা ও মূল্যায়ন:</strong> প্রতি অধ্যায় শেষে সৃজনশীল ও বহুনির্বাচনী (MCQ) মক টেস্ট গ্রহণ।</span>
+                </li>
+                <li class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span><strong>সীমিত আসন ও বিশেষ যত্ন:</strong> প্রতি ব্যাচে সীমিত স্টুডেন্ট, পিছিয়ে পড়া শিক্ষার্থীদের অতিরিক্ত গাইডলাইন।</span>
+                </li>
+                <li class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span><strong>বিগত বছরের সমাধান:</strong> সকল বোর্ড পরীক্ষার সৃজনশীল প্রশ্ন টাইপ ধরে ধরে সলভ করানো।</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Call To Action Footer -->
+        <div class="footer">
+            <div class="contact-info">
+                <p style="font-size: 0.85rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">যোগাযোগ ও ভর্তির তথ্য</p>
+                <div class="contact-item wa">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>+880 1881-196146 (কল বা মেসেজ)</span>
+                </div>
+                <div class="contact-item loc">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>বরমী বাজার, শ্রীপুর, গাজীপুর</span>
+                </div>
+                <div class="contact-item web">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>areefin.me (অনলাইন রেজিস্ট্রেশন)</span>
+                </div>
+            </div>
+            
+            <!-- Scan QR Box -->
+            <div class="qr-code-box">
+                <!-- Google Chart API for dynamic QR code generation -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://areefin.me" alt="QR Code" class="qr-code-img">
+                <span class="qr-code-text">SCAN TO VISIT</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
