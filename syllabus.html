@@ -2,6 +2,13 @@
 <html lang="bn" data-theme="dark">
 
 <head>
+    <script>
+        // Apply saved theme immediately to prevent flashing on page load
+        (function() {
+            var savedTheme = localStorage.getItem('nabil_portfolio_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICT & Programming Complete Syllabus — Nurul Arefin Nabil</title>
@@ -19,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=1.2">
+    <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 
 <body>
@@ -101,12 +108,14 @@
     <!-- Page Header Banner -->
     <section class="section page-banner">
         <div class="container text-center">
-            <div class="section-tag" style="margin: 0 auto 1rem auto;" data-i18n="sylTag">Complete ICT Course Curriculum</div>
+            <div class="section-tag" style="margin: 0 auto 1rem auto;" data-i18n="sylTag">Complete ICT Course Curriculum
+            </div>
             <h1 class="section-title page-title" data-i18n="sylTitle">
                 ৯ম-১০ম ও HSC <span class="text-gradient">আইসিটি সম্পূর্ণ সিলেবাস</span>
             </h1>
             <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;" data-i18n="sylSub">
-                বোর্ড কারিকুলাম অনুযায়ী প্রতিটি অধ্যায়ের প্র্যাকটিক্যাল লার্নিং, এআই-সহায়ক স্টাডি প্রম্পটিং এবং বিগত সকল বোর্ডের CQ/MCQ সমাধান (বরমী, শ্রীপুর, মাওনা, গাজীপুর)
+                বোর্ড কারিকুলাম অনুযায়ী প্রতিটি অধ্যায়ের প্র্যাকটিক্যাল লার্নিং, এআই-সহায়ক স্টাডি প্রম্পটিং এবং বিগত সকল
+                বোর্ডের CQ/MCQ সমাধান (বরমী, শ্রীপুর, মাওনা, গাজীপুর)
             </p>
         </div>
     </section>
@@ -121,116 +130,182 @@
                         <span class="chapter-badge" data-i18n="ch1Badge">১ম অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch1Title">তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ</h3>
                         <ul class="topic-list">
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch1t1">লেটেস্ট তথ্য প্রযুক্তির আধুনিক ধারণা ও বাস্তব ব্যবহার</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch1t2">বিশ্বগ্রাম (Global Village) ও তথ্য প্রযুক্তির সার্বিক অবদান</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch1t3">আর্টিফিশিয়াল ইন্টেলিজেন্স (AI), প্রম্পট ইঞ্জিনিয়ারিং, VR ও রোবোটিক্স</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch1t4">বায়োমেট্রিক্স, বায়োইনফরমেটিক্স ও ন্যানোটেকনোলজি</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch1t5">ই-লার্নিং, এআই ভিত্তিক স্মার্ট পড়াশোনা ও ফিউচার আইসিটি ক্যারিয়ার</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch1t1">লেটেস্ট তথ্য প্রযুক্তির আধুনিক ধারণা ও বাস্তব ব্যবহার</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch1t2">বিশ্বগ্রাম (Global Village) ও তথ্য প্রযুক্তির সার্বিক অবদান</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch1t3">আর্টিফিশিয়াল ইন্টেলিজেন্স (AI), প্রম্পট ইঞ্জিনিয়ারিং, VR ও
+                                    রোবোটিক্স</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch1t4">বায়োমেট্রিক্স, বায়োইনফরমেটিক্স ও ন্যানোটেকনোলজি</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch1t5">ই-লার্নিং, এআই ভিত্তিক স্মার্ট পড়াশোনা ও ফিউচার আইসিটি
+                                    ক্যারিয়ার</span></li>
                         </ul>
                     </div>
                     <div class="chapter-footer">
-                        <span><i class="fa-solid fa-book-bookmark"></i> <span data-i18n="ch1Foot">থিওরি + প্র্যাকটিক্যাল কনসেপ্ট</span></span>
+                        <span><i class="fa-solid fa-book-bookmark"></i> <span data-i18n="ch1Foot">থিওরি + প্র্যাকটিক্যাল
+                                কনসেপ্ট</span></span>
                     </div>
                 </div>
 
                 <!-- Chapter 2 -->
                 <div class="glass-card chapter-card reveal-up" style="border-top: 4px solid var(--secondary);">
                     <div>
-                        <span class="chapter-badge" style="background: rgba(99, 102, 241, 0.12); color: var(--primary); border-color: rgba(99, 102, 241, 0.3);" data-i18n="ch2Badge">২য় অধ্যায়</span>
+                        <span class="chapter-badge"
+                            style="background: rgba(99, 102, 241, 0.12); color: var(--primary); border-color: rgba(99, 102, 241, 0.3);"
+                            data-i18n="ch2Badge">২য় অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch2Title">কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3>
                         <ul class="topic-list">
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch2t1">ব্যান্ডউইথ, ডাটা ট্রান্সমিশন স্পিড ও সিমপ্লেক্স/ডুপ্লেক্স মেথড</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch2t2">ডাটা কমিউনিকেশন মাধ্যম (Optical Fiber, Microwave, Satellite)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch2t3">ওয়ারলেস নেটওয়ার্ক প্রযুক্তি (Bluetooth, Wi-Fi, WiMAX, Mobile Gen)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch2t4">নেটওয়ার্ক টপোলজি (Star, Ring, Bus, Tree, Mesh & Hybrid)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch2t5">ক্লাউড কম্পিউটিং, হাইব্রিড নেটওয়ার্কিং ও সাইবার সিকিউরিটি</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch2t1">ব্যান্ডউইথ, ডাটা ট্রান্সমিশন স্পিড ও সিমপ্লেক্স/ডুপ্লেক্স
+                                    মেথড</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch2t2">ডাটা
+                                    কমিউনিকেশন মাধ্যম (Optical Fiber, Microwave, Satellite)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch2t3">ওয়ারলেস নেটওয়ার্ক প্রযুক্তি (Bluetooth, Wi-Fi, WiMAX, Mobile
+                                    Gen)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch2t4">নেটওয়ার্ক টপোলজি (Star, Ring, Bus, Tree, Mesh & Hybrid)</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch2t5">ক্লাউড কম্পিউটিং, হাইব্রিড নেটওয়ার্কিং ও সাইবার সিকিউরিটি</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="chapter-footer">
-                        <span><i class="fa-solid fa-network-wired"></i> <span data-i18n="ch2Foot">নেটওয়ার্কিং রিয়েল ডায়াগ্রাম</span></span>
+                        <span><i class="fa-solid fa-network-wired"></i> <span data-i18n="ch2Foot">নেটওয়ার্কিং রিয়েল
+                                ডায়াগ্রাম</span></span>
                     </div>
                 </div>
 
                 <!-- Chapter 3 -->
                 <div class="glass-card chapter-card reveal-right" style="border-top: 4px solid var(--amber);">
                     <div>
-                        <span class="chapter-badge" style="background: rgba(245, 158, 11, 0.12); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);" data-i18n="ch3Badge">৩য় অধ্যায়</span>
+                        <span class="chapter-badge"
+                            style="background: rgba(245, 158, 11, 0.12); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);"
+                            data-i18n="ch3Badge">৩য় অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch3Title">সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</h3>
                         <ul class="topic-list">
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch3t1">সংখ্যা পদ্ধতির ইতিহাস ও প্রকারভেদ (Binary, Octal, Hex, Dec)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch3t2">সংখ্যা পদ্ধতির রূপান্তর এবং ২-এর পরিপূরক (2's Complement)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch3t3">মৌলিক ও সার্বজনীন লজিক গেট (AND, OR, NOT, NAND, NOR, XOR)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch3t4">এনকোডার, ডিকোডার, অ্যাডার, রেজিস্টার ও কাউন্টার সার্কিট</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch3t5">বুলিয়ান অ্যালজেব্রা, ডিমরগানের উপপাদ্য ও লজিক ফাংশন সরলীকরণ</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch3t1">সংখ্যা পদ্ধতির ইতিহাস ও প্রকারভেদ (Binary, Octal, Hex, Dec)</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch3t2">সংখ্যা পদ্ধতির রূপান্তর এবং ২-এর পরিপূরক (2's Complement)</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch3t3">মৌলিক ও সার্বজনীন লজিক গেট (AND, OR, NOT, NAND, NOR, XOR)</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch3t4">এনকোডার, ডিকোডার, অ্যাডার, রেজিস্টার ও কাউন্টার সার্কিট</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch3t5">বুলিয়ান অ্যালজেব্রা, ডিমরগানের উপপাদ্য ও লজিক ফাংশন সরলীকরণ</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="chapter-footer">
-                        <span><i class="fa-solid fa-calculator"></i> <span data-i18n="ch3Foot">গাণিতিক ও লজিক সমাধান</span></span>
+                        <span><i class="fa-solid fa-calculator"></i> <span data-i18n="ch3Foot">গাণিতিক ও লজিক
+                                সমাধান</span></span>
                     </div>
                 </div>
 
                 <!-- Chapter 4 -->
                 <div class="glass-card chapter-card reveal-left" style="border-top: 4px solid var(--accent);">
                     <div>
-                        <span class="chapter-badge" style="background: rgba(16, 185, 129, 0.12); color: var(--accent); border-color: rgba(16, 185, 129, 0.3);" data-i18n="ch4Badge">৪র্থ অধ্যায়</span>
+                        <span class="chapter-badge"
+                            style="background: rgba(16, 185, 129, 0.12); color: var(--accent); border-color: rgba(16, 185, 129, 0.3);"
+                            data-i18n="ch4Badge">৪র্থ অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch4Title">ওয়েব ডিজাইন পরিচিতি ও HTML</h3>
                         <ul class="topic-list">
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t1">ওয়েবসাইটের কাঠামো ও লেআউট (Static vs Dynamic Web)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t2">HTML5 ট্যাগ ব্যবহার করে ওয়েব পেজ তৈরি (Formatting, Hyperlink)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t3">ওয়েব পেজে ছবি (Image), টেবিল (Table) ও ইনপুট ফরম তৈরি</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t4">CSS স্টাইলিং দিয়ে সুন্দর ডিজাইন ও রেসপন্সিভ মোবাইল ভিউ</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t5">ফ্রিতে ওয়েবসাইট লাইভ ডোমেইন ও হোস্টিং পাবলিশিং</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch4t1">ওয়েবসাইটের কাঠামো ও লেআউট (Static vs Dynamic Web)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch4t2">HTML5 ট্যাগ ব্যবহার করে ওয়েব পেজ তৈরি (Formatting,
+                                    Hyperlink)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t3">ওয়েব
+                                    পেজে ছবি (Image), টেবিল (Table) ও ইনপুট ফরম তৈরি</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch4t4">CSS
+                                    স্টাইলিং দিয়ে সুন্দর ডিজাইন ও রেসপন্সিভ মোবাইল ভিউ</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch4t5">ফ্রিতে ওয়েবসাইট লাইভ ডোমেইন ও হোস্টিং পাবলিশিং</span></li>
                         </ul>
                     </div>
                     <div class="chapter-footer">
-                        <span><i class="fa-solid fa-code"></i> <span data-i18n="ch4Foot">লাইভ ওয়েব প্রজেক্ট তৈরি</span></span>
+                        <span><i class="fa-solid fa-code"></i> <span data-i18n="ch4Foot">লাইভ ওয়েব প্রজেক্ট
+                                তৈরি</span></span>
                     </div>
                 </div>
 
                 <!-- Chapter 5 -->
                 <div class="glass-card chapter-card special-card reveal-up" style="border-top: 4px solid #ec4899;">
                     <div>
-                        <span class="chapter-badge" style="background: var(--grad-primary); color: #fff;" data-i18n="ch5Badge">৫ম অধ্যায় — বিশেষ হাইলাইট</span>
+                        <span class="chapter-badge" style="background: var(--grad-primary); color: #fff;"
+                            data-i18n="ch5Badge">৫ম অধ্যায় — বিশেষ হাইলাইট</span>
                         <h3 class="chapter-title" data-i18n="ch5Title">প্রোগ্রামিং ভাষা (C, C++, Java, Python)</h3>
                         <ul class="topic-list">
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch5t1">অ্যালগরিদম ও ফ্লোচার্ট (Flowchart) তৈরি ও প্রবলেম সলভিং লজিক</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch5t2">C প্রোগ্রামিং সম্পূর্ণ: ডাটা টাইপ, ইনপুট/আউটপুট (`printf/scanf`)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch5t3">কন্ডিশনাল স্টেটমেন্ট (`if-else`, `switch`), লুপ (`for`, `while`) ও অ্যারে</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch5t4">ফানশন, পয়েন্টার ও অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch5t5">জাভা, পাইথন ও মোবাইল অ্যাপস (Flutter/Android) বেসিকস</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch5t1">অ্যালগরিদম ও ফ্লোচার্ট (Flowchart) তৈরি ও প্রবলেম সলভিং
+                                    লজিক</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch5t2">C
+                                    প্রোগ্রামিং সম্পূর্ণ: ডাটা টাইপ, ইনপুট/আউটপুট (`printf/scanf`)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch5t3">কন্ডিশনাল স্টেটমেন্ট (`if-else`, `switch`), লুপ (`for`, `while`) ও
+                                    অ্যারে</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch5t4">ফানশন, পয়েন্টার ও অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP)</span>
+                            </li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch5t5">জাভা, পাইথন ও মোবাইল অ্যাপস (Flutter/Android) বেসিকস</span></li>
                         </ul>
                     </div>
                     <div class="chapter-footer">
-                        <span><i class="fa-solid fa-laptop-code"></i> <span data-i18n="ch5Foot">সরাসরি কম্পিউটারে কোডিং প্র্যাকটিস</span></span>
+                        <span><i class="fa-solid fa-laptop-code"></i> <span data-i18n="ch5Foot">সরাসরি কম্পিউটারে কোডিং
+                                প্র্যাকটিস</span></span>
                     </div>
                 </div>
 
                 <!-- Chapter 6 -->
                 <div class="glass-card chapter-card reveal-right" style="border-top: 4px solid var(--secondary);">
                     <div>
-                        <span class="chapter-badge" style="background: rgba(236, 72, 153, 0.12); color: var(--pink); border-color: rgba(236, 72, 153, 0.3);" data-i18n="ch6Badge">৬ষ্ঠ অধ্যায়</span>
+                        <span class="chapter-badge"
+                            style="background: rgba(236, 72, 153, 0.12); color: var(--pink); border-color: rgba(236, 72, 153, 0.3);"
+                            data-i18n="ch6Badge">৬ষ্ঠ অধ্যায়</span>
                         <h3 class="chapter-title" data-i18n="ch6Title">ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)</h3>
                         <ul class="topic-list">
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch6t1">ডেটাবেজের মৌলিক ধারণা, ফিল্ড, রেকর্ড ও রিলেশনশিপ</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch6t2">প্রাইমারি কি, ফরেন কি ও রিলেশনাল ডেটাবেজ (RDBMS)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch6t3">SQL কোয়েরির কাজ (`SELECT`, `INSERT`, `UPDATE`, `DELETE`)</span></li>
-                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch6t4">ডেটা সিকিউরিটি, এনক্রিপশন ও আইটি ইন্ডাস্ট্রিতে ক্যোয়ারির ব্যবহার</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch6t1">ডেটাবেজের মৌলিক ধারণা, ফিল্ড, রেকর্ড ও রিলেশনশিপ</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span
+                                    data-i18n="ch6t2">প্রাইমারি কি, ফরেন কি ও রিলেশনাল ডেটাবেজ (RDBMS)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch6t3">SQL
+                                    কোয়েরির কাজ (`SELECT`, `INSERT`, `UPDATE`, `DELETE`)</span></li>
+                            <li class="topic-item"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ch6t4">ডেটা
+                                    সিকিউরিটি, এনক্রিপশন ও আইটি ইন্ডাস্ট্রিতে ক্যোয়ারির ব্যবহার</span></li>
                         </ul>
                     </div>
                     <div class="chapter-footer">
-                        <span><i class="fa-solid fa-database"></i> <span data-i18n="ch6Foot">SQL ডাটা কোয়েরি সমাধান</span></span>
+                        <span><i class="fa-solid fa-database"></i> <span data-i18n="ch6Foot">SQL ডাটা কোয়েরি
+                                সমাধান</span></span>
                     </div>
                 </div>
             </div>
 
             <!-- Board Questions Banner -->
-            <div class="glass-card" style="margin-top: 3.5rem; padding: 2.5rem; text-align: center; border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);">
-                <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem;" data-i18n="boardBannerTitle">🎯 বিগত সকল বোর্ড পরীক্ষার প্রশ্নপত্র সমাধান</h3>
-                <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto 1.5rem auto;" data-i18n="boardBannerSub">
-                    ঢাকা, চট্টগ্রাম, রাজশাহী, কুমিল্লা, দিনাজপুর, যশোর, সিলেট ও বরিশাল বোর্ডের বিগত সকল বছরের <strong>সৃজনশীল (CQ)</strong> ও <strong>বহুনির্বাচনী (MCQ)</strong> প্রশ্ন টাইপ ধরে ধরে নিখুঁতভাবে সলভ করানো হয়।
+            <div class="glass-card"
+                style="margin-top: 3.5rem; padding: 2.5rem; text-align: center; border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);">
+                <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem;" data-i18n="boardBannerTitle">🎯 বিগত সকল বোর্ড
+                    পরীক্ষার প্রশ্নপত্র সমাধান</h3>
+                <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto 1.5rem auto;"
+                    data-i18n="boardBannerSub">
+                    ঢাকা, চট্টগ্রাম, রাজশাহী, কুমিল্লা, দিনাজপুর, যশোর, সিলেট ও বরিশাল বোর্ডের বিগত সকল বছরের
+                    <strong>সৃজনশীল (CQ)</strong> ও <strong>বহুনির্বাচনী (MCQ)</strong> প্রশ্ন টাইপ ধরে ধরে নিখুঁতভাবে
+                    সলভ করানো হয়।
                 </p>
                 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://wa.me/8801881196146" target="_blank" class="btn btn-accent btn-lg" style="background: #25D366; border-color: #25D366;" data-i18n="boardWaBtn">
+                    <a href="https://wa.me/8801881196146" target="_blank" class="btn btn-accent btn-lg"
+                        style="background: #25D366; border-color: #25D366;" data-i18n="boardWaBtn">
                         <i class="fa-brands fa-whatsapp"></i> সরাসরি হোয়াটসঅ্যাপে মেসেজ দিন
                     </a>
                     <a href="index.html#tuition-apply" class="btn btn-secondary btn-lg" data-i18n="boardFormBtn">
@@ -244,54 +319,77 @@
     <!-- Multi-Column Premium Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
                 <!-- Column 1: Brand Info -->
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                        <img src="profile.jpg" alt="Arefin Nabil" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                        <img src="profile.jpg" alt="Arefin Nabil"
+                            style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
                         <div>
                             <h3 style="font-size: 1.15rem; margin: 0; color: var(--text-main);">Arefin Nabil</h3>
                             <span style="font-size: 0.8rem; color: var(--accent);">B.Sc in CSE & ICT Educator</span>
                         </div>
                     </div>
                     <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
-                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
+                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও
+                        ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
                     </p>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div>
-                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">কুইক লিংকস</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
-                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম পেজ</a></li>
-                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন শিখবেন?</a></li>
-                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔ শিক্ষাগত যোগ্যতা</a></li>
-                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔ টিউশন বিষয়সমূহ</a></li>
-                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT সিলেবাস হাব</a></li>
-                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ প্রজেক্টস</a></li>
+                    <h4
+                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">
+                        কুইক লিংকস</h4>
+                    <ul
+                        style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম
+                                পেজ</a></li>
+                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন
+                                শিখবেন?</a></li>
+                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔
+                                শিক্ষাগত যোগ্যতা</a></li>
+                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔
+                                টিউশন বিষয়সমূহ</a></li>
+                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT
+                                সিলেবাস হাব</a></li>
+                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ
+                                প্রজেক্টস</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contact Summary -->
                 <div>
-                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">সরাসরি যোগাযোগ</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
-                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880 1881-196146</li>
-                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i> nurularefinnabil@gmail.com</li>
-                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i> বরমী, শ্রীপুর, গাজীপুর</li>
-                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i> areefin.me</li>
+                    <h4
+                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">
+                        সরাসরি যোগাযোগ</h4>
+                    <ul
+                        style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
+                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880
+                            1881-196146</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i>
+                            nurularefinnabil@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i>
+                            বরমী, শ্রীপুর, গাজীপুর</li>
+                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i>
+                            areefin.me</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Copyright Bar -->
-            <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
-                <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">--</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            <div
+                style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye"
+                        style="color: var(--secondary); margin-left: 5px;"></i> <span
+                        class="visitor-count-number">--</span> মোট ওয়েবসাইট ভিজিটর</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="app.js"></script>
+    <script src="app.js?v=1.8"></script>
 </body>
+
 </html>

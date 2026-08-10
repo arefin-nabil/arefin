@@ -2,6 +2,13 @@
 <html lang="bn" data-theme="dark">
 
 <head>
+    <script>
+        // Apply saved theme immediately to prevent flashing on page load
+        (function() {
+            var savedTheme = localStorage.getItem('nabil_portfolio_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software & Mobile Apps Portfolio — Nurul Arefin Nabil</title>
@@ -19,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=1.2">
+    <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 
 <body>
@@ -101,12 +108,14 @@
     <!-- Page Header Banner -->
     <section class="section page-banner">
         <div class="container text-center">
-            <div class="section-tag" style="margin: 0 auto 1rem auto;" data-i18n="projTag">Software & Mobile App Showcase</div>
+            <div class="section-tag" style="margin: 0 auto 1rem auto;" data-i18n="projTag">Software & Mobile App
+                Showcase</div>
             <h1 class="section-title page-title" data-i18n="projTitle">
                 লাইভ অ্যাপস ও <span class="text-gradient">প্রজেক্ট পোর্টফোলিও</span>
             </h1>
             <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;" data-i18n="projSub">
-                গুগল প্লে-স্টোরে প্রকাশিত লাইভ অ্যান্ড্রয়েড অ্যাপ্লিকেশন, আপকামিং সফটওয়্যার ও ওপেন সোর্স গিটহাব সোর্স কোড।
+                গুগল প্লে-স্টোরে প্রকাশিত লাইভ অ্যান্ড্রয়েড অ্যাপ্লিকেশন, আপকামিং সফটওয়্যার ও ওপেন সোর্স গিটহাব সোর্স
+                কোড।
             </p>
         </div>
     </section>
@@ -115,7 +124,8 @@
     <section class="section" style="padding-top: 1rem; padding-bottom: 4rem;">
         <div class="container">
             <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
-                <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);" data-i18n="pLiveTag">Live Mobile App</span>
+                <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);"
+                    data-i18n="pLiveTag">Live Mobile App</span>
                 <h2 style="font-size: 2rem;" data-i18n="pLiveTitle">📱 গুগল প্লে-স্টোরে লাইভ অ্যাপস</h2>
             </div>
 
@@ -139,20 +149,25 @@
                                     style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Flutter</span>
                                 <span class="skill-chip"
                                     style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Dart</span>
-                                <span class="skill-chip" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Vercel Web API</span>
+                                <span class="skill-chip" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Vercel Web
+                                    API</span>
                             </div>
                         </div>
 
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.75rem 0 1.25rem 0;" data-i18n="pSnakeAppDesc">
-                            বাংলাদেশ বন্যপ্রাণী ও বিষধর সাপ প্রতিরোধ, উদ্ধার কাজ পরিচালনা এবং সাধারণ মানুষের মধ্যে তাৎক্ষণিক সচেতনতা তৈরির লক্ষ্যে প্রস্তুতকৃত গুগলে প্রকাশিত অফিসিয়াল মোবাইল অ্যাপ্লিকেশন।
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.75rem 0 1.25rem 0;"
+                            data-i18n="pSnakeAppDesc">
+                            বাংলাদেশ বন্যপ্রাণী ও বিষধর সাপ প্রতিরোধ, উদ্ধার কাজ পরিচালনা এবং সাধারণ মানুষের মধ্যে
+                            তাৎক্ষণিক সচেতনতা তৈরির লক্ষ্যে প্রস্তুতকৃত গুগলে প্রকাশিত অফিসিয়াল মোবাইল অ্যাপ্লিকেশন।
                         </p>
 
                         <div style="display: flex; gap: 1rem; flex-wrap: wrap;" class="skill-chip-container">
                             <a href="https://play.google.com/store/apps/details?id=bd.snake.app" target="_blank"
-                                class="btn btn-accent" style="background: #01875f; border-color: #01875f;" data-i18n="pSnakePlayBtn">
+                                class="btn btn-accent" style="background: #01875f; border-color: #01875f;"
+                                data-i18n="pSnakePlayBtn">
                                 <i class="fa-brands fa-google-play"></i> প্লে-স্টোরে অ্যাপটি দেখুন ➔
                             </a>
-                            <a href="https://snakeappbd.vercel.app/" target="_blank" class="btn btn-secondary" data-i18n="pSnakeWebBtn">
+                            <a href="https://snakeappbd.vercel.app/" target="_blank" class="btn btn-secondary"
+                                data-i18n="pSnakeWebBtn">
                                 <i class="fa-solid fa-globe"></i> অ্যাপের ওয়েবসাইট দেখুন
                             </a>
                         </div>
@@ -163,29 +178,38 @@
             <!-- Section 2: Upcoming Projects -->
             <div style="margin-bottom: 3.5rem;">
                 <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
-                    <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);" data-i18n="pUpTag">In Development</span>
+                    <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);"
+                        data-i18n="pUpTag">In Development</span>
                     <h2 style="font-size: 2rem;" data-i18n="pUpTitle">🚀 আপকামিং প্রজেক্টসমূহ (Upcoming Projects)</h2>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="pUpSub">বর্তমানে যেসব উচ্চতর সফটওয়্যার ও প্রজেক্টের কাজ চলছে</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="pUpSub">বর্তমানে যেসব উচ্চতর
+                        সফটওয়্যার ও প্রজেক্টের কাজ চলছে</p>
                 </div>
 
                 <div class="upcoming-projects-grid">
                     <!-- Upcoming 1 -->
                     <div class="glass-card reveal-left" style="padding: 1.75rem; border-top: 4px solid var(--primary);">
                         <span
-                            style="font-size: 0.75rem; font-weight: 700; background: rgba(99, 102, 241, 0.15); color: var(--primary); padding: 0.2rem 0.65rem; border-radius: 99px;">Education Tech</span>
-                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pEduTechTitle">Higher Education and Admission Tracking Software</h4>
+                            style="font-size: 0.75rem; font-weight: 700; background: rgba(99, 102, 241, 0.15); color: var(--primary); padding: 0.2rem 0.65rem; border-radius: 99px;">Education
+                            Tech</span>
+                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pEduTechTitle">Higher
+                            Education and Admission Tracking Software</h4>
                         <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="pEduTechDesc">
-                            উচ্চশিক্ষা, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা, এডমিশন ট্র্যাকিং ও শিক্ষার্থীদের গাইডলাইন প্রদানের জন্য একটি ডিজিটাল ইন্টেলিজেন্ট সফটওয়্যার প্ল্যাটফর্ম।
+                            উচ্চশিক্ষা, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা, এডমিশন ট্র্যাকিং ও শিক্ষার্থীদের গাইডলাইন প্রদানের
+                            জন্য একটি ডিজিটাল ইন্টেলিজেন্ট সফটওয়্যার প্ল্যাটফর্ম।
                         </p>
                     </div>
 
                     <!-- Upcoming 2 -->
-                    <div class="glass-card reveal-right" style="padding: 1.75rem; border-top: 4px solid var(--secondary);">
+                    <div class="glass-card reveal-right"
+                        style="padding: 1.75rem; border-top: 4px solid var(--secondary);">
                         <span
-                            style="font-size: 0.75rem; font-weight: 700; background: rgba(6, 182, 212, 0.15); color: var(--secondary); padding: 0.2rem 0.65rem; border-radius: 99px;">Consumer Tech</span>
-                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pWarrantyTitle">Warranty Book Mobile Application</h4>
+                            style="font-size: 0.75rem; font-weight: 700; background: rgba(6, 182, 212, 0.15); color: var(--secondary); padding: 0.2rem 0.65rem; border-radius: 99px;">Consumer
+                            Tech</span>
+                        <h4 style="font-size: 1.35rem; margin: 0.6rem 0 0.4rem 0;" data-i18n="pWarrantyTitle">Warranty
+                            Book Mobile Application</h4>
                         <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="pWarrantyDesc">
-                            প্রোডাক্ট ও যেকোনো ডিভাইসের ওয়ারেন্টি স্লিপ ট্র্যাকিং, এক্সপায়ারি নোটিফিকেশন ও ডিজিটাল কাস্টমার সাপোর্ট রেকর্ড ম্যানেজমেন্ট অ্যাপ।
+                            প্রোডাক্ট ও যেকোনো ডিভাইসের ওয়ারেন্টি স্লিপ ট্র্যাকিং, এক্সপায়ারি নোটিফিকেশন ও ডিজিটাল
+                            কাস্টমার সাপোর্ট রেকর্ড ম্যানেজমেন্ট অ্যাপ।
                         </p>
                     </div>
                 </div>
@@ -208,55 +232,77 @@
     <!-- Multi-Column Premium Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
                 <!-- Column 1: Brand Info -->
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                        <img src="profile.jpg" alt="Arefin Nabil" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                        <img src="profile.jpg" alt="Arefin Nabil"
+                            style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
                         <div>
                             <h3 style="font-size: 1.15rem; margin: 0; color: var(--text-main);">Arefin Nabil</h3>
                             <span style="font-size: 0.8rem; color: var(--accent);">B.Sc in CSE & ICT Educator</span>
                         </div>
                     </div>
                     <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
-                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
+                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও
+                        ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
                     </p>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div>
-                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">কুইক লিংকস</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
-                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম পেজ</a></li>
-                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন শিখবেন?</a></li>
-                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔ শিক্ষাগত যোগ্যতা</a></li>
-                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔ টিউশন বিষয়সমূহ</a></li>
-                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT সিলেবাস হাব</a></li>
-                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ প্রজেক্টস</a></li>
+                    <h4
+                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">
+                        কুইক লিংকস</h4>
+                    <ul
+                        style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম
+                                পেজ</a></li>
+                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন
+                                শিখবেন?</a></li>
+                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔
+                                শিক্ষাগত যোগ্যতা</a></li>
+                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔
+                                টিউশন বিষয়সমূহ</a></li>
+                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT
+                                সিলেবাস হাব</a></li>
+                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ
+                                প্রজেক্টস</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contact Summary -->
                 <div>
-                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">সরাসরি যোগাযোগ</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
-                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880 1881-196146</li>
-                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i> nurularefinnabil@gmail.com</li>
-                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i> বরমী, শ্রীপুর, গাজীপুর</li>
-                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i> areefin.me</li>
+                    <h4
+                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">
+                        সরাসরি যোগাযোগ</h4>
+                    <ul
+                        style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
+                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880
+                            1881-196146</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i>
+                            nurularefinnabil@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i>
+                            বরমী, শ্রীপুর, গাজীপুর</li>
+                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i>
+                            areefin.me</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Copyright Bar -->
-            <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
-                <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye" style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">--</span>+ মোট ওয়েবসাইট ভিজিটর</p>
+            <div
+                style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye"
+                        style="color: var(--secondary); margin-left: 5px;"></i> <span
+                        class="visitor-count-number">--</span> মোট ওয়েবসাইট ভিজিটর</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="app.js"></script>
+    <script src="app.js?v=1.8"></script>
 </body>
 
 </html>
