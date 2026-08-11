@@ -4,7 +4,7 @@
 <head>
     <script>
         // Apply saved theme immediately to prevent flashing on page load
-        (function() {
+        (function () {
             var savedTheme = localStorage.getItem('nabil_portfolio_theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();
@@ -93,11 +93,11 @@
 
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html#home" class="nav-link active" data-i18n="navHome">হোম</a>
+                <a href="index.html#welcome-portal" class="nav-link" data-i18n="navAudience">ছাত্র ও অভিভাবক</a>
                 <a href="index.html#why-me" class="nav-link" data-i18n="navWhy">কেন শিখবেন?</a>
-                <a href="index.html#education" class="nav-link" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
                 <a href="index.html#tuition" class="nav-link" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
                 <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">ICT সিলেবাস</a>
-                <a href="projects.html" class="nav-link" data-i18n="navProjects">প্রজেক্ট</a>
+                <a href="index.html#testimonials" class="nav-link" data-i18n="navReviews">মতামত ও রেজাল্ট</a>
                 <a href="index.html#contact" class="nav-link" data-i18n="navContact">যোগাযোগ</a>
 
                 <!-- Mobile Menu Quick Settings Bar -->
@@ -111,8 +111,8 @@
                 </div>
 
                 <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal mobile-menu-whatsapp"
-                    style="background: #25D366; border-color: #25D366;" data-i18n="navTalkBtn">
-                    <i class="fa-brands fa-whatsapp"></i> কথা বলুন
+                    style="background: #10b981; border-color: #10b981;" data-i18n="navTalkBtn">
+                    <i class="fa-solid fa-gift"></i> ফ্রি ডেমো বুক করুন
                 </a>
             </nav>
 
@@ -128,8 +128,8 @@
                 </button>
 
                 <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal nav-whatsapp-btn"
-                    style="background: #25D366; border-color: #25D366;" data-i18n="navTalkBtn">
-                    <i class="fa-brands fa-whatsapp"></i> কথা বলুন
+                    style="background: #10b981; border-color: #10b981;" data-i18n="navTalkBtn">
+                    <i class="fa-solid fa-gift"></i> ফ্রি ডেমো বুক করুন
                 </a>
 
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
@@ -140,44 +140,41 @@
     </header>
 
     <!-- ==========================================================================
-         Hero Section — Profile & Academic Focus
+         Hero Section — Student & Parent Attracting Focus
          ========================================================================== -->
     <section class="hero" id="home">
         <div class="container hero-grid">
             <div class="hero-content">
-                <div class="status-badge">
+                <div class="status-badge pulse-badge">
                     <span class="status-dot"></span>
-                    <span data-i18n="statusBadge">বরমী, মাওনা ও শ্রীপুরে ICT (আইসিটি) স্পেশালিস্ট টিউশন চালু আছে</span>
+                    <span data-i18n="statusBadge">🔥 ফ্রি ১-অন-১ ডেমো ক্লাস চলছে | বরমী, মাওনা ও শ্রীপুরে নতুন ব্যাচে ভর্তি চালু!</span>
                 </div>
 
                 <h1 class="hero-title" data-i18n="heroTitle">
-                    হাই, আমি <span class="text-gradient">নূরুল আরেফিন নাবিল</span>
+                    তোমার <span class="text-gradient">ICT ও ইংরেজিতে A+</span> নিশ্চিত করার প্রস্তুতি শুরু হোক আজ থেকে!
                 </h1>
                 <div class="hero-focus-tag"
                     style="margin-top: -0.25rem; margin-bottom: 1.15rem; font-size: 1.2rem; font-weight: 700; color: var(--accent);">
-                    <i class="fa-solid fa-code"></i> <span id="typewriterText">ICT (আইসিটি) স্পেশালিস্ট প্রাইভেট
-                        টিউটর</span><span class="typewriter-cursor">|</span>
+                    <i class="fa-solid fa-bolt"></i> <span id="typewriterText">ICT (আইসিটি) স্পেশালিস্ট প্রাইভেট টিউটর</span><span class="typewriter-cursor">|</span>
                 </div>
 
                 <p class="hero-description" data-i18n="heroDesc">
-                    আমি একজন <strong>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (B.Sc in CSE) গ্র্যাজুয়েট</strong>। আমার মূল
-                    অগ্রাধিকার হল ৯ম-১০ম (SSC) ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের <strong>ICT (আইসিটি)</strong> বিষয়ে
-                    প্র্যাকটিক্যাল কোডিং ও ১০০% এ+ উপযোগী প্রস্তুতি প্রদান করা। পাশাপাশি বরমী, মাওনা ও শ্রীপুর এলাকায়
-                    <strong>বাংলা, ইংরেজি ও বিজ্ঞান বিষয়সমূহ (পদার্থ, রসায়ন, গণিত)</strong>-এর বিশেষ প্রাইভেট টিচিং
-                    দেওয়া হয়।
+                    আমি <strong>নূরুল আরেফিন নাবিল (B.Sc in CSE)</strong>। আমি প্রধানত ৯ম-১০ম ও একাদশ-দ্বাদশ (SSC & HSC) শ্রেণির <strong>ICT (আইসিটি)</strong> এবং ৯ম-১০ম শ্রেণির <strong>ইংরেজি</strong> পড়াই। এছাড়া <strong>৭ম থেকে ১০ম শ্রেণি পর্যন্ত গণিত ও বিজ্ঞান সহ সকল বিষয়</strong> অন্ধের মতো মুখস্থ নয়: ল্যাপটপে প্র্যাকটিক্যালি কোডিং, স্লাইডভিত্তিক পড়া ও সহজ টেকনিকে শিক্ষার্থীদের ১০০% পারফেক্ট প্রস্তুতি নিতে সাহায্য করি।
                 </p>
 
                 <div class="hero-cta">
-                    <button class="btn btn-accent btn-lg open-tuition-modal"
-                        style="background: #25D366; border-color: #25D366;" data-i18n="heroBtnTalk">
-                        <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে কথা বলুন</button>
+                    <a href="index.html#tuition-apply" class="btn btn-accent btn-lg open-tuition-modal"
+                        style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #10b981; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);"
+                        data-i18n="heroBtnTalk">
+                        <i class="fa-solid fa-gift"></i> ফ্রি ডেমো ক্লাস বুক করুন
+                    </a>
                     <a href="syllabus.html" class="btn btn-secondary btn-lg" data-i18n="heroBtnSyllabus">
-                        <i class="fa-solid fa-book-open"></i> SSC ও HSC সিলেবাস পেজ ➔
+                        <i class="fa-solid fa-book-open"></i> SSC ও HSC ICT সিলেবাস ➔
                     </a>
                     <a href="https://wa.me/8801881196146?text=Hi%20Nabil%20Sir,%20I%20want%20to%20know%20more%20about%20your%20tuition."
-                        target="_blank" class="btn btn-outline btn-lg"
-                        style="border: 1.5px solid var(--border-glow); color: var(--text-main);">
-                        <i class="fa-solid fa-file-arrow-down"></i> প্রোফাইল বিবরণী (CV)
+                        target="_blank" class="btn btn-outline btn-lg btn-whatsapp"
+                        style="border: 1.5px solid #25D366; color: #25D366; background: rgba(37, 211, 102, 0.1);" data-i18n="heroBtnWa">
+                        <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে মেসেজ
                     </a>
                 </div>
 
@@ -218,24 +215,133 @@
 
                 <!-- Floating Badges -->
                 <div class="floating-badge badge-top">
-                    <div class="badge-icon" style="color: #6366f1;">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="badge-icon" style="color: #10b981;">
+                        <i class="fa-solid fa-award"></i>
                     </div>
                     <div>
-                        <div class="badge-text-title">B.Sc in CSE</div>
-                        <div class="badge-text-sub" data-i18n="badgeBscSub">কম্পিউটার সায়েন্স গ্র্যাজুয়েট</div>
+                        <div class="badge-text-title">১০০% এ+ গ্যারান্টি পদ্ধতি</div>
+                        <div class="badge-text-sub" data-i18n="badgeBscSub">বোর্ড পরীক্ষার জন্য স্পেশাল প্রস্তুতি</div>
                     </div>
                 </div>
 
                 <div class="floating-badge badge-bottom">
-                    <div class="badge-icon" style="color: #10b981;">
+                    <div class="badge-icon" style="color: #6366f1;">
                         <i class="fa-solid fa-laptop-code"></i>
                     </div>
                     <div>
-                        <div class="badge-text-title">Specialist ICT Tutor</div>
-                        <div class="badge-text-sub" data-i18n="badgeIctSub">প্র্যাকটিক্যাল কোডিং ও বোর্ড প্রস্তুতি</div>
+                        <div class="badge-text-title">প্র্যাকটিক্যাল ল্যাপটপ ল্যাব</div>
+                        <div class="badge-text-sub" data-i18n="badgeIctSub">কোডিং ও লজিক স্ক্রীনে প্র্যাকটিস</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Dual Audience Portal — Students & Parents Direct Welcome Cards
+         ========================================================================== -->
+    <section class="section audience-portal-section" id="welcome-portal">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="welcomeTag">
+                    🎯 বিশেষ স্বাগতম
+                </span>
+                <h2 class="section-title" data-i18n="welcomeTitle">পড়াশোনাকে আর কঠিন মনে হবে না: <span class="text-gradient">আমি আছি তোমার সাথে</span></h2>
+                <p class="section-subtitle" data-i18n="welcomeSubtitle">শিক্ষার্থী ও অভিভাবক উভয়ের আস্থা অর্জনই আমার মূল লক্ষ্য</p>
+            </div>
+
+            <div class="audience-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2.5rem;">
+
+                <!-- Student Card -->
+                <div class="glass-card audience-card student-welcome-card reveal-left"
+                    style="padding: 2.25rem; border-top: 5px solid #06b6d4; background: linear-gradient(145deg, rgba(6, 182, 212, 0.08) 0%, rgba(99, 102, 241, 0.03) 100%);">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+                        <div
+                            style="width: 54px; height: 54px; border-radius: 16px; background: rgba(6, 182, 212, 0.18); color: #06b6d4; display: flex; align-items: center; justify-content: center; font-size: 1.6rem;">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <span style="background: rgba(6, 182, 212, 0.15); color: #06b6d4; padding: 0.35rem 0.85rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem;" data-i18n="studentBadge">
+                            👨‍🎓 শিক্ষার্থীদের জন্য
+                        </span>
+                    </div>
+
+                    <h3 style="font-size: 1.4rem; color: var(--text-main); margin-bottom: 0.75rem;" data-i18n="studentTitle">
+                        ICT, C-প্রোগ্রামিং, ইংরেজি বা সায়েন্সের ভয়? আর নয়!
+                    </h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;" data-i18n="studentDesc">
+                        পড়া মুখস্থ করতে পারছ না? C প্রোগ্রামিংয়ের লজিক বা HTML ও ইংরেজি গ্রামার বুঝতে পারছ না? আমি তোমাকে ল্যাপটপে সরাসরি কোড রান করে, স্লাইডভিত্তিক পড়াশোনা ও সহজ টেকনিকে প্রতিটি টপিক এমনভাবে বুঝিয়ে দেব যেন পরীক্ষায় ১০০% উত্তর করতে পারো।
+                    </p>
+
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-main);">
+                            <i class="fa-solid fa-circle-check" style="color: #06b6d4;"></i>
+                            <span data-i18n="studentPt1">ল্যাপটপে প্র্যাকটিক্যাল কোডিং ও লাইভ আউটপুট</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-main);">
+                            <i class="fa-solid fa-circle-check" style="color: #06b6d4;"></i>
+                            <span data-i18n="studentPt2">৯ম-১০ম ইংরেজি ১ম ও ২য় পত্রের সহজ গ্রামার ও প্যাসেজ টেকনিক</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-main);">
+                            <i class="fa-solid fa-circle-check" style="color: #06b6d4;"></i>
+                            <span data-i18n="studentPt3">৭ম-১০ম গণিত ও বিজ্ঞানের প্র্যাকটিক্যাল থিওরি ও কাস্টম নোটস</span>
+                        </li>
+                    </ul>
+
+                    <a href="index.html#tuition-apply" class="btn btn-secondary open-tuition-modal"
+                        style="width: 100%; text-align: center; border-color: #06b6d4; color: #06b6d4;" data-i18n="studentCta">
+                        <i class="fa-solid fa-rocket"></i> ডেমো ক্লাসে জয়েন করো ➔
+                    </a>
+                </div>
+
+                <!-- Parent Card -->
+                <div class="glass-card audience-card parent-welcome-card reveal-right"
+                    style="padding: 2.25rem; border-top: 5px solid #10b981; background: linear-gradient(145deg, rgba(16, 185, 129, 0.08) 0%, rgba(245, 158, 11, 0.03) 100%);">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+                        <div
+                            style="width: 54px; height: 54px; border-radius: 16px; background: rgba(16, 185, 129, 0.18); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.6rem;">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 0.35rem 0.85rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem;" data-i18n="parentBadge">
+                            👨‍👩‍👧 অভিভাবকদের জন্য ১০০% আস্থার পরিবেশ
+                        </span>
+                    </div>
+
+                    <h3 style="font-size: 1.4rem; color: var(--text-main); margin-bottom: 0.75rem;" data-i18n="parentTitle">
+                        আপনার সন্তানের পড়ালেখা ও ভালো ফলাফলের নির্ভরযোগ্য অভিভাবকত্ব
+                    </h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;" data-i18n="parentDesc">
+                        অভিভাবক হিসেবে আপনি চান আপনার সন্তান নিয়ম মেনে পড়ুক এবং ভালো রেজাল্ট করুক। CSE গ্র্যাজুয়েট হিসেবে আমি শুধু শিক্ষক নই, একজন অভিজ্ঞ মেন্টর হিসেবে আপনার সন্তানের পড়ালেখার অগ্রগতি ও নিয়মানুবর্তিতা পর্যবেক্ষণ নিশ্চিত করি।
+                    </p>
+
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-main);">
+                            <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+                            <span data-i18n="parentPt1">সাপ্তাহিক উপস্থিতি, পড়ালেখা ও ফলাফলের সরাসরি হোয়াটসঅ্যাপ আপডেট</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-main);">
+                            <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+                            <span data-i18n="parentPt2">দুর্বল বিষয়গুলোতে ১-অন-১ বিশেষ যত্ন ও রিভিশন ক্লাস</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-main);">
+                            <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+                            <span data-i18n="parentPt3">পড়ালেখার শৃঙ্খলিত রুটিন ও পরীক্ষার সলিউশন শিট</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/8801881196146?text=আসসালামু%20আলাইকুম%20নাবিল%20স্যার,%20আমার%20সন্তানের%20পড়াশোনা%20নিয়ে%20কথা%20বলতে%20চাই।"
+                        target="_blank" class="btn btn-accent btn-whatsapp"
+                        style="width: 100%; text-align: center; background: #10b981; border-color: #10b981;" data-i18n="parentCta">
+                        <i class="fa-brands fa-whatsapp"></i> অভিভাবক হিসেবে কথা বলুন
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
             </div>
         </div>
     </section>
@@ -417,8 +523,7 @@
             <div style="margin-bottom: 2rem;">
                 <h3
                     style="font-size: 1.35rem; display: flex; align-items: center; gap: 0.6rem; color: var(--accent); margin-bottom: 1.25rem;">
-                    <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="catAcademicTitle">একাডেমিক টিউশন (মূল
-                        প্রায়োরিটি)</span>
+                    <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="catAcademicTitle">একাডেমিক টিউশন</span>
                 </h3>
 
                 <div class="subject-grid-academic reveal-grid">
@@ -448,11 +553,11 @@
                         </div>
                         <div
                             style="margin-top: 1.25rem; color: var(--accent); font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
-                            <span data-i18n="cardViewSyllabusBtn">সম্পূর্ণ আইসিটি সিলেবাস পেজ দেখুন ➔</span>
+                            <span data-i18n="cardViewSyllabusBtn">সম্পূর্ণ আইসিটি সিলেবাস দেখুন ➔</span>
                         </div>
                     </a>
 
-                    <!-- Subject 2: Bangla & English -->
+                    <!-- Subject 2: Class 9-10 English Special -->
                     <div class="glass-card subject-card" style="border-top: 4px solid var(--primary);">
                         <div>
                             <div class="subject-icon"
@@ -460,30 +565,30 @@
                                 <i class="fa-solid fa-language"></i>
                             </div>
                             <span class="subject-tag-badge"
-                                style="background: var(--grad-primary); color: #fff;">Grammar & Literature</span>
-                            <h3 class="subject-title">বাংলা ও ইংরেজি (Bangla & English)</h3>
-                            <span class="subject-level">Class 9-10 & HSC General Curriculum</span>
-                            <p class="subject-desc" data-i18n="subjBanglaDesc">
-                                ব্যাকরণ, গ্রামার, ফ্রি রাইটিং, রিডিং কমপ্রিহেনশন এবং সাহিত্য অংশের পূর্ণাঙ্গ ক্লাস ও
-                                নিয়মিত হোমওয়ার্ক চেকিং।
+                                style="background: var(--grad-primary); color: #fff;">Special Focus</span>
+                            <h3 class="subject-title">৯ম-১০ম শ্রেণি ইংরেজি (Class 9-10 English)</h3>
+                            <span class="subject-level">SSC English 1st & 2nd Paper Board Preparation</span>
+                            <p class="subject-desc" data-i18n="subjEngDesc">
+                                Grammatical Rules, Right Forms of Verbs, Tag Questions, Composition & Passage Solving-এর
+                                সহজ শর্টকাট টেকনিক ও নিয়মিত হোমওয়ার্ক চেকিং।
                             </p>
                         </div>
                     </div>
 
-                    <!-- Subject 3: Science Subjects -->
+                    <!-- Subject 3: Class 7-10 Math, Science & All Subjects -->
                     <div class="glass-card subject-card" style="border-top: 4px solid var(--amber);">
                         <div>
                             <div class="subject-icon"
                                 style="background: rgba(245, 158, 11, 0.15); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);">
                                 <i class="fa-solid fa-flask"></i>
                             </div>
-                            <span class="subject-tag-badge" style="background: var(--grad-warm); color: #fff;">Science
-                                Group Special</span>
-                            <h3 class="subject-title">বিজ্ঞান বিষয়সমূহ (Science Group)</h3>
-                            <span class="subject-level">Physics, Chemistry, Higher Math & General Science</span>
+                            <span class="subject-tag-badge" style="background: var(--grad-warm); color: #fff;">Class 7
+                                to 10</span>
+                            <h3 class="subject-title">গণিত, বিজ্ঞান ও সকল বিষয় (Class 7-10)</h3>
+                            <span class="subject-level">Math, Physics, Chemistry, Biology & All Subjects</span>
                             <p class="subject-desc" data-i18n="subjScienceDesc">
-                                পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিতের মূল থিওরি, গাণিতিক প্রবলেম সলভিং এবং CQ গাণিতিক
-                                কনসেপ্ট ক্লিয়ারিং।
+                                ৭ম থেকে ১০ম শ্রেণির গণিত, পদার্থবিজ্ঞান, রসায়ন, জীববিজ্ঞান ও সাধারণ বিজ্ঞানের মূল
+                                থিওরি, গাণিতিক প্রবলেম সলভিং ও বোর্ড CQ কনসেপ্ট ক্লিয়ারিং।
                             </p>
                         </div>
                     </div>
@@ -545,48 +650,40 @@
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
                     <!-- Left: Teaching Modes -->
                     <div>
-                        <span class="section-tag" style="margin-bottom: 0.65rem;">Teaching Modes</span>
-                        <h4 style="font-size: 1.35rem; margin-bottom: 1rem;" data-i18n="teachingModeHeading">🏠 কোথায়
-                            কোথায় পড়ানো হয়?</h4>
+                        <span class="section-tag" style="margin-bottom: 0.65rem;" data-i18n="teachingModeTag">Teaching Modes</span>
+                        <h4 style="font-size: 1.35rem; margin-bottom: 1rem;" data-i18n="teachingModeHeading">🏠 কোথায় কোথায় পড়ানো হয়?</h4>
                         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
                             <li style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.95rem;">
                                 <i class="fa-solid fa-house-chimney" style="color: var(--accent);"></i>
-                                <span><strong>হোম ভিজিট:</strong> বরমী, মাওনা ও শ্রীপুর এলাকায় শিক্ষার্থী বাসায়
-                                    প্রাইভেট।</span>
+                                <span data-i18n="tMode1"><strong>হোম ভিজিট:</strong> বরমী, মাওনা ও শ্রীপুর এলাকায় শিক্ষার্থী বাসায় প্রাইভেট।</span>
                             </li>
                             <li style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.95rem;">
                                 <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i>
-                                <span><strong>নিজস্ব স্পট:</strong> বরমী বাজার সংলগ্ন নিরিবিলি ব্যাচ / প্রাইভেট
-                                    স্থান।</span>
+                                <span data-i18n="tMode2"><strong>নিজস্ব স্পট:</strong> বরমী বাজার সংলগ্ন নিরিবিলি ব্যাচ / প্রাইভেট স্থান।</span>
                             </li>
                             <li style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.95rem;">
                                 <i class="fa-solid fa-laptop" style="color: var(--primary);"></i>
-                                <span><strong>অনলাইন ১-অন-১:</strong> যেকোনো দূরবর্তী স্থানের শিক্ষার্থীদের জন্য লাইভ
-                                    ক্লাস।</span>
+                                <span data-i18n="tMode3"><strong>অনলাইন ১-অন-১:</strong> যেকোনো দূরবর্তী স্থানের শিক্ষার্থীদের জন্য লাইভ ক্লাস।</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Right: Parent Assurance Guarantees -->
                     <div>
-                        <span class="section-tag" style="margin-bottom: 0.65rem;">Parent Trust & Assurance</span>
-                        <h4 style="font-size: 1.35rem; margin-bottom: 1rem;" data-i18n="parentAssuranceHeading">👨‍👩‍👧
-                            অভিভাবকদের প্রতি নিশ্চয়তা</h4>
+                        <span class="section-tag" style="margin-bottom: 0.65rem;" data-i18n="parentAssuranceTag">Parent Trust & Assurance</span>
+                        <h4 style="font-size: 1.35rem; margin-bottom: 1rem;" data-i18n="parentAssuranceHeading">👨‍👩‍👧 অভিভাবকদের প্রতি নিশ্চয়তা</h4>
                         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
                             <li style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.95rem;">
                                 <i class="fa-solid fa-square-check" style="color: var(--accent);"></i>
-                                <span><strong>সাপ্তাহিক আপডেট:</strong> পড়ার নিয়ম ও সার্বিক অগ্রগতি অভিভাবকদের জানানো
-                                    হয়।</span>
+                                <span data-i18n="pAssure1"><strong>সাপ্তাহিক আপডেট:</strong> পড়ার নিয়ম ও সার্বিক অগ্রগতি অভিভাবকদের জানানো হয়।</span>
                             </li>
                             <li style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.95rem;">
                                 <i class="fa-solid fa-file-pen" style="color: var(--amber);"></i>
-                                <span><strong>মডেল টেস্ট ও সলিউশন:</strong> অধ্যায় শেষে CQ & MCQ পরীক্ষা ও সলিউশন
-                                    শিট।</span>
+                                <span data-i18n="pAssure2"><strong>মডেল টেস্ট ও সলিউশন:</strong> অধ্যায় শেষে CQ & MCQ পরীক্ষা ও সলিউশন শিট।</span>
                             </li>
                             <li style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.95rem;">
                                 <i class="fa-solid fa-desktop" style="color: var(--pink);"></i>
-                                <span><strong>ল্যাপটপে প্র্যাকটিক্যাল:</strong> আইসিটির থিওরি মুখস্থ না করিয়ে সরাসরি
-                                    কোডিং শেখানো।</span>
+                                <span data-i18n="pAssure3"><strong>ল্যাপটপে প্র্যাকটিক্যাল:</strong> আইসিটির থিওরি মুখস্থ না করিয়ে সরাসরি কোডিং শেখানো।</span>
                             </li>
                         </ul>
                     </div>
@@ -615,90 +712,339 @@
                     অভিজ্ঞতা</p>
             </div>
 
-            <div class="testimonial-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;">
-                <!-- Review 1 -->
-                <div class="glass-card testimonial-card reveal-fade-zoom" style="padding: 2rem; position: relative;">
-                    <div class="quote-mark"
-                        style="font-size: 3rem; color: var(--primary); opacity: 0.25; position: absolute; top: 15px; right: 20px;">
-                        “</div>
-                    <div style="color: #f59e0b; margin-bottom: 0.85rem; font-size: 1rem;">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.7; margin-bottom: 1.25rem;">
-                        "নাবিল স্যারের কাছে HSC ICT পড়ার পর C প্রোগ্রামিং ও HTML পানির মতো সহজ হয়ে গিয়েছিল। ল্যাপটপে
-                        প্র্যাকটিক্যালি কোড রান করে বোঝানোর কারণে পরীক্ষায় A+ পাই!"
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.85rem;">
-                        <div
-                            style="width: 44px; height: 44px; border-radius: 50%; background: var(--grad-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800;">
-                            সা
-                        </div>
-                        <div>
-                            <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0;">সাকিব আহমেদ</h4>
-                            <span style="font-size: 0.8rem; color: var(--accent);">HSC পরীক্ষার্থী (মাওনা,
-                                গাজীপুর)</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="testimonial-slider-wrapper">
+                <div class="testimonial-slider-track">
 
-                <!-- Review 2 -->
-                <div class="glass-card testimonial-card reveal-fade-zoom" style="padding: 2rem; position: relative;">
-                    <div class="quote-mark"
-                        style="font-size: 3rem; color: var(--secondary); opacity: 0.25; position: absolute; top: 15px; right: 20px;">
-                        “</div>
-                    <div style="color: #f59e0b; margin-bottom: 0.85rem; font-size: 1rem;">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.7; margin-bottom: 1.25rem;">
-                        "আমার ছেলের ৯-১০ম এর আইসিটি ও সায়েন্সের বিষয়ে বেশ ভয় ছিল। নাবিল স্যার পড়ার প্রতি আগ্রহ তৈরি করে
-                        দিয়েছেন এবং প্রতি সপ্তাহের আপডেটের মাধ্যমে আমরা আশ্বস্ত ছিলাম।"
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.85rem;">
-                        <div
-                            style="width: 44px; height: 44px; border-radius: 50%; background: var(--grad-accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800;">
-                            এম
+                    <!-- Review 1 -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
                         </div>
-                        <div>
-                            <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0;">মো: রফিকুল ইসলাম</h4>
-                            <span style="font-size: 0.8rem; color: var(--secondary);">অভিভাবক (বরমী, শ্রীপুর)</span>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "নাবিল স্যারের কাছে HSC ICT পড়ার পর C প্রোগ্রামিং ও HTML পানির মতো সহজ হয়ে গিয়েছিল। ল্যাপটপে
+                            প্র্যাকটিক্যালি কোড রান করে বোঝানোর কারণে পরীক্ষায় A+ পাই!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: var(--grad-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                সা
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">সাকিব আহমেদ</h4>
+                                <span style="font-size: 0.78rem; color: var(--accent);">HSC পরীক্ষার্থী (মাওনা,
+                                    গাজীপুর)</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Review 3 -->
-                <div class="glass-card testimonial-card reveal-fade-zoom" style="padding: 2rem; position: relative;">
-                    <div class="quote-mark"
-                        style="font-size: 3rem; color: var(--pink); opacity: 0.25; position: absolute; top: 15px; right: 20px;">
-                        “</div>
-                    <div style="color: #f59e0b; margin-bottom: 0.85rem; font-size: 1rem;">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.7; margin-bottom: 1.25rem;">
-                        "SSC ICT পরীক্ষার আগে স্যারের সলিউশন শিট এবং লজিক গেটের স্পেশাল ক্লাসের জন্য আমি পুরো ৫০-এ ৫০
-                        মার্কস অ্যানসার করতে পেরেছিলাম। Highly recommended!"
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.85rem;">
-                        <div
-                            style="width: 44px; height: 44px; border-radius: 50%; background: var(--grad-warm); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800;">
-                            নৌ
+                    <!-- Review 2 -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
                         </div>
-                        <div>
-                            <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0;">নৌশীন জাহান</h4>
-                            <span style="font-size: 0.8rem; color: var(--pink);">SSC গোল্ডেন A+ অর্জনকারী</span>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "আমার ছেলের ৯-১০ম এর আইসিটি ও সায়েন্সের বিষয়ে বেশ ভয় ছিল। নাবিল স্যার পড়ার প্রতি আগ্রহ তৈরি
+                            করে দিয়েছেন এবং প্রতি সপ্তাহের আপডেটের মাধ্যমে আমরা আশ্বস্ত ছিলাম।"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: var(--grad-accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                এম
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">মো: রফিকুল ইসলাম</h4>
+                                <span style="font-size: 0.78rem; color: var(--secondary);">অভিভাবক (বরমী,
+                                    শ্রীপুর)</span>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Review 3 -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "SSC ICT পরীক্ষার আগে স্যারের সলিউশন শিট এবং লজিক গেটের স্পেশাল ক্লাসের জন্য আমি পুরো ৫০-এ
+                            ৫০ মার্কস অ্যানসার করতে পেরেছিলাম। Highly recommended!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: var(--grad-warm); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                নৌ
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">নৌশীন জাহান</h4>
+                                <span style="font-size: 0.78rem; color: var(--pink);">SSC গোল্ডেন A+ অর্জনকারী</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "স্যারের কাছে ৯ম-১০ম শ্রেণির ইংরেজি গ্রামার ও আইসিটি একসাথে পড়ে বানিয়ে লেখার ভয় কেটে গেছে।
+                            বোর্ড প্রশ্ন সল্ভের টেকনিকগুলো পরীক্ষায় অনেক কাজে দিয়েছে!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                তা
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">তানজিল হোসেন</h4>
+                                <span style="font-size: 0.78rem; color: #06b6d4;">SSC পরীক্ষার্থী (বরমী)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "আমার মেয়ে ৮ম শ্রেণিতে গণিত ও বিজ্ঞানে অনেক দুর্বল ছিল। নাবিল স্যারের আন্তরিক ১-অন-১ টিচিং ও
+                            কেয়ারের কারণে এখন ক্লাসে গণিতে সর্বোচ্চ নম্বর পাচ্ছে।"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                বে
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">বেগম সালমা খাতুন</h4>
+                                <span style="font-size: 0.78rem; color: #ec4899;">অভিভাবক (মাওনা)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "আইসিটির C প্রোগ্রামিং ও ফিজিক্সের গাণিতিক প্রবলেম সরাসরি ল্যাপটপে প্র্যাকটিস করার অভিজ্ঞতা
+                            অসাধারণ ছিল। রেজাল্ট ভালো করার অন্যতম বড় কারণ স্যারের গাইডলাইন।"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                মা
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">মাহামুদুল হাসান</h4>
+                                <span style="font-size: 0.78rem; color: #10b981;">HSC পরীক্ষার্থী (শ্রীপুর)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE COPIES FOR INFINITE LOOP EFFECT -->
+                    <!-- Review 1 (Dup) -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "নাবিল স্যারের কাছে HSC ICT পড়ার পর C প্রোগ্রামিং ও HTML পানির মতো সহজ হয়ে গিয়েছিল। ল্যাপটপে
+                            প্র্যাকটিক্যালি কোড রান করে বোঝানোর কারণে পরীক্ষায় A+ পাই!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: var(--grad-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                সা
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">সাকিব আহমেদ</h4>
+                                <span style="font-size: 0.78rem; color: var(--accent);">HSC পরীক্ষার্থী (মাওনা,
+                                    গাজীপুর)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 (Dup) -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "আমার ছেলের ৯-১০ম এর আইসিটি ও সায়েন্সের বিষয়ে বেশ ভয় ছিল। নাবিল স্যার পড়ার প্রতি আগ্রহ তৈরি
+                            করে দিয়েছেন এবং প্রতি সপ্তাহের আপডেটের মাধ্যমে আমরা আশ্বস্ত ছিলাম।"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: var(--grad-accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                এম
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">মো: রফিকুল ইসলাম</h4>
+                                <span style="font-size: 0.78rem; color: var(--secondary);">অভিভাবক (বরমী,
+                                    শ্রীপুর)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 (Dup) -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "SSC ICT পরীক্ষার আগে স্যারের সলিউশন শিট এবং লজিক গেটের স্পেশাল ক্লাসের জন্য আমি পুরো ৫০-এ
+                            ৫০ মার্কস অ্যানসার করতে পেরেছিলাম। Highly recommended!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: var(--grad-warm); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                নৌ
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">নৌশীন জাহান</h4>
+                                <span style="font-size: 0.78rem; color: var(--pink);">SSC গোল্ডেন A+ অর্জনকারী</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 (Dup) -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "স্যারের কাছে ১ম-১০ম শ্রেণির ইংরেজি গ্রামার ও আইসিটি একসাথে পড়ে বানিয়ে লেখার ভয় কেটে গেছে।
+                            বোর্ড প্রশ্ন সল্ভের টেকনিকগুলো পরীক্ষায় অনেক কাজে দিয়েছে!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                তা
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">তানজিল হোসেন</h4>
+                                <span style="font-size: 0.78rem; color: #06b6d4;">SSC পরীক্ষার্থী (বরমী)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 (Dup) -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "আমার মেয়ে ৮ম শ্রেণিতে গণিত ও বিজ্ঞানে অনেক দুর্বল ছিল। নাবিল স্যারের আন্তরিক ১-অন-১ টিচিং ও
+                            কেয়ারের কারণে এখন ক্লাসে গণিতে সর্বোচ্চ নম্বর পাচ্ছে।"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                বে
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">বেগম সালমা খাতুন</h4>
+                                <span style="font-size: 0.78rem; color: #ec4899;">অভিভাবক (মাওনা)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 (Dup) -->
+                    <div class="glass-card testimonial-card testimonial-card-slide"
+                        style="padding: 1.85rem; position: relative;">
+                        <div style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="font-size: 0.92rem; color: var(--text-main); line-height: 1.6; margin-bottom: 1.25rem;">
+                            "আইসিটির C প্রোগ্রামিং ও ফিজিক্সের গাণিতিক প্রবলেম সরাসরি ল্যাপটপে প্র্যাকটিস করার অভিজ্ঞতা
+                            অসাধারণ ছিল। রেজাল্ট ভালো করার অন্যতম বড় কারণ স্যারের গাইডলাইন।"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div
+                                style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">
+                                মা
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1rem; font-weight: 700; margin: 0;">মাহামুদুল হাসান</h4>
+                                <span style="font-size: 0.78rem; color: #10b981;">HSC পরীক্ষার্থী (শ্রীপুর)</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!-- Special Highlight: Free Demo Banner Callout -->
+    <div class="container" style="margin-top: 2rem; margin-bottom: -2rem;">
+        <div class="glass-card demo-highlight-banner reveal-pop-up"
+            style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%); border: 2px solid rgba(16, 185, 129, 0.4); padding: 2.25rem; border-radius: var(--radius-lg); text-align: center; position: relative; overflow: hidden;">
+            <div style="display: inline-block; background: #10b981; color: #fff; padding: 0.35rem 1.25rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 0.5px;" data-i18n="demoBannerBadge">
+                ⚡ সীমিত আসনের সুযোগ
+            </div>
+            <h3 style="font-size: 1.75rem; color: var(--text-main); margin-bottom: 0.65rem;" data-i18n="demoBannerTitle">
+                পড়াশোনার মান যাচাই করতে আজই নিন <span class="text-accent-gradient">১টি ফ্রি ১-অন-১ ডেমো ক্লাস</span>
+            </h3>
+            <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 1.5rem auto; line-height: 1.6;" data-i18n="demoBannerDesc">
+                কোনো ভর্তি ফি ছাড়াই প্রথম ক্লাসে এসে ক্লাস পদ্ধতি ও পড়ানোর পরিবেশ পরখ করে দেখুন। ভর্তি হবেন কি না: তা ডেমো ক্লাসের পরেই সিদ্ধান্ত নিন!
+            </p>
+            <a href="index.html#tuition-apply" class="btn btn-accent btn-lg"
+                style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #10b981; font-size: 1.1rem; padding: 0.9rem 2.25rem;" data-i18n="demoBannerBtn">
+                <i class="fa-solid fa-gift"></i> এখনই ডেমো ক্লাস বুক করুন
+            </a>
+        </div>
+    </div>
 
     <!-- ==========================================================================
          SINGLE UNIFIED TUITION & FREE DEMO CLASS APPLICATION HUB
@@ -731,12 +1077,14 @@
                         <label class="form-label" for="appClass" data-i18n="lblSubject">৩. প্রয়োজনীয় বিষয় / ডেমো ক্লাস
                             নির্বাচন করুন *</label>
                         <select class="form-select" id="appClass">
-                            <option value="HSC ICT (স্পেশাল ব্যাচ)" selected>HSC ICT — আইসিটি স্পেশাল ব্যাচ</option>
-                            <option value="Class 9-10 SSC ICT">Class 9-10 (SSC ICT প্রস্তুতি)</option>
-                            <option value="বাংলা ও ইংরেজি বিষয়সমূহ">বাংলা ও ইংরেজি বিষয়সমূহ</option>
-                            <option value="বিজ্ঞান বিষয়সমূহ">বিজ্ঞান বিষয়সমূহ — পদার্থ, রসায়ন, গণিত</option>
-                            <option value="Mobile App Development">মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android)</option>
-                            <option value="C / C++ Logic Building">C / C++ প্রোগ্রামিং ও লজিক বিল্ডিং</option>
+                            <option value="HSC & SSC ICT (আইসিটি)" selected>HSC & SSC ICT — আইসিটি স্পেশাল ব্যাচ
+                            </option>
+                            <option value="Class 9-10 English (ইংরেজি)">Class 9-10 English (৯ম-১০ম ইংরেজি স্পেশাল)
+                            </option>
+                            <option value="Class 7-10 Math, Science & All Subjects">Class 7-10 (গণিত, বিজ্ঞান ও সকল
+                                বিষয়)</option>
+                            <option value="Class 7-8 Academic Care">Class 7-8 (৭ম-৮ম শ্রেণি অল সাবজেক্ট)</option>
+                            <option value="C / C++ & App Development">C / C++ ও মোবাইল অ্যাপ ডেভেলপমেন্ট</option>
                             <option value="ফ্রি ১-অন-১ ডেমো ক্লাস বুকিং">ফ্রি ১-অন-১ ডেমো ক্লাস বুকিং (Free Demo)
                             </option>
                         </select>
@@ -928,58 +1276,43 @@
                             <span style="font-size: 0.8rem; color: var(--accent);">B.Sc in CSE & ICT Educator</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
-                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও
-                        ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
+                    <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;" data-i18n="footerDesc">
+                        বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
                     </p>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div>
-                    <h4
-                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">
+                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;" data-i18n="footerCol2">
                         কুইক লিংকস</h4>
                     <ul class="footer-links-list"
                         style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
-                        <li><a href="#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম পেজ</a></li>
-                        <li><a href="#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন শিখবেন?</a>
-                        </li>
-                        <li><a href="#education" style="color: var(--text-muted); text-decoration: none;">➔ শিক্ষাগত
-                                যোগ্যতা</a></li>
-                        <li><a href="#tuition" style="color: var(--text-muted); text-decoration: none;">➔ টিউশন
-                                বিষয়সমূহ</a></li>
-                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT
-                                সিলেবাস হাব</a></li>
-                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ
-                                প্রজেক্টস</a></li>
+                        <li><a href="#home" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkHome">➔ হোম পেজ</a></li>
+                        <li><a href="#why-me" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkWhy">➔ কেন শিখবেন?</a></li>
+                        <li><a href="#education" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkEdu">➔ শিক্ষাগত যোগ্যতা</a></li>
+                        <li><a href="#tuition" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkTuition">➔ টিউশন বিষয়সমূহ</a></li>
+                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkSyllabus">➔ ICT সিলেবাস হাব</a></li>
+                        <li><a href="#testimonials" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkReviews">➔ মতামত ও রেজাল্ট</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contact Summary -->
                 <div>
-                    <h4
-                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">
+                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;" data-i18n="footerCol3">
                         সরাসরি যোগাযোগ</h4>
-                    <ul
-                        style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
-                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880
-                            1881-196146</li>
-                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i>
-                            nurularefinnabil@gmail.com</li>
-                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i>
-                            বরমী, শ্রীপুর, গাজীপুর</li>
-                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i>
-                            areefin.me</li>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
+                        <li><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> +880 1881-196146</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i> nurularefinnabil@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i> <span data-i18n="footerLocation">বরমী, শ্রীপুর, গাজীপুর</span></li>
+                        <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i> areefin.me</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Copyright Bar -->
-            <div
-                style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
                 <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye"
-                        style="color: var(--secondary); margin-left: 5px;"></i> <span
-                        class="visitor-count-number">--</span> মোট ওয়েবসাইট ভিজিটর</p>
+                        style="color: var(--secondary); margin-left: 5px;"></i> <span class="visitor-count-number">--</span> <span data-i18n="visitorLabelFooter">মোট ওয়েবসাইট ভিজিটর</span></p>
             </div>
         </div>
     </footer>
@@ -994,18 +1327,18 @@
             </button>
 
             <div class="modal-header">
-                <h2 class="modal-title">আইসিটি ও একাডেমিক আবেদন</h2>
-                <p class="modal-subtitle">সহজেই আপনার বা আপনার সন্তানের টিউশন আবেদন জমা দিন</p>
+                <h2 class="modal-title" data-i18n="modalTitle">আইসিটি ও একাডেমিক আবেদন</h2>
+                <p class="modal-subtitle" data-i18n="modalSubtitle">সহজেই আপনার বা আপনার সন্তানের টিউশন আবেদন জমা দিন</p>
             </div>
 
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;" data-i18n="modalDesc">
                 আবেদন জমা দিলে সরাসরি <strong>হোয়াটসঅ্যাপ চ্যাটে</strong> আবেদনের বিবরণ সহ ওপেন হয়ে যাবে।
             </p>
 
             <div style="text-align: center;">
-                <a href="#tuition-apply" class="btn btn-accent btn-lg"
+                <a href="#tuition-apply" class="btn btn-accent btn-lg btn-whatsapp"
                     style="background: #25D366; border-color: #25D366;"
-                    onclick="document.getElementById('tuitionModal').classList.remove('active');">
+                    onclick="document.getElementById('tuitionModal').classList.remove('active');" data-i18n="modalBtn">
                     <i class="fa-brands fa-whatsapp"></i> ফরমে যান এবং কথা বলুন
                 </a>
             </div>
