@@ -738,7 +738,7 @@ function initScrollProgressBar() {
 }
 
 /* ==========================================================================
-   5. Interactive Particle Canvas Background Engine
+   5. Interactive Particle Canvas Background Engine (Zero-Lag & Battery-Friendly)
    ========================================================================== */
 function initBackgroundParticles() {
     const canvas = document.getElementById('bgCanvas');
@@ -749,9 +749,9 @@ function initBackgroundParticles() {
     let height = canvas.height = window.innerHeight;
 
     let particles = [];
-    const isMobile = window.innerWidth <= 768;
-    // Balanced starry density: 65 on desktop, 22 on mobile for super smooth performance
-    const particleCount = isMobile ? 22 : Math.min(Math.floor(width / 24), 65);
+    let isMobile = window.innerWidth <= 768;
+    // Balanced starry density: 55 on desktop, 20 on mobile for super smooth 60-120fps performance
+    const particleCount = isMobile ? 20 : Math.min(Math.floor(width / 26), 55);
 
     const mouse = {
         x: null,
@@ -772,7 +772,21 @@ function initBackgroundParticles() {
     window.addEventListener('resize', () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
+        isMobile = window.innerWidth <= 768;
     }, { passive: true });
+
+    // Automatic Tab Visibility Pause (Zero CPU & Battery consumption when tab is in background)
+    let isCanvasActive = true;
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            isCanvasActive = false;
+        } else {
+            if (!isCanvasActive) {
+                isCanvasActive = true;
+                requestAnimationFrame(animate);
+            }
+        }
+    });
 
     // Star Palette Colors (Indigo, Cyan, Violet, Pink Accent)
     const starColorsDark = [
@@ -803,17 +817,17 @@ function initBackgroundParticles() {
         reset() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.45;
-            this.vy = (Math.random() - 0.5) * 0.45;
+            this.vx = (Math.random() - 0.5) * 0.4;
+            this.vy = (Math.random() - 0.5) * 0.4;
             
-            // Randomize star sizes: 70% small dust stars (0.8-1.5px), 30% glowing stars (1.8-2.8px)
-            this.isGlowingStar = Math.random() > 0.7;
-            this.baseRadius = this.isGlowingStar ? (Math.random() * 1.2 + 1.8) : (Math.random() * 0.7 + 0.8);
+            // Randomize star sizes: 70% small dust stars (0.8-1.5px), 30% glowing stars (1.8-2.6px)
+            this.isGlowingStar = Math.random() > 0.72;
+            this.baseRadius = this.isGlowingStar ? (Math.random() * 1.0 + 1.7) : (Math.random() * 0.6 + 0.8);
             this.radius = this.baseRadius;
 
             // Twinkle parameters (Zero CPU overhead flickering)
             this.twinklePhase = Math.random() * Math.PI * 2;
-            this.twinkleSpeed = Math.random() * 0.03 + 0.015;
+            this.twinkleSpeed = Math.random() * 0.025 + 0.015;
             this.colorIdx = Math.floor(Math.random() * 4);
         }
 
@@ -861,8 +875,8 @@ function initBackgroundParticles() {
                 this.vy *= -1;
             }
 
-            // Mouse Interaction: Subtle Gravitational Push
-            if (mouse.x && mouse.y) {
+            // Mouse Interaction: Subtle Gravitational Push on desktop
+            if (!isMobile && mouse.x && mouse.y) {
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distSq = dx * dx + dy * dy;
@@ -872,8 +886,8 @@ function initBackgroundParticles() {
                     let angle = Math.atan2(dy, dx);
                     let force = (mouse.radius - dist) / mouse.radius;
                     // Push stars away smoothly
-                    this.x -= Math.cos(angle) * force * 2.2;
-                    this.y -= Math.sin(angle) * force * 2.2;
+                    this.x -= Math.cos(angle) * force * 2.0;
+                    this.y -= Math.sin(angle) * force * 2.0;
                 }
             }
 
@@ -903,47 +917,51 @@ function initBackgroundParticles() {
     }
 
     function animate() {
+        if (!isCanvasActive) return;
+
         ctx.clearRect(0, 0, width, height);
         const isLight = window.currentTheme === 'light';
 
-        // 1. Draw Star Constellation Lines & Cursor Beams
+        // 1. Draw Stars & Connection Lines
         for (let i = 0; i < particles.length; i++) {
             particles[i].update();
 
-            // Connection with other stars
-            for (let j = i + 1; j < particles.length; j++) {
-                let dx = particles[i].x - particles[j].x;
-                let dy = particles[i].y - particles[j].y;
-                let distSq = dx * dx + dy * dy;
+            // Star constellation lines (Desktop only to guarantee 0% mobile CPU load)
+            if (!isMobile) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distSq = dx * dx + dy * dy;
 
-                // Squared distance check: 115 * 115 = 13225
-                if (distSq < 13225) {
-                    let dist = Math.sqrt(distSq);
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    let alpha = (1 - dist / 115) * 0.22;
-                    ctx.strokeStyle = isLight ? `rgba(99, 102, 241, ${alpha * 0.8})` : `rgba(99, 102, 241, ${alpha})`;
-                    ctx.lineWidth = 0.7;
-                    ctx.stroke();
+                    // Squared distance check: 110 * 110 = 12100
+                    if (distSq < 12100) {
+                        let dist = Math.sqrt(distSq);
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        let alpha = (1 - dist / 110) * 0.20;
+                        ctx.strokeStyle = isLight ? `rgba(99, 102, 241, ${alpha * 0.8})` : `rgba(99, 102, 241, ${alpha})`;
+                        ctx.lineWidth = 0.65;
+                        ctx.stroke();
+                    }
                 }
-            }
 
-            // Starlight Connection Beams directly to Cursor
-            if (mouse.x && mouse.y) {
-                let dx = mouse.x - particles[i].x;
-                let dy = mouse.y - particles[i].y;
-                let distSq = dx * dx + dy * dy;
-                // Beam connection radius: 130 * 130 = 16900
-                if (distSq < 16900) {
-                    let dist = Math.sqrt(distSq);
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    let beamAlpha = (1 - dist / 130) * 0.35;
-                    ctx.strokeStyle = isLight ? `rgba(6, 182, 212, ${beamAlpha * 0.9})` : `rgba(6, 182, 212, ${beamAlpha})`;
-                    ctx.lineWidth = 0.85;
-                    ctx.stroke();
+                // Starlight Connection Beams directly to Cursor
+                if (mouse.x && mouse.y) {
+                    let dx = mouse.x - particles[i].x;
+                    let dy = mouse.y - particles[i].y;
+                    let distSq = dx * dx + dy * dy;
+                    // Beam connection radius: 130 * 130 = 16900
+                    if (distSq < 16900) {
+                        let dist = Math.sqrt(distSq);
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        let beamAlpha = (1 - dist / 130) * 0.32;
+                        ctx.strokeStyle = isLight ? `rgba(6, 182, 212, ${beamAlpha * 0.85})` : `rgba(6, 182, 212, ${beamAlpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
                 }
             }
         }
@@ -1244,16 +1262,18 @@ function initTypewriter() {
     if (!el) return;
 
     const roles = [
+        "ICT + English — বোর্ড প্রস্তুতি হোক একসাথে!",
+        "ল্যাপটপে হাতে-কলমে কোডিং ও স্লাইডভিত্তিক পড়াশোনা",
+        "৯ম-১০ম ও একাদশ-দ্বাদশ (SSC & HSC) স্পেশাল ব্যাচ",
+        "বোর্ড প্রশ্নের টাইপভিত্তিক পূর্ণাঙ্গ সমাধান",
         "ICT ও সায়েন্সে ১০০% A+ গ্যারান্টি পদ্ধতি",
-        "ল্যাপটপে প্র্যাকটিক্যালি কোডিং ল্যাব",
-        "B.Sc in CSE Graduate (CGPA 3.70)",
-        "বরমী, মাওনা ও শ্রীপুরের স্পেশালিস্ট টিউটর"
+        "B.Sc in CSE | আইসিটি ও ইংলিশ ইনস্ট্রাক্টর"
     ];
 
     let roleIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
-    let speed = 80;
+    let speed = 75;
 
     function type() {
         const currentRole = roles[roleIdx];
@@ -1261,15 +1281,15 @@ function initTypewriter() {
         if (isDeleting) {
             el.textContent = currentRole.substring(0, charIdx - 1);
             charIdx--;
-            speed = 40;
+            speed = 35;
         } else {
             el.textContent = currentRole.substring(0, charIdx + 1);
             charIdx++;
-            speed = 90;
+            speed = 80;
         }
 
         if (!isDeleting && charIdx === currentRole.length) {
-            speed = 1800; // Pause at full word
+            speed = 1900; // Pause at full word
             isDeleting = true;
         } else if (isDeleting && charIdx === 0) {
             isDeleting = false;

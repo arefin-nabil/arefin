@@ -2648,3 +2648,24 @@ a[href*="wa.me"]::before {
         gap: 1rem;
     }
 }
+
+/* Special Poster Highlight Ribbon */
+.special-highlight-ribbon {
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+    transition: var(--trans-normal);
+}
+
+.special-highlight-ribbon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.2);
+}
+
+@media (max-width: 600px) {
+    .special-highlight-ribbon {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 1rem 1.25rem !important;
+    }
+}
