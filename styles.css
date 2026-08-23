@@ -1533,6 +1533,17 @@ a {
     min-height: 46px;
 }
 
+.form-select option {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 0.5rem;
+}
+
+[data-theme="light"] .form-select option {
+    background: #ffffff;
+    color: #0f172a;
+}
+
 .form-control:focus, .form-select:focus {
     border-color: var(--primary);
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
@@ -1870,7 +1881,7 @@ a {
     }
 
     .navbar {
-        padding: 0.85rem 0;
+        padding: 0.75rem 0;
         background: var(--bg-dark);
         border-bottom: 1px solid var(--border-color);
     }
@@ -1889,8 +1900,49 @@ a {
         font-size: 0.675rem !important;
     }
 
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.45rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .lang-toggle-btn {
+        height: 36px !important;
+        padding: 0 0.6rem !important;
+        font-size: 0.8rem !important;
+        gap: 0.35rem !important;
+        border-radius: var(--radius-sm) !important;
+    }
+
+    .theme-toggle-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.9rem !important;
+        border-radius: 50% !important;
+    }
+
     .nav-whatsapp-btn {
         display: none !important;
+    }
+
+    .mobile-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1.15rem !important;
+        padding: 0 !important;
+        background: rgba(99, 102, 241, 0.12) !important;
+        border: 1px solid rgba(99, 102, 241, 0.28) !important;
+        border-radius: var(--radius-sm) !important;
+    }
+
+    [data-theme="light"] .mobile-toggle {
+        background: rgba(99, 102, 241, 0.08) !important;
+        border-color: rgba(99, 102, 241, 0.25) !important;
+        color: #0f172a !important;
     }
 
     .nav-menu {
@@ -1934,10 +1986,6 @@ a {
         display: inline-flex !important;
         width: 85% !important;
         margin-top: 0.5rem;
-    }
-
-    .mobile-toggle {
-        display: block;
     }
 
     .desktop-only-btn {

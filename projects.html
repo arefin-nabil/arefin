@@ -59,11 +59,13 @@
 
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html#home" class="nav-link" data-i18n="navHome">হোম</a>
+                <a href="index.html#welcome-portal" class="nav-link" data-i18n="navAudience">ছাত্র ও অভিভাবক</a>
                 <a href="index.html#why-me" class="nav-link" data-i18n="navWhy">কেন শিখবেন?</a>
                 <a href="index.html#education" class="nav-link" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
                 <a href="index.html#tuition" class="nav-link" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
                 <a href="syllabus.html" class="nav-link" data-i18n="navSyllabus">ICT সিলেবাস</a>
                 <a href="projects.html" class="nav-link active" data-i18n="navProjects">প্রজেক্ট</a>
+                <a href="index.html#testimonials" class="nav-link" data-i18n="navReviews">মতামত ও রেজাল্ট</a>
                 <a href="index.html#contact" class="nav-link" data-i18n="navContact">যোগাযোগ</a>
 
                 <!-- Mobile Menu Quick Settings Bar -->
@@ -77,25 +79,25 @@
                 </div>
 
                 <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal mobile-menu-whatsapp"
-                    style="background: #25D366; border-color: #25D366;" data-i18n="navTalkBtn">
-                    <i class="fa-brands fa-whatsapp"></i> কথা বলুন
+                    style="background: #10b981; border-color: #10b981;" data-i18n="navTalkBtn">
+                    <i class="fa-solid fa-gift"></i> ফ্রি ডেমো বুক করুন
                 </a>
             </nav>
 
             <div class="nav-actions">
-                <!-- Desktop Language Switcher Button (BN <-> EN) -->
-                <button class="lang-toggle-btn lang-toggle-action desktop-only-btn" title="Language Switcher (BN / EN)">
+                <!-- Language Switcher Button (BN <-> EN) -->
+                <button class="lang-toggle-btn lang-toggle-action" title="Language Switcher (BN / EN)">
                     <i class="fa-solid fa-language"></i> <span class="langText">EN</span>
                 </button>
 
-                <!-- Desktop Theme Toggle Button -->
-                <button class="theme-toggle-btn theme-toggle-action desktop-only-btn" title="থিম পরিবর্তন করুন">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle-btn theme-toggle-action" title="থিম পরিবর্তন করুন">
                     <i class="fa-solid fa-sun"></i>
                 </button>
 
                 <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal nav-whatsapp-btn"
-                    style="background: #25D366; border-color: #25D366;" data-i18n="navTalkBtn">
-                    <i class="fa-brands fa-whatsapp"></i> কথা বলুন
+                    style="background: #10b981; border-color: #10b981;" data-i18n="navTalkBtn">
+                    <i class="fa-solid fa-gift"></i> ফ্রি ডেমো বুক করুন
                 </a>
 
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
@@ -136,7 +138,7 @@
                         <img src="applogo.png" alt="সাপ ও বন্যপ্রাণী রেসকিউ বিডি অ্যাপ লোগো"
                             style="width: 115px; height: 115px; border-radius: 24px; object-fit: cover; box-shadow: 0 10px 28px rgba(16,185,129,0.35); border: 2px solid var(--accent);">
                         <span
-                            style="display: inline-block; font-size: 0.75rem; font-weight: 700; background: #25D366; color: #fff; padding: 0.2rem 0.6rem; border-radius: 99px; margin-top: 0.85rem;">Live
+                            style="display: inline-block; font-size: 0.75rem; font-weight: 700; background: #25D366; color: #fff; padding: 0.2rem 0.6rem; border-radius: 99px; margin-top: 0.85rem;" data-i18n="pLiveBadge">Live
                             on Play Store</span>
                     </div>
 
@@ -230,9 +232,9 @@
     </section>
 
     <!-- Multi-Column Premium Footer -->
-    <footer class="footer">
+    <footer class="footer reveal-up">
         <div class="container">
-            <div
+            <div class="footer-grid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
                 <!-- Column 1: Brand Info -->
                 <div>
@@ -244,7 +246,7 @@
                             <span style="font-size: 0.8rem; color: var(--accent);">B.Sc in CSE & ICT Educator</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+                    <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;" data-i18n="footerDesc">
                         বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও
                         ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।
                     </p>
@@ -253,29 +255,30 @@
                 <!-- Column 2: Quick Links -->
                 <div>
                     <h4
-                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;">
+                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.25rem;" data-i18n="footerCol2">
                         কুইক লিংকস</h4>
-                    <ul
+                    <ul class="footer-links-list"
                         style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
-                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;">➔ হোম
+                        <li><a href="index.html#home" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkHome">➔ হোম
                                 পেজ</a></li>
-                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;">➔ কেন
+                        <li><a href="index.html#why-me" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkWhy">➔ কেন
                                 শিখবেন?</a></li>
-                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;">➔
+                        <li><a href="index.html#education" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkEdu">➔
                                 শিক্ষাগত যোগ্যতা</a></li>
-                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;">➔
+                        <li><a href="index.html#tuition" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkTuition">➔
                                 টিউশন বিষয়সমূহ</a></li>
-                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;">➔ ICT
+                        <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkSyllabus">➔ ICT
                                 সিলেবাস হাব</a></li>
-                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;">➔ লাইভ
+                        <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkProjects">➔ লাইভ
                                 প্রজেক্টস</a></li>
+                        <li><a href="index.html#testimonials" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkReviews">➔ মতামত ও রেজাল্ট</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contact Summary -->
                 <div>
                     <h4
-                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;">
+                        style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.1rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem;" data-i18n="footerCol3">
                         সরাসরি যোগাযোগ</h4>
                     <ul
                         style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-muted);">
@@ -284,7 +287,7 @@
                         <li><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i>
                             nurularefinnabil@gmail.com</li>
                         <li><i class="fa-solid fa-location-dot" style="color: var(--amber); margin-right: 6px;"></i>
-                            বরমী, শ্রীপুর, গাজীপুর</li>
+                            <span data-i18n="footerLocation">বরমী, শ্রীপুর, গাজীপুর</span></li>
                         <li><i class="fa-solid fa-globe" style="color: var(--secondary); margin-right: 6px;"></i>
                             areefin.me</li>
                     </ul>
@@ -296,10 +299,38 @@
                 style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
                 <p>© 2026 <strong>Nurul Arefin Nabil</strong> | B.Sc in CSE & ICT Educator | <i class="fa-solid fa-eye"
                         style="color: var(--secondary); margin-left: 5px;"></i> <span
-                        class="visitor-count-number">--</span> মোট ওয়েবসাইট ভিজিটর</p>
+                        class="visitor-count-number">--</span> <span data-i18n="visitorLabelFooter">মোট ওয়েবসাইট ভিজিটর</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- ==========================================================================
+         Apply for Tuition Pop-up Modal
+         ========================================================================== -->
+    <div class="modal-overlay" id="tuitionModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+                <h2 class="modal-title" data-i18n="modalTitle">আইসিটি ও একাডেমিক আবেদন</h2>
+                <p class="modal-subtitle" data-i18n="modalSubtitle">সহজেই আপনার বা আপনার সন্তানের টিউশন আবেদন জমা দিন</p>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;" data-i18n="modalDesc">
+                আবেদন জমা দিলে সরাসরি <strong>হোয়াটসঅ্যাপ চ্যাটে</strong> আবেদনের বিবরণ সহ ওপেন হয়ে যাবে।
+            </p>
+
+            <div style="text-align: center;">
+                <a href="index.html#tuition-apply" class="btn btn-accent btn-lg btn-whatsapp"
+                    style="background: #25D366; border-color: #25D366;"
+                    onclick="document.getElementById('tuitionModal').classList.remove('active');" data-i18n="modalBtn">
+                    <i class="fa-brands fa-whatsapp"></i> ফরমে যান এবং কথা বলুন
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="app.js?v=1.8"></script>

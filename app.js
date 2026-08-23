@@ -184,6 +184,7 @@ function applyLanguage(lang) {
             navEdu: "শিক্ষাগত যোগ্যতা",
             navTuition: "টিউশন বিষয়সমূহ",
             navSyllabus: "ICT সিলেবাস",
+            navProjects: "প্রজেক্ট",
             navReviews: "মতামত ও রেজাল্ট",
             navContact: "যোগাযোগ",
             navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> ফ্রি ডেমো বুক করুন",
@@ -194,14 +195,16 @@ function applyLanguage(lang) {
             heroFocusTag: "<i class=\"fa-solid fa-bolt\"></i> ICT (আইসিটি) স্পেশালিস্ট প্রাইভেট টিউটর | শ্রীপুর, মাওনা ও বরমী",
             heroDesc: "আমি <strong>নূরুল আরেফিন নাবিল (B.Sc in CSE)</strong>। আমি প্রধানত ৯ম-১০ম ও একাদশ-দ্বাদশ (SSC & HSC) শ্রেণির <strong>ICT (আইসিটি)</strong> এবং ৯ম-১০ম শ্রেণির <strong>ইংরেজি</strong> পড়াই। এছাড়া <strong>৭ম থেকে ১০ম শ্রেণি পর্যন্ত গণিত ও বিজ্ঞান সহ সকল বিষয়</strong> অন্ধের মতো মুখস্থ নয়: ল্যাপটপে প্র্যাকটিক্যালি কোডিং, স্লাইডভিত্তিক পড়া ও সহজ টেকনিকে শিক্ষার্থীদের ১০০% পারফেক্ট প্রস্তুতি নিতে সাহায্য করি।",
             heroBtnTalk: "<i class=\"fa-solid fa-gift\"></i> ফ্রি ডেমো ক্লাস বুক করুন",
-            heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC সিলেবাস ➔",
+            heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC ICT সিলেবাস ➔",
             heroBtnWa: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে মেসেজ",
             statOneOnOneNum: "১-অন-১",
             statExpNum: "৪+ বছর",
             statStudentsNum: "৫০+",
-            statPersonalCare: "ব্যক্তিগত কেয়ার ও আপডেট",
-            statVisitorLabel: "ওয়েবসাইট ভিজিটর",
+            statPersonalCare: "ব্যক্তিগত স্পেশাল কেয়ার",
+            statVisitorLabel: "মোট ওয়েবসাইট ভিজিটর",
+            badgeBscTitle: "১০০% এ+ গ্যারান্টি পদ্ধতি",
             badgeBscSub: "বোর্ড পরীক্ষার জন্য স্পেশাল প্রস্তুতি",
+            badgeIctTitle: "প্র্যাকটিক্যাল ল্যাপটপ ল্যাব",
             badgeIctSub: "কোডিং ও লজিক স্ক্রীনে প্র্যাকটিস",
             statExp: "আইসিটি ও একাডেমিক টিচিং",
             statStudents: "সফল শিক্ষার্থী মেন্টরড",
@@ -225,42 +228,66 @@ function applyLanguage(lang) {
             parentPt3: "পড়ালেখার শৃঙ্খলিত রুটিন ও পরীক্ষার সলিউশন শিট",
             parentCta: "<i class=\"fa-brands fa-whatsapp\"></i> অভিভাবক হিসেবে কথা বলুন",
 
+            // Why Me BN
+            whyTag: "Teaching Methodology",
             whyTitle: "আমার কাছে <span class=\"text-gradient\">কেন শিখবেন?</span>",
             whySubtitle: "অন্ধের মতো মুখস্থ নয়, প্র্যাকটিক্যালি কোডিং ও প্রযুক্তিকে ভালোবাসতে শেখানোই আমার মূল লক্ষ্য",
+            whyStep1: "01 • প্র্যাকটিক্যাল ল্যাব",
             whyPt1Title: "কম্পিউটার/ল্যাপটপে প্র্যাকটিক্যাল কোডিং",
             whyPt1Desc: "পড়ার টেবিলে বসেই নিজের ল্যাপটপ ও কম্পিউটারের মাধ্যমে সরাসরি কোড টাইপ করে স্ক্রীনে আউটপুট দেখা এবং প্র্যাকটিক্যালি শেখানো হয়।",
+            whyStep2: "02 • ডিজিটাল স্পেশাল নোটস",
             whyPt2Title: "হ্যান্ডরাইটিং ও ডিজিটাল স্পেশাল নোটস",
             whyPt2Desc: "প্রতিটি অধ্যায়ের সহজ ভাষায় গোছানো স্পেশাল নোটস তৈরি করে দেওয়া হয়, যা পরীক্ষার আগে রিভিশনের জন্য অত্যন্ত কার্যকরী।",
+            whyStep3: "03 • কুইজ ও মডেল টেস্ট",
             whyPt3Title: "অধ্যায়ভিত্তিক কুইজ ও মডেল টেস্ট",
             whyPt3Desc: "প্রতিটি অধ্যায় শেষ হওয়ার পর CQ ও MCQ প্রশ্নের ওপর স্পেশাল টেস্ট নেওয়া হয় এবং প্রতিটি ভুলের আলাদা সলিউশন শিট দেওয়া হয়।",
+            whyStep4: "04 • বোর্ড প্রশ্ন সল্ভ",
             whyPt4Title: "বিগত সালের বোর্ড প্রশ্ন সমাধান",
             whyPt4Desc: "ঢাকা, চট্টগ্রাম, রাজশাহী সহ সকল শিক্ষা বোর্ডের বিগত ৫-১০ বছরের প্রশ্নপত্র টাইপ ধরে ধরে পারফেক্টভাবে সমাধান করানো হয়।",
+            whyStep5: "05 ★ এআই স্মার্ট লার্নিং",
             whyPt5Title: "এআই (AI) ভিত্তিক স্মার্ট লার্নিং সুযোগ",
-            whyPt5Desc: "আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) যুগে কীভাবে ChatGPT, Claude & GitHub Copilot এর মাধ্যমে কঠিন লজিক দ্রুত বোঝা, কোডের ভুল (Bug) ধরা এবং স্মার্ট স্টাডি টেকনিক ব্যবহার করা যায়: তার প্র্যাকটিক্যাল গাইডলাইন দেওয়া হয়।",
+            whyPt5Desc: "আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) যুগে কীভাবে ChatGPT, Claude & GitHub Copilot এর মাধ্যমে কঠিন লজিক দ্রুত বোঝা, কোডের ভুল (Bug) ধরা এবং স্মার্ট স্টাডি টেকনিক ব্যবহার করা যায়—তার প্র্যাকটিক্যাল গাইডলাইন দেওয়া হয়।",
+
+            // Education BN
+            eduTag: "Academic Background",
             eduTitle: "শিক্ষাগত <span class=\"text-accent-gradient\">যোগ্যতা ও ব্যাকগ্রাউন্ড</span>",
             eduSubtitle: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE) ব্যাকগ্রাউন্ড ও শিক্ষাগত কৃতিত্ব",
-            bscDesc: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)-এ বি.এস.সি সম্পন্ন করা। সফটওয়্যার ইঞ্জিনিয়ারিং, মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android), ডেটা স্ট্রাকচার ও সি প্রোগ্রামিং অ্যালগরিদমে বিশেষ পারদর্শিতা।",
+            eduBadgeGrad: "Graduation / Bachelor",
+            eduBscTitle: "B.Sc in Computer Science & Engineering (CSE)",
+            bscDesc: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)-এ বি.এস.সি সম্পন্ন করা (CGPA 3.70+ Out of 4.00)। সফটওয়্যার ইঞ্জিনিয়ারিং, মোবাইল অ্যাপ ডেভেলপমেন্ট (Flutter/Android), ডেটা স্ট্রাকচার ও সি প্রোগ্রামিং অ্যালগরিদমে বিশেষ পারদর্শিতা।",
+            eduBadgeHsc: "Higher Secondary (HSC)",
+            eduHscTitle: "উচ্চ মাধ্যমিক (HSC — Science)",
             hscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন। আইসিটি (ICT), গণিত ও পদার্থবিজ্ঞানে বিশেষ কৃতিত্ব।",
+            eduBadgeSsc: "Secondary School (SSC)",
+            eduSscTitle: "মাধ্যমিক (SSC — Science)",
             sscDesc: "বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন এবং শ্রীপুর উপজেলায় ১ম স্থান অর্জন।",
+
+            // Tuition Offerings BN
+            tuitionTag: "Private Tuition Offerings",
             tuitionTitle: "টিউশন <span class=\"text-accent-gradient\">বিষয়সমূহ ও সেবা</span>",
             tuitionSubtitle: "৯ম-১০ম ও একাদশ-দ্বাদশ শ্রেণীর বিষয়ভিত্তিক বিশেষ টিচিং সার্ভিসেস",
-            catAcademicTitle: "একাডেমিক টিউশন সেবা",
-            catSkillTitle: "স্কিল ডেভেলপমেন্ট ও প্রোগ্রামিং (অতিরিক্ত সেবা)",
+            posterHighlightText: "<strong style=\"color: var(--accent);\">বিশেষভাবে:</strong> সপ্তম থেকে দশম শ্রেণীর শিক্ষার্থীদের জন্য বিজ্ঞান, গণিত সহ সকল বিষয়ে বিশেষ যত্ন নিয়ে পড়ানো হয়।",
+            catAcademicTitle: "একাডেমিক টিউশন",
+            subjIctTitle: "ICT — আইসিটি (Class 9-10 & HSC)",
+            subjIctLevel: "SSC & HSC ICT Board Exam 100% Preparation",
             subjIctDesc: "C প্রোগ্রামিং, HTML ওয়েব পেজ, সংখ্যা পদ্ধতি (Binary/Hex), লজিক গেট, বুলিয়ান অ্যালজেব্রা এবং ডেটাবেজ (SQL)-এর এ টু জেড প্র্যাকটিক্যালি ল্যাপটপে কোড টাইপ করে ১০০% পারফেক্ট প্রস্তুতি।",
+            subjEngTitle: "৯ম-১০ম শ্রেণি ইংরেজি (Class 9-10 English)",
+            subjEngLevel: "SSC English 1st & 2nd Paper Board Preparation",
             subjEngDesc: "Grammatical Rules, Right Forms of Verbs, Tag Questions, Composition & Passage Solving-এর সহজ শর্টকাট টেকনিক ও নিয়মিত হোমওয়ার্ক চেকিং।",
+            subjScienceTitle: "গণিত, বিজ্ঞান ও সকল বিষয় (Class 7-10)",
+            subjScienceLevel: "Math, Physics, Chemistry, Biology & All Subjects",
             subjScienceDesc: "৭ম থেকে ১০ম শ্রেণির গণিত, পদার্থবিজ্ঞান, রসায়ন, জীববিজ্ঞান ও সাধারণ বিজ্ঞানের মূল থিওরি, গাণিতিক প্রবলেম সলভিং ও বোর্ড CQ কনসেপ্ট ক্লিয়ারিং।",
-            subjAppDesc: "নিজের ফোনে রান করার মতো রিয়েল অ্যাপ বানানো, UI কাস্টমাইজেশন ও বেসিক মোবাইল অ্যাপস ডেভেলপমেন্ট কোর্স।",
+            catSkillTitle: "স্কিল ডেভেলপমেন্ট ও প্রোগ্রামিং (অতিরিক্ত সেবা)",
+            subjCppTitle: "C / C++ প্রোগ্রামিং ও লজিক",
+            subjCppLevel: "Logic Building & Problem Solving",
             subjCppDesc: "প্রোগ্রামিংয়ের লজিক তৈরি, লুপ, অ্যারে, পয়েন্টার, ফাংশন ও বেসিক অবজেক্ট ওরিয়েন্টেড কনসেপ্ট।",
+            subjAppTitle: "মোবাইল অ্যাপ ডেভেলপমেন্ট",
+            subjAppLevel: "Flutter, Dart & Android Building",
+            subjAppDesc: "নিজের ফোনে রান করার মতো রিয়েল অ্যাপ বানানো, UI কাস্টমাইজেশন ও বেসিক মোবাইল অ্যাপস ডেভেলপমেন্ট কোর্স।",
 
-            // Demo Banner Callout BN
-            demoBannerBadge: "⚡ সীমিত আসনের সুযোগ",
-            demoBannerTitle: "পড়াশোনার মান যাচাই করতে আজই নিন <span class=\"text-accent-gradient\">১টি ফ্রি ১-অন-১ ডেমো ক্লাস</span>",
-            demoBannerDesc: "কোনো ভর্তি ফি ছাড়াই প্রথম ক্লাসে এসে ক্লাস পদ্ধতি ও পড়ানোর পরিবেশ পরখ করে দেখুন। ভর্তি হবেন কি না: তা ডেমো ক্লাসের পরেই সিদ্ধান্ত নিন!",
-            demoBannerBtn: "<i class=\"fa-solid fa-gift\"></i> এখনই ডেমো ক্লাস বুক করুন",
-
-            // Teaching mode & Parent trust BN
-            teachingModeTag: "পড়ানোর মাধ্যম",
-            parentAssuranceTag: "অভিভাবকদের আস্থা ও নিশ্চয়তা",
+            // Teaching Mode & Parent Assurance BN
+            teachingModeTag: "Teaching Modes",
+            parentAssuranceTag: "Parent Trust & Assurance",
             teachingModeHeading: "🏠 কোথায় কোথায় পড়ানো হয়?",
             parentAssuranceHeading: "👨‍👩‍👧 অভিভাবকদের প্রতি নিশ্চয়তা",
             tMode1: "<strong>হোম ভিজিট:</strong> বরমী, মাওনা ও শ্রীপুর এলাকায় শিক্ষার্থী বাসায় প্রাইভেট।",
@@ -269,26 +296,91 @@ function applyLanguage(lang) {
             pAssure1: "<strong>সাপ্তাহিক আপডেট:</strong> পড়ার নিয়ম ও সার্বিক অগ্রগতি অভিভাবকদের জানানো হয়।",
             pAssure2: "<strong>মডেল টেস্ট ও সলিউশন:</strong> অধ্যায় শেষে CQ & MCQ পরীক্ষা ও সলিউশন শিট।",
             pAssure3: "<strong>ল্যাপটপে প্র্যাকটিক্যাল:</strong> আইসিটির থিওরি মুখস্থ না করিয়ে সরাসরি কোডিং শেখানো।",
+
+            // Reviews BN
+            reviewsTag: "Student & Parent Reviews",
+            reviewsTitle: "শিক্ষার্থী ও <span class=\"text-gradient\">অভিভাবকদের মতামত</span>",
+            reviewsSubtitle: "নাবিল স্যারের টিচিং মেথডোলজি, প্র্যাকটিক্যাল কোডিং ও রেজাল্ট নিয়ে প্রত্যক্ষ অভিজ্ঞতা",
+            rev1Text: "\"নাবিল স্যারের কাছে HSC ICT পড়ার পর C প্রোগ্রামিং ও HTML পানির মতো সহজ হয়ে গিয়েছিল। ল্যাপটপে প্র্যাকটিক্যালি কোড রান করে বোঝানোর কারণে পরীক্ষায় A+ পাই!\"",
+            rev1Name: "সাকিব আহমেদ",
+            rev1Role: "HSC পরীক্ষার্থী (মাওনা, গাজীপুর)",
+            rev2Text: "\"আমার ছেলের ৯-১০ম এর আইসিটি ও সায়েন্সের বিষয়ে বেশ ভয় ছিল। নাবিল স্যার পড়ার প্রতি আগ্রহ তৈরি করে দিয়েছেন এবং প্রতি সপ্তাহের আপডেটের মাধ্যমে আমরা আশ্বস্ত ছিলাম।\"",
+            rev2Name: "মো: রফিকুল ইসলাম",
+            rev2Role: "অভিভাবক (বরমী, শ্রীপুর)",
+            rev3Text: "\"SSC ICT পরীক্ষার আগে স্যারের সলিউশন শিট এবং লজিক গেটের স্পেশাল ক্লাসের জন্য আমি পুরো ৫০-এ ৫০ মার্কস অ্যানসার করতে পেরেছিলাম। Highly recommended!\"",
+            rev3Name: "নৌশীন জাহান",
+            rev3Role: "SSC গোল্ডেন A+ অর্জনকারী",
+            rev4Text: "\"স্যারের কাছে ৯ম-১০ম শ্রেণির ইংরেজি গ্রামার ও আইসিটি একসাথে পড়ে বানিয়ে লেখার ভয় কেটে গেছে। বোর্ড প্রশ্ন সল্ভের টেকনিকগুলো পরীক্ষায় অনেক কাজে দিয়েছে!\"",
+            rev4Name: "তানজিল হোসেন",
+            rev4Role: "SSC পরীক্ষার্থী (বরমী)",
+            rev5Text: "\"আমার মেয়ে ৮ম শ্রেণিতে গণিত ও বিজ্ঞানে অনেক দুর্বল ছিল। নাবিল স্যারের আন্তরিক ১-অন-১ টিচিং ও কেয়ারের কারণে এখন ক্লাসে গণিতে সর্বোচ্চ নম্বর পাচ্ছে।\"",
+            rev5Name: "বেগম সালমা খাতুন",
+            rev5Role: "অভিভাবক (মাওনা)",
+            rev6Text: "\"আইসিটির C প্রোগ্রামিং ও ফিজিক্সের গাণিতিক প্রবলেম সরাসরি ল্যাপটপে প্র্যাকটিস করার অভিজ্ঞতা অসাধারণ ছিল। রেজাল্ট ভালো করার অন্যতম বড় কারণ স্যারের গাইডলাইন।\"",
+            rev6Name: "মাহামুদুল হাসান",
+            rev6Role: "HSC পরীক্ষার্থী (শ্রীপুর)",
+
+            // Form BN
+            formTag: "Direct WhatsApp Form",
             formTitle: "টিউশন ও ফ্রি ডেমো ক্লাসের <span class=\"text-accent-gradient\">সহজ আবেদন</span>",
             formSubtitle: "মাত্র ৪টি তথ্য পূরণ করে ১-ক্লিকে হোয়াটসঅ্যাপে আবেদন বা ফ্রি ডেমো ক্লাস বুক করুন",
             lblStudentName: "১. শিক্ষার্থীর নাম *",
+            placeholderStudentName: "আপনার বা শিক্ষার্থীর নাম লিখুন",
             lblPhone: "২. মোবাইল নম্বর *",
             lblSubject: "৩. প্রয়োজনীয় বিষয় / ডেমো ক্লাস নির্বাচন করুন *",
             lblArea: "৪. আপনার এলাকা *",
+            optIct: "HSC & SSC ICT — আইসিটি স্পেশাল ব্যাচ",
+            optEng: "Class 9-10 English (৯ম-১০ম ইংরেজি স্পেশাল)",
+            optScience: "Class 7-10 (গণিত, বিজ্ঞান ও সকল বিষয়)",
+            optClass78: "Class 7-8 (৭ম-৮ম শ্রেণি অল সাবজেক্ট)",
+            optCppApp: "C / C++ ও মোবাইল অ্যাপ ডেভেলপমেন্ট",
+            optDemo: "ফ্রি ১-অন-১ ডেমো ক্লাস বুকিং (Free Demo)",
+            optLocBarmi: "বরমী (Barmi)",
+            optLocMaona: "মাওনা (Maona)",
+            optLocSreepur: "শ্রীপুর (Sreepur)",
+            optLocBarama: "বরামা (Barama)",
+            optLocGosinga: "গোসিংগা (Gosinga)",
+            optLocSohadia: "সোহাদিয়া (Sohadia)",
+            optLocShimultoli: "শিমুলতলী (Shimultoli)",
+            optLocOnline: "অন্যান্য এলাকা / অনলাইন ক্লাসের জন্য",
             btnSubmitForm: "<i class=\"fa-brands fa-whatsapp\"></i> সরাসরি হোয়াটসঅ্যাপে কথা বলুন ➔",
+
+            // Projects Preview BN
             projPreviewTitle: "লাইভ অ্যাপস ও <span class=\"text-gradient\">প্রজেক্টসমূহ</span>",
             projPreviewSub: "প্লে-স্টোরে লাইভ মোবাইল অ্যাপ \"সাপ ও বন্যপ্রাণী রেসকিউ বিডি\", আপকামিং প্রজেক্টস ও গিটহাব সোর্স কোড আলাদা পেজে দেখুন",
             btnViewAllProjects: "<i class=\"fa-solid fa-laptop-code\"></i> সকল প্রজেক্টস ও লাইভ অ্যাপস পেজে যান ➔",
+
+            // Contact Section BN
+            contactTag: "Get in Touch",
             contactTitle: "সরাসরি <span class=\"text-gradient\">যোগাযোগ করুন</span>",
             contactSubtitle: "আইসিটি ও একাডেমিক টিউশনি বা প্রজেক্টের বিষয়ে কথা বলুন",
-            contactCardTitle: "যোগাযোগের ঠিকানা",
-            directMessageTitle: "সরাসরি মেসেজ পাঠান",
-            directMessageDesc: "ফরম পূরণ করে সাবমিট করলেই ১-ক্লিকে হোয়াটসঅ্যাপ মেসেজ তৈরি হয়ে যাবে।",
-            contactNameLbl: "আপনার নাম",
-            contactPhoneLbl: "ইমেইল / ফোন নম্বর",
-            contactMsgLbl: "মেসেজ",
-            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে মেসেজ পাঠান ➔",
-            
+            contactCardTitle: "যোগাযোগের ঠিকানা ও তথ্য",
+            contactLblWa: "হোয়াটসঅ্যাপ (Direct Message / Call)",
+            contactLblEmail: "ইমেইল ঠিকানা",
+            contactLblWeb: "ব্যক্তিগত ওয়েবসাইট",
+            contactLblLoc: "বর্তমান অবস্থান ও ঠিকানা",
+            contactValLoc: "বরমী বাস স্ট্যান্ড, শ্রীপুর, গাজীপুর (Barmi, Sreepur, Gazipur)",
+            contactLblSocial: "সোশ্যাল ও প্রফেশনাল প্রোফাইল:",
+            contactBtnWa: "<i class=\"fa-brands fa-whatsapp\"></i> সরাসরি হোয়াটসঅ্যাপে কথা বলুন ➔",
+
+            // Footer & Modal BN
+            footerDesc: "বরমী, মাওনা ও শ্রীপুরে ৯ম-১০ম ও একাদশ-দ্বাদশ (HSC) শিক্ষার্থীদের জন্য প্র্যাকটিক্যাল কোডিং ও ১০০% বোর্ড পরীক্ষার স্পেশাল প্রস্তুতি।",
+            footerCol2: "কুইক লিংকস",
+            footerCol3: "সরাসরি যোগাযোগ",
+            fLinkHome: "➔ হোম পেজ",
+            fLinkWhy: "➔ কেন শিখবেন?",
+            fLinkEdu: "➔ শিক্ষাগত যোগ্যতা",
+            fLinkTuition: "➔ টিউশন বিষয়সমূহ",
+            fLinkSyllabus: "➔ ICT সিলেবাস হাব",
+            fLinkProjects: "➔ লাইভ প্রজেক্টস",
+            fLinkReviews: "➔ মতামত ও রেজাল্ট",
+            footerLocation: "বরমী, শ্রীপুর, গাজীপুর",
+            visitorLabelFooter: "মোট ওয়েবসাইট ভিজিটর",
+            modalTitle: "আইসিটি ও একাডেমিক আবেদন",
+            modalSubtitle: "সহজেই আপনার বা আপনার সন্তানের টিউশন আবেদন জমা দিন",
+            modalDesc: "আবেদন জমা দিলে সরাসরি <strong>হোয়াটসঅ্যাপ চ্যাটে</strong> আবেদনের বিবরণ সহ ওপেন হয়ে যাবে।",
+            modalBtn: "<i class=\"fa-brands fa-whatsapp\"></i> ফরমে যান এবং কথা বলুন",
+
             // Syllabus Page Keys
             sylTag: "Complete ICT Course Curriculum",
             sylTitle: "৯ম-১০ম ও HSC <span class=\"text-gradient\">আইসিটি সম্পূর্ণ সিলেবাস</span>",
@@ -351,6 +443,7 @@ function applyLanguage(lang) {
             projSub: "গুগল প্লে-স্টোরে প্রকাশিত লাইভ অ্যান্ড্রয়েড অ্যাপ্লিকেশন, আপকামিং সফটওয়্যার ও ওপেন সোর্স গিটহাব সোর্স কোড।",
             pLiveTag: "Live Mobile App",
             pLiveTitle: "📱 গুগল প্লে-স্টোরে লাইভ অ্যাপস",
+            pLiveBadge: "Live on Play Store",
             pSnakeAppName: "সাপ ও বন্যপ্রাণী — রেসকিউ বিডি",
             pSnakeAppDesc: "বাংলাদেশ বন্যপ্রাণী ও বিষধর সাপ প্রতিরোধ, উদ্ধার কাজ পরিচালনা এবং সাধারণ মানুষের মধ্যে তাৎক্ষণিক সচেতনতা তৈরির লক্ষ্যে প্রস্তুতকৃত গুগলে প্রকাশিত অফিসিয়াল মোবাইল অ্যাপ্লিকেশন।",
             pSnakePlayBtn: "<i class=\"fa-brands fa-google-play\"></i> প্লে-স্টোরে অ্যাপটি দেখুন ➔",
@@ -363,7 +456,8 @@ function applyLanguage(lang) {
             pWarrantyTitle: "Warranty Book Mobile Application",
             pWarrantyDesc: "প্রোডাক্ট ও যেকোনো ডিভাইসের ওয়ারেন্টি স্লিপ ট্র্যাকিং, এক্সপায়ারি নোটিফিকেশন ও ডিজিটাল কাস্টমার সাপোর্ট রেকর্ড ম্যানেজমেন্ট অ্যাপ।",
             pGitTag: "Open Source Code Repositories",
-            pGitTitle: "💻 অন্যান্য প্রজেক্টসমূহ"
+            pGitTitle: "💻 অন্যান্য প্রজেক্টসমূহ",
+            pGitDesc: "বর্তমানে সক্রিয় পাবলিক ও ওপেন সোর্স গিটহাব রিপোজিটরি"
         },
         en: {
             brandSubtitle: "ICT & CSE Educator",
@@ -373,25 +467,28 @@ function applyLanguage(lang) {
             navEdu: "Education",
             navTuition: "Tuition Subjects",
             navSyllabus: "ICT Syllabus",
+            navProjects: "Projects",
             navReviews: "Reviews & Results",
             navContact: "Contact",
-            navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> Free Demo",
+            navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> Book Free Demo",
             cardViewSyllabusBtn: "View Complete ICT Syllabus ➔",
             themeText: "Theme",
             statusBadge: "🔥 Free 1-on-1 Demo Classes Open | Admissions Open in Barmi, Mawna & Sreepur!",
             heroTitle: "Master <span class=\"text-gradient\">ICT & English</span> with 100% Board Exam Success!",
-            heroFocusTag: "<i class=\"fa-solid fa-bolt\"></i> Specialist ICT & English Educator | Sreepur, Mawna & Barmi",
+            heroFocusTag: "<i class=\"fa-solid fa-bolt\"></i> Specialist ICT & Academic Educator | Sreepur, Mawna & Barmi",
             heroDesc: "I am <strong>Nurul Arefin Nabil (B.Sc in CSE)</strong>. I primarily teach <strong>ICT</strong> for Class 9-12 (SSC & HSC) and <strong>English</strong> for Class 9-10. Additionally, for <strong>Class 7 to 10 Math, Science & All Subjects</strong>, I help students prepare 100% effectively with practical laptop coding, slide-based visual lessons, and easy techniques.",
             heroBtnTalk: "<i class=\"fa-solid fa-gift\"></i> Book Free Demo Class",
-            heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC & HSC Syllabus ➔",
+            heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC & HSC ICT Syllabus ➔",
             heroBtnWa: "<i class=\"fa-brands fa-whatsapp\"></i> Message on WhatsApp",
             statOneOnOneNum: "1-on-1",
             statExpNum: "4+ Yrs",
             statStudentsNum: "50+",
-            statPersonalCare: "Personal Care & Progress Updates",
-            statVisitorLabel: "Website Visitors",
+            statPersonalCare: "Personal Special Care",
+            statVisitorLabel: "Total Website Visitors",
+            badgeBscTitle: "100% A+ Success Method",
             badgeBscSub: "Specialized Board Exam Prep",
-            badgeIctSub: "Hands-on Laptop Coding Lab",
+            badgeIctTitle: "Practical Laptop Lab",
+            badgeIctSub: "Live Coding & Logic Practice",
             statExp: "ICT & Academic Teaching Exp.",
             statStudents: "Successful Students Mentored",
 
@@ -414,70 +511,140 @@ function applyLanguage(lang) {
             parentPt3: "Disciplined study routine & board exam solution sheets",
             parentCta: "<i class=\"fa-brands fa-whatsapp\"></i> Talk as a Parent on WhatsApp",
 
+            // Why Me EN
+            whyTag: "Teaching Methodology",
             whyTitle: "Why <span class=\"text-gradient\">Learn With Me?</span>",
             whySubtitle: "Not blind memorization, but practical learning and mastering technology is my primary goal",
+            whyStep1: "01 • Practical Lab",
             whyPt1Title: "Practical Coding on Computer/Laptop",
             whyPt1Desc: "Learn hands-on by typing code directly on laptops/computers, observing real-time screen outputs and practical execution.",
+            whyStep2: "02 • Digital Chapter Notes",
             whyPt2Title: "Handwritten & Digital Special Notes",
             whyPt2Desc: "Structured chapter notes provided in simple language for rapid and effective exam revisions.",
+            whyStep3: "03 • Quizzes & Model Tests",
             whyPt3Title: "Chapter Tests & Model Exams",
             whyPt3Desc: "Regular CQ & MCQ exams after completing each chapter with individualized solution sheets.",
+            whyStep4: "04 • Past Board Solutions",
             whyPt4Title: "Past Board Question Solutions",
             whyPt4Desc: "Comprehensive solution coverage for past 5-10 years board questions across Dhaka, Chittagong & Rajshahi boards.",
+            whyStep5: "05 ★ AI Smart Learning",
             whyPt5Title: "AI-Powered Smart Learning",
-            whyPt5Desc: "Learn how to leverage ChatGPT, Claude & GitHub Copilot for rapid logic understanding and smart study techniques.",
+            whyPt5Desc: "Learn how to leverage ChatGPT, Claude & GitHub Copilot for rapid logic understanding, debugging bugs, and smart study techniques.",
+
+            // Education EN
+            eduTag: "Academic Background",
             eduTitle: "Academic <span class=\"text-accent-gradient\">Qualifications & Background</span>",
-            eduSubtitle: "Computer Science & Engineering (CSE) academic achievements",
-            bscDesc: "Graduated with B.Sc in CSE. Specialized in Software Engineering, Mobile App Development (Flutter/Android), and Data Structures.",
-            hscDesc: "Achieved GPA 5.00 Out of 5.00 in HSC Science. Outstanding grades in ICT, Mathematics & Physics.",
-            sscDesc: "Achieved GPA 5.00 Out of 5.00 in SSC Science. Ranked 1st place in Sreepur Upazila.",
+            eduSubtitle: "Computer Science & Engineering (CSE) academic background & achievements",
+            eduBadgeGrad: "Graduation / Bachelor",
+            eduBscTitle: "B.Sc in Computer Science & Engineering (CSE)",
+            bscDesc: "Graduated with B.Sc in Computer Science & Engineering (CSE) (CGPA 3.70+ Out of 4.00). Specialized in Software Engineering, Mobile App Development (Flutter/Android), Data Structures, and C/C++ Algorithms.",
+            eduBadgeHsc: "Higher Secondary (HSC)",
+            eduHscTitle: "Higher Secondary (HSC — Science)",
+            hscDesc: "Achieved GPA 5.00 Out of 5.00 in HSC Science Group. Outstanding grades in ICT, Mathematics & Physics.",
+            eduBadgeSsc: "Secondary School (SSC)",
+            eduSscTitle: "Secondary School (SSC — Science)",
+            sscDesc: "Achieved GPA 5.00 Out of 5.00 in SSC Science Group. Ranked 1st place in Sreepur Upazila.",
+
+            // Tuition Offerings EN
+            tuitionTag: "Private Tuition Offerings",
             tuitionTitle: "Tuition <span class=\"text-accent-gradient\">Subjects & Offerings</span>",
             tuitionSubtitle: "Specialized academic teaching services for Class 9-10 (SSC) and Class 11-12 (HSC)",
-            catAcademicTitle: "Academic Tuition Services",
-            catSkillTitle: "Skill Development & Coding (Secondary Offerings)",
+            posterHighlightText: "<strong style=\"color: var(--accent);\">Special Care:</strong> Dedicated 1-on-1 and small batch care for Class 7 to 10 in Science, Mathematics, and all academic subjects.",
+            catAcademicTitle: "Core Academic Tuition",
+            subjIctTitle: "ICT — Class 9-10 & HSC",
+            subjIctLevel: "SSC & HSC ICT Board Exam 100% Preparation",
             subjIctDesc: "100% complete board preparation for C Programming, HTML Web Design, Number Systems, Logic Gates, and SQL Databases with practical laptop coding.",
-            subjBanglaDesc: "Comprehensive grammar, free writing, reading comprehension, and literature analysis with regular homework feedback.",
-            subjScienceDesc: "Core theories, mathematical problem solving, and CQ math concept clearing for Physics, Chemistry & Higher Math (Class 7-10).",
-            subjAppDesc: "Hands-on cross-platform Flutter/Android mobile app development course from UI design to building real apps.",
-            subjCppDesc: "Programming logic construction, loops, arrays, functions, pointers, and Object-Oriented Programming (OOP) basics.",
+            subjEngTitle: "Class 9-10 English Special",
+            subjEngLevel: "SSC English 1st & 2nd Paper Board Preparation",
+            subjEngDesc: "Grammatical Rules, Right Forms of Verbs, Tag Questions, Composition & Passage Solving with simplified techniques and regular homework feedback.",
+            subjScienceTitle: "Math, Science & All Subjects (Class 7-10)",
+            subjScienceLevel: "Math, Physics, Chemistry, Biology & All Subjects",
+            subjScienceDesc: "Core theories, mathematical problem solving, and CQ math concept clearing for Physics, Chemistry, Higher Math & General Science (Class 7-10).",
+            catSkillTitle: "Skill Development & Programming (Secondary Offerings)",
+            subjCppTitle: "C / C++ Programming & Logic",
+            subjCppLevel: "Logic Building & Problem Solving",
+            subjCppDesc: "Programming logic construction, loops, arrays, functions, pointers, and Object-Oriented Programming (OOP) fundamentals.",
+            subjAppTitle: "Mobile App Development",
+            subjAppLevel: "Flutter, Dart & Android Building",
+            subjAppDesc: "Hands-on cross-platform Flutter/Android mobile app development course from UI design to building real working apps.",
 
-            // Demo Banner Callout EN
-            demoBannerBadge: "⚡ Limited Seats Available",
-            demoBannerTitle: "Evaluate Teaching Quality Today with <span class=\"text-accent-gradient\">1 Free 1-on-1 Demo Class</span>",
-            demoBannerDesc: "Experience the interactive teaching style & environment in your first class with no admission fee. Decide on admission after trying the demo class!",
-            demoBannerBtn: "<i class=\"fa-solid fa-gift\"></i> Book Free Demo Class Now",
-
-            // Teaching mode & Parent trust EN
+            // Teaching Mode & Parent Assurance EN
             teachingModeTag: "Teaching Modes",
             parentAssuranceTag: "Parent Trust & Assurance",
             teachingModeHeading: "🏠 Teaching Locations & Modes",
             parentAssuranceHeading: "👨‍👩‍👧 Assurance to Parents",
             tMode1: "<strong>Home Visit:</strong> Private tuition at student's home in Barmi, Mawna & Sreepur.",
-            tMode2: "<strong>Private Spot:</strong> Quiet batch / private spot near Barmi Bazar.",
+            tMode2: "<strong>Private Spot:</strong> Quiet batch / private tuition spot near Barmi Bazar.",
             tMode3: "<strong>Online 1-on-1:</strong> Interactive live classes for remote students.",
-            pAssure1: "<strong>Weekly Updates:</strong> Keeping parents informed on study habits & progress.",
-            pAssure2: "<strong>Model Exams & Solutions:</strong> Chapter-wise CQ & MCQ tests with solution sheets.",
+            pAssure1: "<strong>Weekly Updates:</strong> Keeping parents informed on study habits, attendance & progress.",
+            pAssure2: "<strong>Model Exams & Solutions:</strong> Chapter-wise CQ & MCQ tests with complete solution sheets.",
             pAssure3: "<strong>Laptop Practical:</strong> Direct coding & visual slides instead of rote memorization.",
 
+            // Reviews EN
+            reviewsTag: "Student & Parent Reviews",
+            reviewsTitle: "Student & <span class=\"text-gradient\">Parent Feedback</span>",
+            reviewsSubtitle: "Real feedback on teaching methodology, hands-on laptop coding, and board exam results",
+            rev1Text: "\"After studying HSC ICT with Nabil Sir, C Programming and HTML became crystal clear. Understanding code practically on laptops helped me secure an A+ in board exams!\"",
+            rev1Name: "Sakib Ahmed",
+            rev1Role: "HSC Examinee (Mawna, Gazipur)",
+            rev2Text: "\"My son was terrified of Class 9-10 ICT and Science. Nabil Sir created genuine curiosity for learning, and weekly updates kept us completely reassured.\"",
+            rev2Name: "Md. Rafiqul Islam",
+            rev2Role: "Guardian (Barmi, Sreepur)",
+            rev3Text: "\"Sir's solution sheets and logic gate special classes right before SSC ICT allowed me to answer 50/50 marks with full confidence. Highly recommended!\"",
+            rev3Name: "Noushin Jahan",
+            rev3Role: "SSC Golden A+ Achiever",
+            rev4Text: "\"Studying Class 9-10 English grammar and ICT together removed my fear of free-hand writing. Board question solving techniques were invaluable!\"",
+            rev4Name: "Tanzil Hossain",
+            rev4Role: "SSC Examinee (Barmi)",
+            rev5Text: "\"My daughter was struggling in Class 8 Math and Science. Thanks to Nabil Sir's caring 1-on-1 guidance, she is now scoring top marks in her class.\"",
+            rev5Name: "Begum Salma Khatun",
+            rev5Role: "Guardian (Mawna)",
+            rev6Text: "\"Practicing C programming and physics mathematical formulas live on laptops was an amazing experience. Sir's mentorship was key to my success.\"",
+            rev6Name: "Mahamudul Hasan",
+            rev6Role: "HSC Examinee (Sreepur)",
+
+            // Form EN
+            formTag: "Direct WhatsApp Form",
             formTitle: "Tuition & Free Demo Class <span class=\"text-accent-gradient\">Application Hub</span>",
             formSubtitle: "Fill out 4 simple details to send a 1-click application or book a free trial demo class via WhatsApp",
             lblStudentName: "1. Student Name *",
+            placeholderStudentName: "Enter your or student's name",
             lblPhone: "2. Mobile Number *",
             lblSubject: "3. Select Required Subject / Free Demo *",
             lblArea: "4. Your Location *",
+            optIct: "HSC & SSC ICT — Special Batch",
+            optEng: "Class 9-10 English (Special Batch)",
+            optScience: "Class 7-10 (Math, Science & All Subjects)",
+            optClass78: "Class 7-8 (All Subjects Academic Care)",
+            optCppApp: "C / C++ & Mobile App Development",
+            optDemo: "Free 1-on-1 Demo Class Booking (Free Demo)",
+            optLocBarmi: "Barmi",
+            optLocMaona: "Mawna",
+            optLocSreepur: "Sreepur",
+            optLocBarama: "Barama",
+            optLocGosinga: "Gosinga",
+            optLocSohadia: "Sohadia",
+            optLocShimultoli: "Shimultoli",
+            optLocOnline: "Other Areas / Online Live Class",
             btnSubmitForm: "<i class=\"fa-brands fa-whatsapp\"></i> Chat Directly on WhatsApp ➔",
+
+            // Projects Preview EN
             projPreviewTitle: "Live Apps & <span class=\"text-gradient\">Projects Showcase</span>",
-            projPreviewSub: "View Play Store live mobile app \"Rescue BD\", upcoming projects, and open-source GitHub repositories on dedicated page",
+            projPreviewSub: "View Play Store live mobile app \"Rescue BD\", upcoming software projects, and open-source GitHub repositories on dedicated page",
             btnViewAllProjects: "<i class=\"fa-solid fa-laptop-code\"></i> Go to Projects & Live Apps Page ➔",
+
+            // Contact Section EN
+            contactTag: "Get in Touch",
             contactTitle: "Get in <span class=\"text-gradient\">Touch Directly</span>",
             contactSubtitle: "Contact for private tuition inquiries or software projects",
-            contactCardTitle: "Contact Details",
-            directMessageTitle: "Send Direct Message",
-            directMessageDesc: "Fill form and submit to create a 1-click WhatsApp message.",
-            contactNameLbl: "Your Name",
-            contactPhoneLbl: "Email / Phone Number",
-            contactMsgLbl: "Message",
-            btnSendWhatsApp: "<i class=\"fa-brands fa-whatsapp\"></i> Send Message via WhatsApp ➔",
+            contactCardTitle: "Contact Details & Info",
+            contactLblWa: "WhatsApp (Direct Message / Call)",
+            contactLblEmail: "Email Address",
+            contactLblWeb: "Personal Website",
+            contactLblLoc: "Current Location & Address",
+            contactValLoc: "Barmi Bus Stand, Sreepur, Gazipur",
+            contactLblSocial: "Social & Professional Profiles:",
+            contactBtnWa: "<i class=\"fa-brands fa-whatsapp\"></i> Chat Directly on WhatsApp ➔",
 
             // Footer & Modal EN
             footerDesc: "Practical laptop coding & 100% board exam preparation for Class 9-10 & HSC students in Barmi, Mawna & Sreepur.",
@@ -488,6 +655,7 @@ function applyLanguage(lang) {
             fLinkEdu: "➔ Academic Qualifications",
             fLinkTuition: "➔ Tuition Offerings",
             fLinkSyllabus: "➔ ICT Syllabus Hub",
+            fLinkProjects: "➔ Live Projects",
             fLinkReviews: "➔ Reviews & Results",
             footerLocation: "Barmi, Sreepur, Gazipur",
             visitorLabelFooter: "Total Website Visitors",
@@ -558,6 +726,7 @@ function applyLanguage(lang) {
             projSub: "Live Google Play Store Android applications, upcoming software platforms, and open-source GitHub source codes.",
             pLiveTag: "Live Mobile App",
             pLiveTitle: "📱 Live Apps on Google Play Store",
+            pLiveBadge: "Live on Play Store",
             pSnakeAppName: "Snakes & Wildlife — Rescue BD",
             pSnakeAppDesc: "Official Google Play Store mobile application published for wildlife protection, venomous snake rescue operations, and instant public awareness in Bangladesh.",
             pSnakePlayBtn: "<i class=\"fa-brands fa-google-play\"></i> View App on Play Store ➔",
@@ -570,7 +739,8 @@ function applyLanguage(lang) {
             pWarrantyTitle: "Warranty Book Mobile Application",
             pWarrantyDesc: "Digital device warranty tracker, expiry notification, and customer record management app.",
             pGitTag: "Open Source Code Repositories",
-            pGitTitle: "💻 Open Source GitHub Repositories"
+            pGitTitle: "💻 Other Software Projects",
+            pGitDesc: "Active public & open-source GitHub repositories"
         }
     };
 
@@ -580,6 +750,13 @@ function applyLanguage(lang) {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) {
             el.innerHTML = dict[key];
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) {
+            el.setAttribute('placeholder', dict[key]);
         }
     });
 }
@@ -750,15 +927,16 @@ function initBackgroundParticles() {
 
     let particles = [];
     let isMobile = window.innerWidth <= 768;
-    // Balanced starry density: 55 on desktop, 20 on mobile for super smooth 60-120fps performance
-    const particleCount = isMobile ? 20 : Math.min(Math.floor(width / 26), 55);
+    // Optimized particle count: 70 on desktop, 34 on mobile for rich interactive constellation
+    let particleCount = isMobile ? 34 : Math.min(Math.floor(width / 18), 72);
 
     const mouse = {
         x: null,
         y: null,
-        radius: 160
+        radius: isMobile ? 130 : 170
     };
 
+    // Desktop Mouse Events
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
@@ -769,13 +947,48 @@ function initBackgroundParticles() {
         mouse.y = null;
     });
 
+    // Mobile Touch Events (Enables beautiful fingertip constellation interactions)
+    window.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 0) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+        setTimeout(() => {
+            mouse.x = null;
+            mouse.y = null;
+        }, 300);
+    }, { passive: true });
+
+    window.addEventListener('touchcancel', () => {
+        mouse.x = null;
+        mouse.y = null;
+    }, { passive: true });
+
     window.addEventListener('resize', () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         isMobile = window.innerWidth <= 768;
+        mouse.radius = isMobile ? 130 : 170;
+        const newCount = isMobile ? 34 : Math.min(Math.floor(width / 18), 72);
+        if (particles.length !== newCount) {
+            particles = [];
+            for (let i = 0; i < newCount; i++) {
+                particles.push(new Star());
+            }
+        }
     }, { passive: true });
 
-    // Automatic Tab Visibility Pause (Zero CPU & Battery consumption when tab is in background)
+    // Automatic Tab Visibility Pause (Zero CPU & Battery consumption when tab is hidden)
     let isCanvasActive = true;
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
@@ -791,7 +1004,7 @@ function initBackgroundParticles() {
     // Star Palette Colors (Indigo, Cyan, Violet, Pink Accent)
     const starColorsDark = [
         'rgba(99, 102, 241, ',   // Indigo
-        'rgba(6, 182, 212, ',    // Cyan
+        'rgba(6, 182, 212, ',    // Cyan Neon
         'rgba(168, 85, 247, ',   // Violet / Purple
         'rgba(236, 72, 153, '    // Pink Accent
     ];
@@ -809,7 +1022,6 @@ function initBackgroundParticles() {
     class Star {
         constructor() {
             this.reset();
-            // Stagger initial positions across canvas
             this.x = Math.random() * width;
             this.y = Math.random() * height;
         }
@@ -817,15 +1029,16 @@ function initBackgroundParticles() {
         reset() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.4;
-            this.vy = (Math.random() - 0.5) * 0.4;
+            const speedScale = isMobile ? 0.35 : 0.45;
+            this.vx = (Math.random() - 0.5) * speedScale;
+            this.vy = (Math.random() - 0.5) * speedScale;
             
-            // Randomize star sizes: 70% small dust stars (0.8-1.5px), 30% glowing stars (1.8-2.6px)
-            this.isGlowingStar = Math.random() > 0.72;
-            this.baseRadius = this.isGlowingStar ? (Math.random() * 1.0 + 1.7) : (Math.random() * 0.6 + 0.8);
+            // Randomize star sizes: 65% subtle dust stars (1.0-1.6px), 35% glowing node stars (1.8-2.8px)
+            this.isGlowingStar = Math.random() > 0.65;
+            this.baseRadius = this.isGlowingStar ? (Math.random() * 1.0 + 1.8) : (Math.random() * 0.6 + 0.9);
             this.radius = this.baseRadius;
 
-            // Twinkle parameters (Zero CPU overhead flickering)
+            // Twinkle parameters
             this.twinklePhase = Math.random() * Math.PI * 2;
             this.twinkleSpeed = Math.random() * 0.025 + 0.015;
             this.colorIdx = Math.floor(Math.random() * 4);
@@ -839,18 +1052,18 @@ function initBackgroundParticles() {
             // Twinkle Alpha calculation
             this.twinklePhase += this.twinkleSpeed;
             const twinkleAlphaFactor = 0.55 + Math.sin(this.twinklePhase) * 0.45;
-            const finalAlpha = (this.isGlowingStar ? 0.75 : 0.45) * twinkleAlphaFactor;
+            const finalAlpha = (this.isGlowingStar ? 0.85 : 0.55) * twinkleAlphaFactor;
 
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
             ctx.fillStyle = `${baseColor}${finalAlpha})`;
             ctx.fill();
 
-            // Additional Radial Aura Glow for Bright Stars
-            if (this.isGlowingStar && !isLight && twinkleAlphaFactor > 0.6) {
+            // Additional Radial Aura Glow for Bright Star Nodes
+            if (this.isGlowingStar && !isLight && twinkleAlphaFactor > 0.5) {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius * 2.2, 0, Math.PI * 2);
-                ctx.fillStyle = `${baseColor}${finalAlpha * 0.22})`;
+                ctx.arc(this.x, this.y, this.radius * 2.4, 0, Math.PI * 2);
+                ctx.fillStyle = `${baseColor}${finalAlpha * 0.25})`;
                 ctx.fill();
             }
         }
@@ -859,7 +1072,7 @@ function initBackgroundParticles() {
             this.x += this.vx;
             this.y += this.vy;
 
-            // Clamping boundaries to prevent escaping or getting stuck off-screen
+            // Clamping boundaries to bounce stars smoothly inside viewport
             if (this.x < 0) {
                 this.x = 0;
                 this.vx *= -1;
@@ -875,19 +1088,21 @@ function initBackgroundParticles() {
                 this.vy *= -1;
             }
 
-            // Mouse Interaction: Subtle Gravitational Push on desktop
-            if (!isMobile && mouse.x && mouse.y) {
+            // Mouse & Touch Gravitational Interaction
+            if (mouse.x !== null && mouse.y !== null) {
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distSq = dx * dx + dy * dy;
-                // Squared Distance check (160 * 160 = 25600)
-                if (distSq < 25600) {
+                let maxDistSq = mouse.radius * mouse.radius;
+
+                if (distSq < maxDistSq) {
                     let dist = Math.sqrt(distSq);
                     let angle = Math.atan2(dy, dx);
                     let force = (mouse.radius - dist) / mouse.radius;
-                    // Push stars away smoothly
-                    this.x -= Math.cos(angle) * force * 2.0;
-                    this.y -= Math.sin(angle) * force * 2.0;
+                    // Push stars away smoothly from cursor/touch
+                    const pushFactor = isMobile ? 1.4 : 2.2;
+                    this.x -= Math.cos(angle) * force * pushFactor;
+                    this.y -= Math.sin(angle) * force * pushFactor;
                 }
             }
 
@@ -921,47 +1136,52 @@ function initBackgroundParticles() {
 
         ctx.clearRect(0, 0, width, height);
         const isLight = window.currentTheme === 'light';
+        const connMaxDist = isMobile ? 95 : 130;
+        const connMaxDistSq = connMaxDist * connMaxDist;
+        const beamMaxDist = isMobile ? 120 : 150;
+        const beamMaxDistSq = beamMaxDist * beamMaxDist;
 
-        // 1. Draw Stars & Connection Lines
+        // 1. Draw Stars & Connected Node Mesh Constellation
         for (let i = 0; i < particles.length; i++) {
             particles[i].update();
 
-            // Star constellation lines (Desktop only to guarantee 0% mobile CPU load)
-            if (!isMobile) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x;
-                    let dy = particles[i].y - particles[j].y;
-                    let distSq = dx * dx + dy * dy;
+            // Inter-Star Constellation Lines (Connected Node Mesh on both Desktop & Mobile)
+            for (let j = i + 1; j < particles.length; j++) {
+                let dx = particles[i].x - particles[j].x;
+                let dy = particles[i].y - particles[j].y;
+                let distSq = dx * dx + dy * dy;
 
-                    // Squared distance check: 110 * 110 = 12100
-                    if (distSq < 12100) {
-                        let dist = Math.sqrt(distSq);
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        let alpha = (1 - dist / 110) * 0.20;
-                        ctx.strokeStyle = isLight ? `rgba(99, 102, 241, ${alpha * 0.8})` : `rgba(99, 102, 241, ${alpha})`;
-                        ctx.lineWidth = 0.65;
-                        ctx.stroke();
-                    }
+                if (distSq < connMaxDistSq) {
+                    let dist = Math.sqrt(distSq);
+                    let alpha = (1 - dist / connMaxDist) * 0.26;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = isLight 
+                        ? `rgba(99, 102, 241, ${alpha * 0.85})` 
+                        : `rgba(99, 102, 241, ${alpha})`;
+                    ctx.lineWidth = isMobile ? 0.6 : 0.75;
+                    ctx.stroke();
                 }
+            }
 
-                // Starlight Connection Beams directly to Cursor
-                if (mouse.x && mouse.y) {
-                    let dx = mouse.x - particles[i].x;
-                    let dy = mouse.y - particles[i].y;
-                    let distSq = dx * dx + dy * dy;
-                    // Beam connection radius: 130 * 130 = 16900
-                    if (distSq < 16900) {
-                        let dist = Math.sqrt(distSq);
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(mouse.x, mouse.y);
-                        let beamAlpha = (1 - dist / 130) * 0.32;
-                        ctx.strokeStyle = isLight ? `rgba(6, 182, 212, ${beamAlpha * 0.85})` : `rgba(6, 182, 212, ${beamAlpha})`;
-                        ctx.lineWidth = 0.8;
-                        ctx.stroke();
-                    }
+            // Starlight Connection Beams directly to Cursor or Touch point
+            if (mouse.x !== null && mouse.y !== null) {
+                let dx = mouse.x - particles[i].x;
+                let dy = mouse.y - particles[i].y;
+                let distSq = dx * dx + dy * dy;
+
+                if (distSq < beamMaxDistSq) {
+                    let dist = Math.sqrt(distSq);
+                    let beamAlpha = (1 - dist / beamMaxDist) * 0.38;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.strokeStyle = isLight 
+                        ? `rgba(6, 182, 212, ${beamAlpha * 0.85})` 
+                        : `rgba(6, 182, 212, ${beamAlpha})`;
+                    ctx.lineWidth = isMobile ? 0.75 : 0.95;
+                    ctx.stroke();
                 }
             }
         }
@@ -1255,13 +1475,13 @@ function initTuitionModal() {
 }
 
 /* ==========================================================================
-   13. Hero Dynamic Typewriter Animation
+   13. Hero Dynamic Typewriter Animation (Multilingual Support)
    ========================================================================== */
 function initTypewriter() {
     const el = document.getElementById('typewriterText');
     if (!el) return;
 
-    const roles = [
+    const bnRoles = [
         "ICT + English — বোর্ড প্রস্তুতি হোক একসাথে!",
         "ল্যাপটপে হাতে-কলমে কোডিং ও স্লাইডভিত্তিক পড়াশোনা",
         "৯ম-১০ম ও একাদশ-দ্বাদশ (SSC & HSC) স্পেশাল ব্যাচ",
@@ -1270,13 +1490,24 @@ function initTypewriter() {
         "B.Sc in CSE | আইসিটি ও ইংলিশ ইনস্ট্রাক্টর"
     ];
 
+    const enRoles = [
+        "Master ICT & English with 100% Board Exam Success!",
+        "Hands-on Laptop Coding & Visual Interactive Lessons",
+        "Class 9-10 (SSC) & Class 11-12 (HSC) Special Batches",
+        "Comprehensive Past Board Question Solutions",
+        "100% Guaranteed A+ Board Preparation System",
+        "B.Sc in CSE | Specialist ICT & Academic Educator"
+    ];
+
     let roleIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
     let speed = 75;
 
     function type() {
-        const currentRole = roles[roleIdx];
+        const lang = document.documentElement.getAttribute('lang') || 'bn';
+        const roles = (lang === 'en') ? enRoles : bnRoles;
+        const currentRole = roles[roleIdx % roles.length];
 
         if (isDeleting) {
             el.textContent = currentRole.substring(0, charIdx - 1);
