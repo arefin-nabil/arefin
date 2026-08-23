@@ -1036,27 +1036,6 @@
         </div>
     </section>
 
-
-    <!-- Special Highlight: Free Demo Banner Callout -->
-    <div class="container" style="margin-top: 2rem; margin-bottom: -2rem;">
-        <div class="glass-card demo-highlight-banner reveal-pop-up"
-            style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%); border: 2px solid rgba(16, 185, 129, 0.4); padding: 2.25rem; border-radius: var(--radius-lg); text-align: center; position: relative; overflow: hidden;">
-            <div style="display: inline-block; background: #10b981; color: #fff; padding: 0.35rem 1.25rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 0.5px;" data-i18n="demoBannerBadge">
-                ⚡ সীমিত আসনের সুযোগ
-            </div>
-            <h3 style="font-size: 1.75rem; color: var(--text-main); margin-bottom: 0.65rem;" data-i18n="demoBannerTitle">
-                পড়াশোনার মান যাচাই করতে আজই নিন <span class="text-accent-gradient">১টি ফ্রি ১-অন-১ ডেমো ক্লাস</span>
-            </h3>
-            <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 1.5rem auto; line-height: 1.6;" data-i18n="demoBannerDesc">
-                কোনো ভর্তি ফি ছাড়াই প্রথম ক্লাসে এসে ক্লাস পদ্ধতি ও পড়ানোর পরিবেশ পরখ করে দেখুন। ভর্তি হবেন কি না: তা ডেমো ক্লাসের পরেই সিদ্ধান্ত নিন!
-            </p>
-            <a href="index.html#tuition-apply" class="btn btn-accent btn-lg"
-                style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #10b981; font-size: 1.1rem; padding: 0.9rem 2.25rem;" data-i18n="demoBannerBtn">
-                <i class="fa-solid fa-gift"></i> এখনই ডেমো ক্লাস বুক করুন
-            </a>
-        </div>
-    </div>
-
     <!-- ==========================================================================
          SINGLE UNIFIED TUITION & FREE DEMO CLASS APPLICATION HUB
          ========================================================================== -->
@@ -1161,9 +1140,9 @@
                     বলুন</p>
             </div>
 
-            <div class="contact-grid">
-                <div class="glass-card contact-info-card reveal-glow-border">
-                    <h3 style="font-size: 1.4rem;" data-i18n="contactCardTitle">যোগাযোগের ঠিকানা</h3>
+            <div class="contact-single-wrapper" style="max-width: 620px; margin: 0 auto;">
+                <div class="glass-card contact-info-card reveal-glow-border" style="padding: 2.5rem 2.25rem;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;" data-i18n="contactCardTitle">যোগাযোগের ঠিকানা ও তথ্য</h3>
 
                     <div class="contact-item">
                         <div class="contact-icon"
@@ -1203,15 +1182,15 @@
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div>
-                            <div class="contact-label">বর্তমান অবস্থান / মূল বাসস্থান</div>
-                            <div class="contact-val">বরমী, শ্রীপুর, গাজীপুর (Barmi, Sreepur, Gazipur)
+                            <div class="contact-label">বর্তমান অবস্থান ও ঠিকানা</div>
+                            <div class="contact-val">বরমী বাস স্ট্যান্ড, শ্রীপুর, গাজীপুর (Barmi, Sreepur, Gazipur)
                             </div>
                         </div>
                     </div>
 
-                    <div>
-                        <div class="contact-label" style="margin-bottom: 0.5rem;">সোশ্যাল প্রোফাইল:</div>
-                        <div class="social-links">
+                    <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); text-align: center;">
+                        <div class="contact-label" style="margin-bottom: 0.85rem;">সোশ্যাল ও প্রফেশনাল প্রোফাইল:</div>
+                        <div class="social-links" style="justify-content: center;">
                             <!-- Facebook -->
                             <a href="https://web.facebook.com/N.ArefinNabil/" target="_blank" class="social-icon-btn"
                                 title="Facebook"
@@ -1235,38 +1214,14 @@
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <!-- Quick Message Form with Direct WhatsApp Handler -->
-                <div class="glass-card reveal-glow-border" style="padding: 2.5rem;">
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;" data-i18n="directMessageTitle">সরাসরি মেসেজ
-                        পাঠান</h3>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;"
-                        data-i18n="directMessageDesc">ফরম পূরণ করে সাবমিট করলেই ১-ক্লিকে হোয়াটসঅ্যাপ মেসেজ তৈরি হয়ে
-                        যাবে।</p>
-                    <form id="directContactForm">
-                        <div class="form-group">
-                            <label class="form-label" for="contactName" data-i18n="contactNameLbl">আপনার নাম</label>
-                            <input type="text" class="form-control" id="contactName" placeholder="আপনার নাম লিখুন"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contactPhone" data-i18n="contactPhoneLbl">ইমেইল / ফোন
-                                নম্বর</label>
-                            <input type="text" class="form-control" id="contactPhone" placeholder="ইমেইল বা ফোন নম্বর"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contactMsg" data-i18n="contactMsgLbl">মেসেজ</label>
-                            <textarea class="form-control" id="contactMsg" rows="4" placeholder="আপনার কথাগুলো লিখুন..."
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-accent"
-                            style="width: 100%; background: #25D366; border-color: #25D366;"
-                            data-i18n="btnSendWhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে মেসেজ পাঠান ➔
-                        </button>
-                    </form>
+                    <div style="margin-top: 1.75rem;">
+                        <a href="https://wa.me/8801881196146?text=আসসালামু%20আলাইকুম%20নাবিল%20স্যার,%20আমি%20আপনার%20সাথে%20কথা%20বলতে%20চাই।"
+                            target="_blank" class="btn btn-accent btn-lg"
+                            style="width: 100%; background: #25D366; border-color: #25D366; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);">
+                            <i class="fa-brands fa-whatsapp"></i> সরাসরি হোয়াটসঅ্যাপে কথা বলুন ➔
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
