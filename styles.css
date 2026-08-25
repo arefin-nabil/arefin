@@ -2725,3 +2725,79 @@ a[href*="wa.me"]::before {
         padding: 1rem 1.25rem !important;
     }
 }
+
+/* ==========================================================================
+   Course Features & Study Methodology Grid Styles
+   ========================================================================== */
+.course-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 992px) {
+    .course-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-card {
+    padding: 1.85rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: var(--trans-spring);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border-color);
+}
+
+.feature-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+    color: var(--text-main);
+    line-height: 1.35;
+}
+
+.feature-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.feature-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+[data-theme="light"] .feature-title {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .feature-desc {
+    color: #334155 !important;
+}
+
+[data-theme="light"] .feature-icon {
+    border-color: rgba(99, 102, 241, 0.2) !important;
+}
