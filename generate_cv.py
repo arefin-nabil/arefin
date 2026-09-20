@@ -56,6 +56,41 @@ def add_section_header(doc, title_text):
     pPr.append(pBdr)
     return p
 
+def set_classic_grid_borders(table, color="94A3B8", sz="4"):
+    tblPr = table._element.xpath('w:tblPr')
+    if tblPr:
+        borders_xml = f'''
+        <w:tblBorders {nsdecls("w")}>
+            <w:top w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>
+            <w:bottom w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>
+            <w:left w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>
+            <w:right w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>
+            <w:insideH w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>
+            <w:insideV w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>
+        </w:tblBorders>
+        '''
+        tblPr[0].append(parse_xml(borders_xml))
+
+def add_classic_section_header(doc, title_text):
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(6)
+    p.paragraph_format.space_after = Pt(2)
+    p.paragraph_format.keep_with_next = True
+    
+    # Classic banner with shaded background and navy border
+    pPr = p._p.get_or_add_pPr()
+    shd = parse_xml(f'<w:shd {nsdecls("w")} w:fill="E2E8F0"/>')
+    pPr.append(shd)
+    pBdr = parse_xml(f'<w:pBdr {nsdecls("w")}><w:bottom w:val="single" w:sz="6" w:space="2" w:color="0F4C81"/></w:pBdr>')
+    pPr.append(pBdr)
+    
+    run = p.add_run(f"  {title_text.upper()}")
+    run.font.name = 'Calibri'
+    run.font.size = Pt(9.5)
+    run.font.bold = True
+    run.font.color.rgb = RGBColor(15, 76, 129)
+    return p
+
 def build_best_teacher_cv():
     doc = Document()
     
@@ -521,6 +556,11 @@ def build_best_teacher_cv():
     r_sig_date.font.size = Pt(8.3)
     r_sig_date.font.color.rgb = RGBColor(100, 116, 139)
     
+    # =========================================================================
+    # PAGE 3: TRADITIONAL / OLD-STYLE CV (STANDALONE 1-PAGE FORMAT)
+    # =========================================================================
+    add_old_style_cv_page(doc)
+    
     output_filename = "CV_Nurul_Arefin_Nabil_ICT_Lecturer.docx"
     try:
         doc.save(output_filename)
@@ -529,6 +569,324 @@ def build_best_teacher_cv():
         alt_filename = "CV_Nurul_Arefin_Nabil_ICT_Teacher.docx"
         doc.save(alt_filename)
         print(f"Original file is open in Word. Saved to: {alt_filename}")
+
+def add_old_style_cv_page(doc):
+    # Add page break to start Page 3 (Traditional 1-page Old Style CV)
+    doc.add_page_break()
+    
+    # Header Table: Title & Contacts on Left/Center, Photo Box on Right
+    hdr_tbl = doc.add_table(rows=1, cols=2)
+    hdr_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+    hdr_tbl.autofit = False
+    
+    hdr_widths = [Inches(5.55), Inches(1.4)]
+    for row in hdr_tbl.rows:
+        for idx, w in enumerate(hdr_widths):
+            row.cells[idx].width = w
+            
+    c_info = hdr_tbl.rows[0].cells[0]
+    c_photo = hdr_tbl.rows[0].cells[1]
+    set_cell_margins(c_info, top=0, bottom=15, left=0, right=30)
+    set_cell_margins(c_photo, top=8, bottom=8, left=8, right=8)
+    c_photo.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+    
+    # Border around photo cell for classic passport frame
+    tcPr = c_photo._element.get_or_add_tcPr()
+    p_bdr = parse_xml(f'''
+    <w:tcBorders {nsdecls("w")}>
+        <w:top w:val="single" w:sz="6" w:space="0" w:color="94A3B8"/>
+        <w:left w:val="single" w:sz="6" w:space="0" w:color="94A3B8"/>
+        <w:bottom w:val="single" w:sz="6" w:space="0" w:color="94A3B8"/>
+        <w:right w:val="single" w:sz="6" w:space="0" w:color="94A3B8"/>
+    </w:tcBorders>
+    ''')
+    tcPr.append(p_bdr)
+    
+    # Traditional Title
+    p_t1 = c_info.paragraphs[0]
+    p_t1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_t1.paragraph_format.space_before = Pt(0)
+    p_t1.paragraph_format.space_after = Pt(1)
+    r_cv = p_t1.add_run("CURRICULUM VITAE\n")
+    r_cv.font.name = 'Calibri'
+    r_cv.font.size = Pt(13)
+    r_cv.font.bold = True
+    r_cv.font.underline = True
+    r_cv.font.color.rgb = RGBColor(15, 76, 129)
+    
+    r_of = p_t1.add_run("OF\n")
+    r_of.font.name = 'Calibri'
+    r_of.font.size = Pt(8.5)
+    r_of.font.bold = True
+    
+    r_name = p_t1.add_run("NURUL AREFIN NABIL")
+    r_name.font.name = 'Calibri'
+    r_name.font.size = Pt(13)
+    r_name.font.bold = True
+    r_name.font.color.rgb = RGBColor(15, 76, 129)
+    
+    # Contact info in traditional style
+    p_cnt = c_info.add_paragraph()
+    p_cnt.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_cnt.paragraph_format.space_before = Pt(2)
+    p_cnt.paragraph_format.space_after = Pt(0)
+    p_cnt.paragraph_format.line_spacing = 1.05
+    r_c = p_cnt.add_run(
+        "Mailing Address: Barmi, Sreepur, Gazipur-1743, Dhaka, Bangladesh\n"
+        "Mobile: +880 1881-196146   |   E-mail: nurularefinnabil@gmail.com\n"
+        "Portfolio: www.areefin.me   |   LinkedIn: in/n-arefin-nabil"
+    )
+    r_c.font.size = Pt(8.2)
+    r_c.font.color.rgb = RGBColor(51, 65, 85)
+    
+    # Photo insertion
+    p_ph = c_photo.paragraphs[0]
+    p_ph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_ph.paragraph_format.space_after = Pt(0)
+    img_path = "profile.jpg"
+    if os.path.exists(img_path):
+        p_ph.add_run().add_picture(img_path, width=Inches(1.15))
+        
+    # -------------------------------------------------------------------------
+    # 1. CAREER OBJECTIVE
+    # -------------------------------------------------------------------------
+    add_classic_section_header(doc, "1. Career Objective")
+    p_obj = doc.add_paragraph()
+    p_obj.paragraph_format.space_before = Pt(2)
+    p_obj.paragraph_format.space_after = Pt(3)
+    p_obj.paragraph_format.line_spacing = 1.08
+    p_obj.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    r_obj = p_obj.add_run(
+        "To secure a responsible position as an ICT / Computer Science Teacher or IT Professional in a reputed institution, "
+        "utilizing my academic foundation in CSE, practical programming skills, and teaching capabilities to contribute "
+        "effectively toward institutional excellence and students' academic growth."
+    )
+    r_obj.font.size = Pt(8.6)
+    
+    # -------------------------------------------------------------------------
+    # 2. WORK & TEACHING EXPERIENCE
+    # -------------------------------------------------------------------------
+    add_classic_section_header(doc, "2. Work & Teaching Experience")
+    
+    exp_items = [
+        ("ICT & Programming Instructor / Academic Tutor", "Tongi, Uttara & Sreepur", "2024 – Present (1+ Year)",
+         "Teaching HSC ICT curriculum (C Programming, HTML/Web Design, Database/SQL, Number Systems). Conducting practical lab sessions and exam preparation model tests."),
+        ("Assistant Teacher (ICT & Science)", "Barmi Al-Madina School & Plus Coaching", "1+ Year",
+         "Conducted secondary ICT & Science classes, structured lesson planning, student evaluation, computer lab training, and typing coaching.")
+    ]
+    
+    for title, loc, duration, desc in exp_items:
+        p_e = doc.add_paragraph()
+        p_e.paragraph_format.space_before = Pt(2)
+        p_e.paragraph_format.space_after = Pt(1)
+        p_e.paragraph_format.line_spacing = 1.05
+        
+        r_t = p_e.add_run(f"•  {title}")
+        r_t.font.bold = True
+        r_t.font.size = Pt(8.8)
+        r_t.font.color.rgb = RGBColor(15, 76, 129)
+        
+        r_l = p_e.add_run(f" — {loc}")
+        r_l.font.size = Pt(8.4)
+        
+        r_d = p_e.add_run(f"  ({duration})\n")
+        r_d.font.bold = True
+        r_d.font.size = Pt(8.2)
+        r_d.font.color.rgb = RGBColor(100, 116, 139)
+        
+        r_ds = p_e.add_run(f"   {desc}")
+        r_ds.font.size = Pt(8.3)
+        r_ds.font.color.rgb = RGBColor(51, 65, 85)
+
+    # -------------------------------------------------------------------------
+    # 3. ACADEMIC QUALIFICATIONS (CLASSIC FULL GRID TABLE)
+    # -------------------------------------------------------------------------
+    add_classic_section_header(doc, "3. Educational Qualifications")
+    
+    edu_tbl = doc.add_table(rows=4, cols=5)
+    edu_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+    edu_tbl.autofit = False
+    set_classic_grid_borders(edu_tbl, color="94A3B8", sz="4")
+    
+    edu_widths = [Inches(1.95), Inches(2.2), Inches(1.05), Inches(0.65), Inches(1.1)]
+    for row in edu_tbl.rows:
+        for idx, w in enumerate(edu_widths):
+            row.cells[idx].width = w
+            
+    hdrs = ["Exam / Degree", "Board / University", "Group / Major", "Year", "Result"]
+    for idx, text in enumerate(hdrs):
+        cell = edu_tbl.rows[0].cells[idx]
+        set_cell_background(cell, "F1F5F9")
+        set_cell_margins(cell, top=45, bottom=45, left=50, right=50)
+        p = cell.paragraphs[0]
+        p.paragraph_format.space_after = Pt(0)
+        if idx in [3, 4]:
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r = p.add_run(text)
+        r.font.bold = True
+        r.font.size = Pt(8.4)
+        r.font.color.rgb = RGBColor(15, 76, 129)
+        
+    edu_rows = [
+        ("B.Sc. in Computer Science & Engineering", "Uttara University, Dhaka", "CSE", "2026", "CGPA 3.40 / 4.00"),
+        ("Alim (Equivalent to HSC)", "Tamirul Millat Kamil Madrasha", "Science", "2021", "GPA 5.00 / 5.00"),
+        ("Dakhil (Equivalent to SSC)", "Patka Dakhil Madrasha", "Science", "2019", "GPA 5.00 (Upazila 1st)")
+    ]
+    for r_idx, data in enumerate(edu_rows, start=1):
+        for c_idx, val in enumerate(data):
+            c = edu_tbl.rows[r_idx].cells[c_idx]
+            set_cell_margins(c, top=35, bottom=35, left=50, right=50)
+            p = c.paragraphs[0]
+            p.paragraph_format.space_after = Pt(0)
+            if c_idx in [3, 4]:
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            r = p.add_run(val)
+            r.font.size = Pt(8.2)
+            if c_idx == 0:
+                r.font.bold = True
+            if "5.00" in val:
+                r.font.bold = True
+
+    # -------------------------------------------------------------------------
+    # 4. COMPUTER & TECHNICAL SKILLS
+    # -------------------------------------------------------------------------
+    add_classic_section_header(doc, "4. Computer & Technical Skills")
+    skills = [
+        ("Office Applications", "MS Word, MS Excel, MS PowerPoint, MS Access, Internet & Google Workspace"),
+        ("Programming & Web", "C, C++, Python, HTML5, CSS3, Relational Database & SQL queries"),
+        ("Hardware & Systems", "Windows, Linux, Computer Troubleshooting, Lab Networking & Safe Internet")
+    ]
+    for cat, items in skills:
+        p_s = doc.add_paragraph()
+        p_s.paragraph_format.space_before = Pt(1)
+        p_s.paragraph_format.space_after = Pt(1)
+        p_s.paragraph_format.line_spacing = 1.05
+        r_k = p_s.add_run(f"•  {cat}: ")
+        r_k.font.bold = True
+        r_k.font.size = Pt(8.4)
+        r_v = p_s.add_run(items)
+        r_v.font.size = Pt(8.3)
+
+    # -------------------------------------------------------------------------
+    # 5. PERSONAL DETAILS (TRADITIONAL 2-COLUMN TABLE FORMAT)
+    # -------------------------------------------------------------------------
+    add_classic_section_header(doc, "5. Personal Information")
+    
+    p_tbl = doc.add_table(rows=5, cols=4)
+    p_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+    p_tbl.autofit = False
+    
+    p_widths = [Inches(1.5), Inches(2.2), Inches(1.3), Inches(1.95)]
+    for row in p_tbl.rows:
+        for idx, w in enumerate(p_widths):
+            row.cells[idx].width = w
+            
+    personal_data = [
+        ("Father's Name", ": Md. Norul Amin", "Date of Birth", ": 26th February, 2004"),
+        ("Mother's Name", ": Nurun Naher", "Gender / Sex", ": Male"),
+        ("Nationality", ": Bangladeshi (by birth)", "Marital Status", ": Single"),
+        ("Religion", ": Islam", "Blood Group", ": B+ (Positive)"),
+        ("Permanent Address", ": Barmi, Sreepur, Gazipur", "Present Address", ": Barmi, Sreepur, Gazipur")
+    ]
+    
+    for r_i, (k1, v1, k2, v2) in enumerate(personal_data):
+        cells = p_tbl.rows[r_i].cells
+        for c in cells:
+            set_cell_margins(c, top=20, bottom=20, left=30, right=30)
+            
+        p0 = cells[0].paragraphs[0]
+        p0.paragraph_format.space_after = Pt(0)
+        r0 = p0.add_run(k1)
+        r0.font.bold = True
+        r0.font.size = Pt(8.2)
+        
+        p1 = cells[1].paragraphs[0]
+        p1.paragraph_format.space_after = Pt(0)
+        r1 = p1.add_run(v1)
+        r1.font.size = Pt(8.2)
+        
+        p2 = cells[2].paragraphs[0]
+        p2.paragraph_format.space_after = Pt(0)
+        r2 = p2.add_run(k2)
+        r2.font.bold = True
+        r2.font.size = Pt(8.2)
+        
+        p3 = cells[3].paragraphs[0]
+        p3.paragraph_format.space_after = Pt(0)
+        r3 = p3.add_run(v2)
+        r3.font.size = Pt(8.2)
+
+    # -------------------------------------------------------------------------
+    # 6. REFERENCES
+    # -------------------------------------------------------------------------
+    add_classic_section_header(doc, "6. References")
+    
+    r_tbl = doc.add_table(rows=1, cols=2)
+    r_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+    r_tbl.autofit = False
+    for idx, w in enumerate([Inches(3.48), Inches(3.47)]):
+        r_tbl.rows[0].cells[idx].width = w
+        set_cell_margins(r_tbl.rows[0].cells[idx], top=20, bottom=20, left=30, right=30)
+        
+    c_r1 = r_tbl.rows[0].cells[0]
+    p_r1 = c_r1.paragraphs[0]
+    p_r1.paragraph_format.space_after = Pt(0)
+    p_r1.paragraph_format.line_spacing = 1.05
+    r_r1_n = p_r1.add_run("Tanzillah Wahid\n")
+    r_r1_n.font.bold = True
+    r_r1_n.font.size = Pt(8.5)
+    r_r1_n.font.color.rgb = RGBColor(15, 76, 129)
+    r_r1_d = p_r1.add_run("Assistant Professor & Coordinator, Dept. of CSE\nUttara University, Dhaka | Email: tanzillah@uttarauniversity.edu.bd")
+    r_r1_d.font.size = Pt(8.0)
+    
+    c_r2 = r_tbl.rows[0].cells[1]
+    p_r2 = c_r2.paragraphs[0]
+    p_r2.paragraph_format.space_after = Pt(0)
+    p_r2.paragraph_format.line_spacing = 1.05
+    r_r2_n = p_r2.add_run("Md. Norul Amin\n")
+    r_r2_n.font.bold = True
+    r_r2_n.font.size = Pt(8.5)
+    r_r2_n.font.color.rgb = RGBColor(15, 76, 129)
+    r_r2_d = p_r2.add_run("Founder & Principal, Barmi Al-Madina Pre-Cadet School\nBarmi, Sreepur, Gazipur | Mobile: +880 1915-430867")
+    r_r2_d.font.size = Pt(8.0)
+
+    # -------------------------------------------------------------------------
+    # DECLARATION & SIGNATURE
+    # -------------------------------------------------------------------------
+    p_dec = doc.add_paragraph()
+    p_dec.paragraph_format.space_before = Pt(4)
+    p_dec.paragraph_format.space_after = Pt(4)
+    p_dec.paragraph_format.line_spacing = 1.05
+    r_dec = p_dec.add_run(
+        "Declaration: I do hereby declare that all information stated above is authentic, complete and true to the best of my knowledge."
+    )
+    r_dec.font.italic = True
+    r_dec.font.size = Pt(8.0)
+    r_dec.font.color.rgb = RGBColor(71, 85, 105)
+    
+    # Signature row
+    sig_tbl = doc.add_table(rows=1, cols=2)
+    sig_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+    sig_tbl.autofit = False
+    for idx, w in enumerate([Inches(3.5), Inches(3.45)]):
+        sig_tbl.rows[0].cells[idx].width = w
+        set_cell_margins(sig_tbl.rows[0].cells[idx], top=8, bottom=0, left=0, right=0)
+        
+    p_dt = sig_tbl.rows[0].cells[0].paragraphs[0]
+    p_dt.paragraph_format.space_after = Pt(0)
+    r_dt = p_dt.add_run("\nDate: .......................................")
+    r_dt.font.size = Pt(8.2)
+    r_dt.font.color.rgb = RGBColor(100, 116, 139)
+    
+    p_sg = sig_tbl.rows[0].cells[1].paragraphs[0]
+    p_sg.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    p_sg.paragraph_format.space_after = Pt(0)
+    r_sgl = p_sg.add_run("_______________________________\n")
+    r_sgl.font.bold = True
+    r_sgl.font.color.rgb = RGBColor(15, 76, 129)
+    r_sgn = p_sg.add_run("(Nurul Arefin Nabil)")
+    r_sgn.font.bold = True
+    r_sgn.font.size = Pt(8.8)
 
 if __name__ == "__main__":
     build_best_teacher_cv()
