@@ -84,25 +84,54 @@ function initNavbar() {
         }
     });
 
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+    const navBackdrop = document.getElementById('navBackdrop');
+
+    function closeMobileMenu() {
+        if (!navMenu) return;
+        navMenu.classList.remove('active');
+        if (navBackdrop) navBackdrop.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        if (mobileToggle) {
             const icon = mobileToggle.querySelector('i');
             if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-xmark');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
             }
-        });
+        }
+    }
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                const icon = mobileToggle.querySelector('i');
-                if (icon) {
+    function toggleMobileMenu() {
+        if (!navMenu) return;
+        const isOpen = navMenu.classList.toggle('active');
+        if (navBackdrop) navBackdrop.classList.toggle('active', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        if (mobileToggle) {
+            const icon = mobileToggle.querySelector('i');
+            if (icon) {
+                if (isOpen) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
                     icon.classList.add('fa-bars');
                     icon.classList.remove('fa-xmark');
                 }
-            });
+            }
+        }
+    }
+
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', closeMobileMenu);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 }
@@ -187,6 +216,8 @@ function applyLanguage(lang) {
             navProjects: "প্রজেক্ট",
             navReviews: "মতামত ও রেজাল্ট",
             navContact: "যোগাযোগ",
+            navDownloadCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> সিভি ডাউনলোড",
+            navCv: "শিক্ষক সিভি (PDF)",
             navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> ফ্রি ডেমো বুক করুন",
             cardViewSyllabusBtn: "সম্পূর্ণ আইসিটি সিলেবাস দেখুন ➔",
             themeText: "থিম",
@@ -197,6 +228,12 @@ function applyLanguage(lang) {
             heroBtnTalk: "<i class=\"fa-solid fa-gift\"></i> ফ্রি ডেমো ক্লাস বুক করুন",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC ও HSC ICT সিলেবাস ➔",
             heroBtnWa: "<i class=\"fa-brands fa-whatsapp\"></i> হোয়াটসঅ্যাপে মেসেজ",
+            heroBtnCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> শিক্ষক সিভি ডাউনলোড (PDF)",
+            eduCvTag: "Official Curriculum Vitae",
+            eduCvCardTitle: "নূরুল আরেফিন নাবিল — অফিসিয়াল শিক্ষক সিভি (CV / Resume)",
+            eduCvCardDesc: "বি.এস.সি ইন সিএসই (CGPA 3.70), আইসিটি ও একাডেমিক শিক্ষকতার বিস্তারিত অভিজ্ঞতা, টেকনিক্যাল স্কিলস ও প্রকাশনা সম্বলিত ভেরিফাইড সিভি।",
+            eduDownloadCvBtn: "<i class=\"fa-solid fa-file-pdf\"></i> শিক্ষক সিভি ডাউনলোড (PDF)",
+            eduDownloadDocxBtn: "<i class=\"fa-solid fa-file-word\"></i> এডিটেবল Word ফাইল (DOCX)",
             statOneOnOneNum: "১-অন-১",
             statExpNum: "২+ বছর",
             statStudentsNum: "৫০+",
@@ -401,6 +438,7 @@ function applyLanguage(lang) {
             fLinkSyllabus: "➔ ICT সিলেবাস হাব",
             fLinkProjects: "➔ লাইভ প্রজেক্টস",
             fLinkReviews: "➔ মতামত ও রেজাল্ট",
+            fLinkCv: "➔ শিক্ষক সিভি (PDF ডাউনলোড)",
             footerLocation: "বরমী, শ্রীপুর, গাজীপুর",
             visitorLabelFooter: "মোট ওয়েবসাইট ভিজিটর",
             modalTitle: "আইসিটি ও একাডেমিক আবেদন",
@@ -497,6 +535,8 @@ function applyLanguage(lang) {
             navProjects: "Projects",
             navReviews: "Reviews & Results",
             navContact: "Contact",
+            navDownloadCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> Download CV",
+            navCv: "Teacher CV (PDF)",
             navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> Book Free Demo",
             cardViewSyllabusBtn: "View Complete ICT Syllabus ➔",
             themeText: "Theme",
@@ -507,6 +547,12 @@ function applyLanguage(lang) {
             heroBtnTalk: "<i class=\"fa-solid fa-gift\"></i> Book Free Demo Class",
             heroBtnSyllabus: "<i class=\"fa-solid fa-book-open\"></i> SSC & HSC ICT Syllabus ➔",
             heroBtnWa: "<i class=\"fa-brands fa-whatsapp\"></i> Message on WhatsApp",
+            heroBtnCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> Download Teacher CV (PDF)",
+            eduCvTag: "Official Curriculum Vitae",
+            eduCvCardTitle: "Nurul Arefin Nabil — Official Teacher CV / Resume",
+            eduCvCardDesc: "B.Sc in CSE (CGPA 3.70), comprehensive ICT & academic teaching credentials, projects, and contact details.",
+            eduDownloadCvBtn: "<i class=\"fa-solid fa-file-pdf\"></i> Download Teacher CV (PDF)",
+            eduDownloadDocxBtn: "<i class=\"fa-solid fa-file-word\"></i> Editable Word File (DOCX)",
             statOneOnOneNum: "1-on-1",
             statExpNum: "2+ Yrs",
             statStudentsNum: "50+",
@@ -711,6 +757,7 @@ function applyLanguage(lang) {
             fLinkSyllabus: "➔ ICT Syllabus Hub",
             fLinkProjects: "➔ Live Projects",
             fLinkReviews: "➔ Reviews & Results",
+            fLinkCv: "➔ Download Teacher CV (PDF)",
             footerLocation: "Barmi, Sreepur, Gazipur",
             visitorLabelFooter: "Total Website Visitors",
             modalTitle: "ICT & Academic Application",

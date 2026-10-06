@@ -523,7 +523,7 @@ a {
 }
 
 /* ==========================================================================
-   Header & Navbar Navigation (Brand Name Line-Break Fix Guarantee)
+   Header & Navbar Navigation (Enhanced Aesthetics & Download CV Feature)
    ========================================================================== */
 .navbar {
     position: fixed;
@@ -531,21 +531,30 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 0;
-    transition: var(--trans-normal);
+    padding: 0.95rem 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(8, 11, 18, 0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar.scrolled {
-    padding: 0.75rem 0;
-    background: rgba(8, 11, 18, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
+    padding: 0.65rem 0;
+    background: rgba(8, 11, 18, 0.94);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(99, 102, 241, 0.12);
+}
+
+[data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.12);
 }
 
 [data-theme="light"] .navbar.scrolled {
     background: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
@@ -556,12 +565,268 @@ a {
     width: 100%;
 }
 
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.brand-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.brand-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
+    transition: var(--trans-spring);
+    display: block;
+}
+
+.brand-status-dot {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 11px;
+    height: 11px;
+    background: #10b981;
+    border: 2px solid var(--bg-dark);
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: pulse 2s infinite;
+}
+
+[data-theme="light"] .brand-status-dot {
+    border-color: #ffffff;
+}
+
+.brand-logo:hover .brand-avatar {
+    transform: scale(1.08) rotate(3deg);
+    border-color: var(--secondary);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* User Explicit Requirement: Arefin Nabil MUST be strictly on 1 SINGLE line everywhere */
+.brand-name {
+    font-size: 1.18rem;
+    font-weight: 800;
+    line-height: 1.15;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    letter-spacing: -0.2px;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.brand-logo:hover .brand-name {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+}
+
+[data-theme="light"] .brand-logo:hover .brand-name {
+    color: var(--primary);
+    text-shadow: none;
+}
+
+.brand-subtitle {
+    font-size: 0.725rem;
+    color: var(--secondary);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    white-space: nowrap !important;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.brand-subtitle-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 0.885rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.42rem 0.72rem;
+    border-radius: var(--radius-full);
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(99, 102, 241, 0.12);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.18) 100%);
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.45), 0 4px 15px rgba(99, 102, 241, 0.2);
+    font-weight: 600;
+}
+
+[data-theme="light"] .nav-link {
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .nav-link:hover {
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.08);
+}
+
+[data-theme="light"] .nav-link.active {
+    color: var(--primary) !important;
+    background: rgba(99, 102, 241, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.3);
+}
+
 .nav-actions {
     display: flex !important;
     align-items: center !important;
-    gap: 0.75rem !important;
+    gap: 0.6rem !important;
     flex-wrap: nowrap !important;
     flex-shrink: 0 !important;
+}
+
+/* Sleek Download CV Button in Navbar */
+.nav-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.835rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.22) 0%, rgba(6, 182, 212, 0.18) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.45);
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: var(--trans-spring);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-cv-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-cv-btn:hover::before {
+    left: 100%;
+}
+
+.nav-cv-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    border-color: #6366f1;
+    color: #ffffff !important;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+.nav-cv-btn i {
+    color: var(--secondary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-cv-btn:hover i {
+    color: #ffffff;
+    transform: translateY(2px);
+}
+
+[data-theme="light"] .nav-cv-btn {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.35);
+    color: var(--primary) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+}
+
+[data-theme="light"] .nav-cv-btn:hover {
+    background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    color: #ffffff !important;
+    box-shadow: 0 8px 22px rgba(99, 102, 241, 0.35);
+}
+
+[data-theme="light"] .nav-cv-btn:hover i {
+    color: #ffffff;
+}
+
+.theme-toggle-btn, .lang-toggle-btn {
+    height: 38px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--trans-spring);
+    padding: 0 0.8rem;
+    font-weight: 700;
+    font-size: 0.825rem;
+    gap: 0.35rem;
+    flex-shrink: 0;
+}
+
+.theme-toggle-btn {
+    width: 38px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.theme-toggle-btn:hover, .lang-toggle-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: scale(1.08);
+    box-shadow: var(--shadow-glow);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95) rotate(180deg);
+}
+
+.nav-whatsapp-btn {
+    padding: 0.5rem 1.15rem;
+    font-size: 0.84rem;
+    font-weight: 700;
 }
 
 .mobile-toggle {
@@ -584,6 +849,89 @@ a {
     .mobile-toggle {
         display: flex !important;
     }
+}
+
+/* Backdrop Overlay for Mobile Drawer */
+.nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Hero Download CV Button */
+.btn-hero-cv {
+    border: 1.5px solid rgba(99, 102, 241, 0.45) !important;
+    color: var(--text-main) !important;
+    background: rgba(99, 102, 241, 0.12) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-hero-cv:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(6, 182, 212, 0.25) 100%) !important;
+    border-color: var(--secondary) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.btn-hero-cv i {
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+}
+
+.btn-hero-cv:hover i {
+    transform: translateY(3px);
+    color: #ffffff;
+}
+
+[data-theme="light"] .btn-hero-cv {
+    background: rgba(99, 102, 241, 0.08) !important;
+    border-color: rgba(99, 102, 241, 0.35) !important;
+    color: var(--primary) !important;
+}
+
+[data-theme="light"] .btn-hero-cv:hover {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%) !important;
+}
+
+/* Education Section CV Highlight Banner */
+.cv-download-card {
+    transition: var(--trans-spring);
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-download-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary) !important;
+    box-shadow: 0 20px 45px rgba(99, 102, 241, 0.25);
+}
+
+.mobile-cv-card-btn {
+    display: none;
 }
 
 /* Universal Top Header & Hero Clearance Fix (prevents fixed navbar overlap on ALL pages) */
@@ -610,139 +958,6 @@ a {
         padding-top: 3rem !important;
         padding-bottom: 2.25rem !important;
     }
-}
-
-.brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-family: var(--font-heading);
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.brand-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--primary);
-    box-shadow: var(--shadow-glow);
-    transition: var(--trans-spring);
-    flex-shrink: 0;
-}
-
-.brand-logo:hover .brand-avatar {
-    transform: scale(1.08) rotate(4deg);
-}
-
-.brand-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* User Explicit Requirement: Arefin Nabil MUST be strictly on 1 SINGLE line everywhere */
-.brand-name {
-    font-size: 1.18rem;
-    font-weight: 800;
-    line-height: 1.15;
-    white-space: nowrap !important;
-    word-break: keep-all !important;
-    letter-spacing: -0.2px;
-    color: var(--text-main);
-}
-
-.brand-subtitle {
-    font-size: 0.725rem;
-    color: var(--secondary);
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    white-space: nowrap !important;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 1.4rem;
-    list-style: none;
-}
-
-.nav-link {
-    font-size: 0.925rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    transition: var(--trans-fast);
-    position: relative;
-    white-space: nowrap;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--text-main);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--grad-primary);
-    transition: var(--trans-fast);
-    border-radius: 2px;
-}
-
-.nav-link:hover::after, .nav-link.active::after {
-    width: 100%;
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    flex-shrink: 0;
-}
-
-.theme-toggle-btn, .lang-toggle-btn {
-    height: 40px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
-    background: var(--bg-card);
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--trans-spring);
-    padding: 0 0.85rem;
-    font-weight: 700;
-    font-size: 0.85rem;
-    gap: 0.4rem;
-    flex-shrink: 0;
-}
-
-.theme-toggle-btn {
-    width: 40px;
-    border-radius: 50%;
-    padding: 0;
-}
-
-.theme-toggle-btn:hover, .lang-toggle-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-    transform: scale(1.08);
-    box-shadow: var(--shadow-glow);
-}
-
-.mobile-toggle {
-    display: none;
-    font-size: 1.4rem;
-    background: none;
-    border: none;
-    color: var(--text-main);
-    cursor: pointer;
-    padding: 0.4rem;
 }
 
 /* Ensure mobile menu elements are strictly hidden on desktop */
@@ -1922,6 +2137,10 @@ a {
         border-radius: 50% !important;
     }
 
+    .nav-cv-btn {
+        display: none !important;
+    }
+
     .nav-whatsapp-btn {
         display: none !important;
     }
@@ -1952,18 +2171,18 @@ a {
         width: 100%;
         height: calc(100vh - 66px);
         background: rgba(11, 15, 25, 0.98);
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 1.25rem;
-        transition: var(--trans-normal);
+        gap: 0.75rem;
+        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
-        padding: 2.25rem 1.5rem 3rem 1.5rem;
+        padding: 1.75rem 1.25rem 3rem 1.25rem;
         overflow-y: auto;
         border-top: 1px solid var(--border-color);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         will-change: left;
     }
 
@@ -1971,6 +2190,21 @@ a {
         background: rgba(255, 255, 255, 0.98) !important;
         border-top-color: #e2e8f0 !important;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 1rem;
+        width: 88%;
+        text-align: center;
+        padding: 0.6rem 1rem;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="light"] .nav-menu .nav-link {
+        background: #f8fafc;
+        border-color: #e2e8f0;
     }
 
     .glass-card {
@@ -1982,10 +2216,38 @@ a {
         left: 0;
     }
 
+    .mobile-cv-card-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        width: 88% !important;
+        padding: 0.85rem 1.25rem;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.2) 100%) !important;
+        border: 1.5px solid rgba(99, 102, 241, 0.5) !important;
+        border-radius: var(--radius-md);
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+        margin-top: 0.35rem;
+        transition: var(--trans-spring);
+    }
+
+    .mobile-cv-card-btn:active {
+        transform: scale(0.98);
+    }
+
+    [data-theme="light"] .mobile-cv-card-btn {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.1) 100%) !important;
+        color: var(--primary) !important;
+    }
+
     .mobile-menu-whatsapp {
         display: inline-flex !important;
-        width: 85% !important;
-        margin-top: 0.5rem;
+        width: 88% !important;
+        margin-top: 0.35rem;
     }
 
     .desktop-only-btn {

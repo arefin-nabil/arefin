@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=1.3">
+    <link rel="stylesheet" href="styles.css?v=1.4">
 </head>
 
 <body>
@@ -85,10 +85,13 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html#home" class="brand-logo">
-                <img src="profile.jpg" alt="Nurul Arefin Nabil Profile Image" class="brand-avatar">
+                <div class="brand-avatar-wrapper">
+                    <img src="profile.jpg" alt="Nurul Arefin Nabil Profile Image" class="brand-avatar">
+                    <span class="brand-status-dot" title="Active Educator"></span>
+                </div>
                 <div class="brand-info">
                     <span class="brand-name">Arefin Nabil</span>
-                    <span class="brand-subtitle" data-i18n="brandSubtitle">ICT & CSE Educator</span>
+                    <span class="brand-subtitle"><span class="brand-subtitle-dot"></span> <span data-i18n="brandSubtitle">ICT & CSE Educator</span></span>
                 </div>
             </a>
 
@@ -102,6 +105,12 @@
                 <a href="projects.html" class="nav-link" data-i18n="navProjects">প্রজেক্ট</a>
                 <a href="index.html#testimonials" class="nav-link" data-i18n="navReviews">মতামত ও রেজাল্ট</a>
                 <a href="index.html#contact" class="nav-link" data-i18n="navContact">যোগাযোগ</a>
+
+                <!-- Mobile Menu Download CV Card -->
+                <a href="CV_Nurul_Arefin_Nabil_ICT_teacher.pdf" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.pdf" target="_blank"
+                    class="mobile-cv-card-btn" data-i18n="navDownloadCv">
+                    <i class="fa-solid fa-file-arrow-down"></i> সিভি ডাউনলোড (PDF)
+                </a>
 
                 <!-- Mobile Menu Quick Settings Bar -->
                 <div class="mobile-nav-settings">
@@ -120,6 +129,12 @@
             </nav>
 
             <div class="nav-actions">
+                <!-- Download CV Action Button -->
+                <a href="CV_Nurul_Arefin_Nabil_ICT_teacher.pdf" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.pdf" target="_blank"
+                    class="btn btn-cv-download nav-cv-btn" title="Download Official CV (PDF)" data-i18n="navDownloadCv">
+                    <i class="fa-solid fa-file-arrow-down"></i> <span class="cv-btn-text">Download CV</span>
+                </a>
+
                 <!-- Language Switcher Button (BN <-> EN) -->
                 <button class="lang-toggle-btn lang-toggle-action" title="Language Switcher (BN / EN)">
                     <i class="fa-solid fa-language"></i> <span class="langText">EN</span>
@@ -141,6 +156,9 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Drawer Backdrop Overlay -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
 
     <!-- ==========================================================================
          Hero Section — Student & Parent Attracting Focus
@@ -178,6 +196,10 @@
                         target="_blank" class="btn btn-outline btn-lg btn-whatsapp"
                         style="border: 1.5px solid #25D366; color: #25D366; background: rgba(37, 211, 102, 0.1);" data-i18n="heroBtnWa">
                         <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে মেসেজ
+                    </a>
+                    <a href="CV_Nurul_Arefin_Nabil_ICT_teacher.pdf" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.pdf" target="_blank"
+                        class="btn btn-hero-cv btn-lg" data-i18n="heroBtnCv">
+                        <i class="fa-solid fa-file-arrow-down"></i> শিক্ষক সিভি ডাউনলোড (PDF)
                     </a>
                 </div>
 
@@ -504,6 +526,37 @@
                         বিজ্ঞান বিভাগ (Science Group) থেকে জিপিএ ৫.০০ (GPA 5.00) অর্জন এবং শ্রীপুর উপজেলায় ১ম স্থান
                         অর্জন।
                     </p>
+                </div>
+            </div>
+
+            <!-- Verified Official Teacher CV Showcase Banner -->
+            <div class="glass-card cv-download-card reveal-up"
+                style="margin-top: 2.75rem; padding: 2.25rem 2.5rem; border-color: rgba(99, 102, 241, 0.35); background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);">
+                <div class="cv-card-content"
+                    style="display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+                    <div class="cv-card-info" style="display: flex; align-items: center; gap: 1.5rem; flex: 1; min-width: 280px;">
+                        <div class="cv-icon-badge"
+                            style="width: 58px; height: 58px; border-radius: var(--radius-md); background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.6rem; box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35); flex-shrink: 0;">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <div>
+                            <span class="section-tag" style="margin-bottom: 0.35rem;" data-i18n="eduCvTag">Official Curriculum Vitae</span>
+                            <h3 style="font-size: 1.35rem; margin-bottom: 0.35rem;" data-i18n="eduCvCardTitle">নূরুল আরেফিন নাবিল — অফিসিয়াল শিক্ষক সিভি (CV)</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; max-width: 680px;" data-i18n="eduCvCardDesc">
+                                বি.এস.সি ইন সিএসই (CGPA 3.70), আইসিটি ও একাডেমিক শিক্ষকতার বিস্তারিত অভিজ্ঞতা, টেকনিক্যাল স্কিলস ও প্রকাশনা সম্বলিত ভেরিফাইড সিভি।
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-card-actions" style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+                        <a href="CV_Nurul_Arefin_Nabil_ICT_teacher.pdf" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.pdf" target="_blank"
+                            class="btn btn-primary btn-lg" style="box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);" data-i18n="eduDownloadCvBtn">
+                            <i class="fa-solid fa-file-pdf"></i> শিক্ষক সিভি ডাউনলোড (PDF)
+                        </a>
+                        <a href="CV_Nurul_Arefin_Nabil_ICT_Lecturer.docx" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.docx" target="_blank"
+                            class="btn btn-secondary btn-lg" title="Download Word Format" data-i18n="eduDownloadDocxBtn">
+                            <i class="fa-solid fa-file-word" style="color: #3b82f6;"></i> Word (DOCX)
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1383,6 +1436,7 @@
                         <li><a href="syllabus.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkSyllabus">➔ ICT সিলেবাস হাব</a></li>
                         <li><a href="projects.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkProjects">➔ লাইভ প্রজেক্টস</a></li>
                         <li><a href="index.html#testimonials" style="color: var(--text-muted); text-decoration: none;" data-i18n="fLinkReviews">➔ মতামত ও রেজাল্ট</a></li>
+                        <li><a href="CV_Nurul_Arefin_Nabil_ICT_teacher.pdf" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.pdf" target="_blank" style="color: var(--secondary); text-decoration: none; font-weight: 600;" data-i18n="fLinkCv">➔ শিক্ষক সিভি (PDF ডাউনলোড)</a></li>
                     </ul>
                 </div>
 
