@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=1.4">
+    <link rel="stylesheet" href="styles.css?v=1.5">
 </head>
 
 <body>
@@ -62,10 +62,10 @@
 
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html#home" class="nav-link" data-i18n="navHome">হোম</a>
-                <a href="index.html#welcome-portal" class="nav-link" data-i18n="navAudience">ছাত্র ও অভিভাবক</a>
+                <a href="index.html#welcome-portal" class="nav-link desktop-hide" data-i18n="navAudience">ছাত্র ও অভিভাবক</a>
                 <a href="index.html#why-me" class="nav-link" data-i18n="navWhy">কেন শিখবেন?</a>
-                <a href="index.html#education" class="nav-link" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
-                <a href="index.html#tuition" class="nav-link" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
+                <a href="index.html#education" class="nav-link desktop-hide" data-i18n="navEdu">শিক্ষাগত যোগ্যতা</a>
+                <a href="index.html#tuition" class="nav-link desktop-hide" data-i18n="navTuition">টিউশন বিষয়সমূহ</a>
                 <a href="syllabus.html" class="nav-link active" data-i18n="navSyllabus">ICT সিলেবাস</a>
                 <a href="projects.html" class="nav-link" data-i18n="navProjects">প্রজেক্ট</a>
                 <a href="index.html#testimonials" class="nav-link" data-i18n="navReviews">মতামত ও রেজাল্ট</a>
@@ -88,33 +88,34 @@
                 </div>
 
                 <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal mobile-menu-whatsapp"
-                    style="background: #10b981; border-color: #10b981;" data-i18n="navTalkBtn">
+                    data-i18n="navTalkBtn">
                     <i class="fa-solid fa-gift"></i> ফ্রি ডেমো বুক করুন
                 </a>
             </nav>
 
             <div class="nav-actions">
-                <!-- Download CV Action Button -->
+                <!-- Compact CV Download Button -->
                 <a href="CV_Nurul_Arefin_Nabil_ICT_teacher.pdf" download="CV_Nurul_Arefin_Nabil_ICT_Lecturer.pdf" target="_blank"
-                    class="btn btn-cv-download nav-cv-btn" title="Download Official CV (PDF)" data-i18n="navDownloadCv">
-                    <i class="fa-solid fa-file-arrow-down"></i> <span class="cv-btn-text">Download CV</span>
+                    class="nav-cv-btn" title="Download Official CV (PDF)" data-i18n="navCvShort">
+                    <i class="fa-solid fa-file-arrow-down"></i> <span>CV</span>
                 </a>
 
-                <!-- Language Switcher Button (BN <-> EN) -->
-                <button class="lang-toggle-btn lang-toggle-action" title="Language Switcher (BN / EN)">
-                    <i class="fa-solid fa-language"></i> <span class="langText">EN</span>
-                </button>
+                <!-- Integrated Language & Theme Utility Capsule -->
+                <div class="nav-util-cluster">
+                    <button class="lang-toggle-btn lang-toggle-action" title="Language Switcher (BN / EN)" aria-label="Toggle Language">
+                        <span class="langText">EN</span>
+                    </button>
+                    <button class="theme-toggle-btn theme-toggle-action" title="থিম পরিবর্তন করুন" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                </div>
 
-                <!-- Theme Toggle Button -->
-                <button class="theme-toggle-btn theme-toggle-action" title="থিম পরিবর্তন করুন">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-
-                <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal nav-whatsapp-btn"
-                    style="background: #10b981; border-color: #10b981;" data-i18n="navTalkBtn">
-                    <i class="fa-solid fa-gift"></i> ফ্রি ডেমো বুক করুন
+                <!-- Primary CTA Button -->
+                <a href="index.html#tuition-apply" class="btn btn-accent open-tuition-modal nav-cta-btn" data-i18n="navTalkBtn">
+                    <i class="fa-solid fa-gift"></i> <span>ফ্রি ডেমো</span>
                 </a>
 
+                <!-- Mobile Toggle Button -->
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>

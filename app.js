@@ -199,7 +199,7 @@ function initLanguageSwitcher() {
 
 function applyLanguage(lang) {
     document.querySelectorAll('.langText, #langText').forEach(el => {
-        el.textContent = lang === 'bn' ? 'EN' : 'বাংলা';
+        el.textContent = lang === 'bn' ? 'EN' : 'BN';
     });
 
     document.documentElement.setAttribute('lang', lang);
@@ -216,9 +216,10 @@ function applyLanguage(lang) {
             navProjects: "প্রজেক্ট",
             navReviews: "মতামত ও রেজাল্ট",
             navContact: "যোগাযোগ",
-            navDownloadCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> সিভি ডাউনলোড",
+            navCvShort: "<i class=\"fa-solid fa-file-arrow-down\"></i> <span>সিভি</span>",
+            navDownloadCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> সিভি ডাউনলোড (PDF)",
             navCv: "শিক্ষক সিভি (PDF)",
-            navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> ফ্রি ডেমো বুক করুন",
+            navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> <span>ফ্রি ডেমো</span>",
             cardViewSyllabusBtn: "সম্পূর্ণ আইসিটি সিলেবাস দেখুন ➔",
             themeText: "থিম",
             statusBadge: "🔥 ফ্রি ১-অন-১ ডেমো ক্লাস চলছে | বরমী, মাওনা ও শ্রীপুরে নতুন ব্যাচে ভর্তি চালু!",
@@ -535,9 +536,10 @@ function applyLanguage(lang) {
             navProjects: "Projects",
             navReviews: "Reviews & Results",
             navContact: "Contact",
-            navDownloadCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> Download CV",
+            navCvShort: "<i class=\"fa-solid fa-file-arrow-down\"></i> <span>CV</span>",
+            navDownloadCv: "<i class=\"fa-solid fa-file-arrow-down\"></i> Download CV (PDF)",
             navCv: "Teacher CV (PDF)",
-            navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> Book Free Demo",
+            navTalkBtn: "<i class=\"fa-solid fa-gift\"></i> <span>Free Demo</span>",
             cardViewSyllabusBtn: "View Complete ICT Syllabus ➔",
             themeText: "Theme",
             statusBadge: "🔥 Free 1-on-1 Demo Classes Open | Admissions Open in Barmi, Mawna & Sreepur!",
